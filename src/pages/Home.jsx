@@ -59,14 +59,14 @@ export default function Home() {
             />
           )}
 
-          {/* Carefully tuned dual gradient scrim: keeps text 100% accessible while keeping polar ice visible */}
-          <div className="absolute inset-0 bg-gradient-to-r from-glacier-50/95 via-glacier-50/80 to-glacier-50/20 sm:to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-t from-glacier-100/90 via-transparent to-glacier-50/60" />
+          {/* Carefully tuned dual gradient scrim: lets vibrant sapphire polar waters shine while ensuring text clarity */}
+          <div className="absolute inset-0 bg-gradient-to-r from-glacier-50/90 via-glacier-50/45 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-glacier-100/75 via-transparent to-polar-950/15" />
         </div>
 
         {/* Hero Content */}
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl backdrop-blur-[2px] bg-glacier-50/70 sm:bg-glacier-50/60 p-6 sm:p-10 rounded-3xl border border-white/60 shadow-xs space-y-6 sm:space-y-8">
+          <div className="max-w-3xl backdrop-blur-md bg-white/75 sm:bg-white/70 p-6 sm:p-10 rounded-3xl border border-white/80 shadow-md space-y-6 sm:space-y-8">
             {/* Plain-Language Eyebrow */}
             <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-polar-100/90 border border-polar-200 text-polar-800 text-xs sm:text-sm font-medium tracking-wide w-fit">
               <span className="w-2 h-2 rounded-full bg-aurora-500 animate-pulse"></span>
@@ -106,7 +106,7 @@ export default function Home() {
         <div className="absolute bottom-4 right-4 sm:bottom-6 sm:right-8 z-20 flex items-center gap-2">
           <div className="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-polar-950/65 backdrop-blur-md text-[11px] font-medium text-glacier-100 border border-white/10 shadow-xs">
             <span className="w-1.5 h-1.5 rounded-full bg-aurora-400 animate-pulse"></span>
-            <span>Live Aerial Survey &bull; Antarctic Ice Shelf</span>
+            <span>Antarctic Navigation &bull; Lemaire Channel</span>
           </div>
           {!reducedMotion && (
             <button
