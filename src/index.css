@@ -62,6 +62,66 @@
 }
 
 /* ==========================================================================
+   SCROLL REVEAL STYLING (Entire Website & All Components)
+   ========================================================================== */
+.reveal-on-scroll,
+[data-reveal],
+.reveal-card {
+  opacity: 0;
+  transform: translateY(24px);
+  transition-property: opacity, transform, filter;
+  transition-duration: 700ms;
+  transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  filter: blur(2px);
+  will-change: opacity, transform, filter;
+}
+
+[data-reveal-direction="down"] {
+  transform: translateY(-24px);
+}
+
+[data-reveal-direction="left"] {
+  transform: translateX(28px);
+}
+
+[data-reveal-direction="right"] {
+  transform: translateX(-28px);
+}
+
+[data-reveal-direction="zoom"] {
+  transform: scale(0.94);
+}
+
+[data-reveal-direction="fade"] {
+  transform: none;
+}
+
+/* Revealed state */
+.reveal-on-scroll.is-revealed,
+[data-reveal].is-revealed,
+.reveal-card.is-revealed,
+section.is-revealed,
+article.is-revealed {
+  opacity: 1 !important;
+  transform: translate3d(0, 0, 0) scale(1) !important;
+  filter: blur(0px) !important;
+}
+
+/* Fallback for print or reduced motion */
+@media print, (prefers-reduced-motion: reduce) {
+  .reveal-on-scroll,
+  [data-reveal],
+  .reveal-card,
+  section,
+  article {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+    transition: none !important;
+  }
+}
+
+/* ==========================================================================
    LEAFLET REAL POLAR MAP STYLING
    ========================================================================== */
 .leaflet-container {

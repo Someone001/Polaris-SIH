@@ -27,7 +27,7 @@ export default function About() {
   return (
     <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-20 space-y-20">
       {/* 1. Header */}
-      <div className="space-y-4 max-w-3xl">
+      <div data-reveal data-reveal-direction="up" className="reveal-on-scroll space-y-4 max-w-3xl">
         <Tag variant="aurora">About the Initiative</Tag>
         <SectionHeading
           kicker="MINISTRY OF EARTH SCIENCES (MoES) & NCPOR"
@@ -37,7 +37,7 @@ export default function About() {
       </div>
 
       {/* 2. Institutional Mandate & SIH26063 Context */}
-      <div className="p-8 sm:p-10 rounded-2xl border border-glacier-border bg-glacier-50 space-y-6 shadow-xs">
+      <div data-reveal data-reveal-direction="up" className="reveal-on-scroll p-8 sm:p-10 rounded-2xl border border-glacier-border bg-glacier-50 space-y-6 shadow-xs">
         <div className="flex items-center gap-2 text-aurora-700">
           <ShieldCheck className="w-5 h-5" />
           <span className="text-xs uppercase tracking-wider font-semibold">Institutional Mandate & Mission</span>
@@ -67,7 +67,7 @@ export default function About() {
       </div>
 
       {/* 3. The Three Polar Realms & Research Stations */}
-      <div className="space-y-8">
+      <div data-reveal data-reveal-direction="up" className="reveal-on-scroll space-y-8">
         <div className="space-y-2">
           <p className="text-xs uppercase tracking-widest font-semibold text-aurora-600">
             STRATEGIC HIGH-LATITUDE PRESENCE
@@ -82,7 +82,7 @@ export default function About() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {/* Bharati Station */}
-          <div className="p-6 rounded-xl border border-glacier-border bg-white shadow-2xs space-y-3">
+          <div data-reveal data-reveal-delay="100" className="reveal-card p-6 rounded-xl border border-glacier-border bg-white shadow-2xs space-y-3">
             <div className="flex items-center justify-between">
               <span className="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-ice-100 text-ice-800">
                 Antarctica &bull; Operational

@@ -15,7 +15,11 @@ export default function SectionHeading({
   const isDark = theme === 'dark';
 
   return (
-    <div className={`space-y-3 ${isCenter ? 'text-center mx-auto' : 'text-left'} ${className}`}>
+    <div
+      data-reveal
+      data-reveal-direction="up"
+      className={`reveal-on-scroll space-y-3 ${isCenter ? 'text-center mx-auto' : 'text-left'} ${className}`}
+    >
       {kicker && (
         <p
           className={`text-xs uppercase tracking-widest font-semibold ${

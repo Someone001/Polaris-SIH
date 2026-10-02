@@ -167,7 +167,7 @@ export default function Archive() {
       </div>
 
       {/* 2. FILTERS CONTROL BAR */}
-      <div className="bg-glacier-50 p-6 sm:p-8 rounded-2xl border border-glacier-border shadow-xs">
+      <div data-reveal data-reveal-direction="up" className="reveal-on-scroll bg-glacier-50 p-6 sm:p-8 rounded-2xl border border-glacier-border shadow-xs">
         <ArchiveFilters
           searchQuery={searchQuery}
           onSearchChange={handleSearchChange}
@@ -200,6 +200,7 @@ export default function Archive() {
               expedition={expMap.get(item.expeditionId)}
               onClick={handleOpenItem}
               dataTour={idx === 0 ? 'archive-first-card' : undefined}
+              data-reveal-delay={Math.min((idx % 6) * 60, 300)}
             />
           ))}
         </div>

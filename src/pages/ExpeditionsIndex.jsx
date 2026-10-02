@@ -82,7 +82,7 @@ export default function ExpeditionsIndex() {
       </div>
 
       {/* Interactive Realistic Station Network Map */}
-      <div className="space-y-4">
+      <div data-reveal data-reveal-direction="up" className="reveal-on-scroll space-y-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
             <MapIcon className="w-5 h-5 text-aurora-600" />
@@ -108,7 +108,7 @@ export default function ExpeditionsIndex() {
       </div>
 
       {/* Filter Chips Bar */}
-      <div className="bg-glacier-50 p-6 sm:p-7 rounded-2xl border border-glacier-border space-y-5 shadow-xs">
+      <div data-reveal data-reveal-direction="up" className="reveal-on-scroll bg-glacier-50 p-6 sm:p-7 rounded-2xl border border-glacier-border space-y-5 shadow-xs">
         {/* Region Filter Chips */}
         <div className="space-y-2">
           <span className="text-xs uppercase tracking-wider font-semibold text-polar-600">
@@ -198,14 +198,17 @@ export default function ExpeditionsIndex() {
 
       {/* Expeditions List Rows */}
       <div className="space-y-4">
-        {filteredExpeditions.map((exp) => {
+        {filteredExpeditions.map((exp, idx) => {
           const recordCount = itemCountsByExp[exp.id] || 0;
           const isOngoing = exp.status === 'active' || exp.status === 'Ongoing';
 
           return (
             <article
               key={exp.id}
-              className="group bg-glacier-50 border border-glacier-border rounded-xl p-6 sm:p-7 hover:border-ice-300 hover:shadow-xs transition-all duration-200 flex flex-col md:flex-row md:items-center justify-between gap-6"
+              data-reveal
+              data-reveal-direction="up"
+              data-reveal-delay={Math.min((idx % 5) * 70, 300)}
+              className="reveal-card group bg-glacier-50 border border-glacier-border rounded-xl p-6 sm:p-7 hover:border-ice-300 hover:shadow-xs transition-all duration-200 flex flex-col md:flex-row md:items-center justify-between gap-6"
             >
               {/* Left Column: Title, Dates, Region, Summary */}
               <div className="space-y-2.5 max-w-3xl">

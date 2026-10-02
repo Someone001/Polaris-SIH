@@ -66,7 +66,11 @@ export default function Home() {
 
         {/* Hero Content */}
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl backdrop-blur-md bg-white/75 sm:bg-white/70 p-6 sm:p-10 rounded-3xl border border-white/80 shadow-md space-y-6 sm:space-y-8">
+          <div
+            data-reveal
+            data-reveal-direction="up"
+            className="reveal-on-scroll max-w-3xl backdrop-blur-md bg-white/75 sm:bg-white/70 p-6 sm:p-10 rounded-3xl border border-white/80 shadow-md space-y-6 sm:space-y-8"
+          >
             {/* Plain-Language Eyebrow */}
             <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-polar-100/90 border border-polar-200 text-polar-800 text-xs sm:text-sm font-medium tracking-wide w-fit">
               <span className="w-2 h-2 rounded-full bg-aurora-500 animate-pulse"></span>
@@ -123,7 +127,7 @@ export default function Home() {
       </section>
 
       {/* LIVE "BY THE NUMBERS" STRIP */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section data-reveal data-reveal-direction="up" className="reveal-on-scroll max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="p-8 sm:p-10 rounded-xl bg-glacier-50 border border-glacier-border shadow-xs">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
             <div className="md:col-span-4 border-b md:border-b-0 md:border-r border-glacier-border pb-6 md:pb-0 md:pr-8 space-y-1.5">
@@ -139,7 +143,7 @@ export default function Home() {
             </div>
 
             <div className="md:col-span-8 grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8">
-              <Link to="/archive" className="group block space-y-1 hover:translate-y-[-2px] transition-transform">
+              <Link to="/archive" data-reveal data-reveal-delay="100" className="reveal-card group block space-y-1 hover:translate-y-[-2px] transition-transform">
                 <span className="block font-serif text-4xl sm:text-5xl font-light text-polar-900 group-hover:text-aurora-700 transition-colors">
                   {stats.expeditionsCount}
                 </span>
@@ -151,7 +155,7 @@ export default function Home() {
                 </span>
               </Link>
 
-              <Link to="/archive" className="group block space-y-1 hover:translate-y-[-2px] transition-transform">
+              <Link to="/archive" data-reveal data-reveal-delay="200" className="reveal-card group block space-y-1 hover:translate-y-[-2px] transition-transform">
                 <span className="block font-serif text-4xl sm:text-5xl font-light text-polar-900 group-hover:text-aurora-700 transition-colors">
                   {stats.itemsCount}
                 </span>
@@ -163,7 +167,7 @@ export default function Home() {
                 </span>
               </Link>
 
-              <Link to="/archive" className="group block space-y-1 hover:translate-y-[-2px] transition-transform">
+              <Link to="/archive" data-reveal data-reveal-delay="300" className="reveal-card group block space-y-1 hover:translate-y-[-2px] transition-transform">
                 <span className="block font-serif text-4xl sm:text-5xl font-light text-polar-900 group-hover:text-aurora-700 transition-colors">
                   {stats.regionsCount}
                 </span>
@@ -189,7 +193,7 @@ export default function Home() {
 
         <div className="space-y-8">
           {/* BLOCK 1: Explore the collection (Full-width editorial split layout) */}
-          <div className="rounded-xl border border-glacier-border bg-glacier-50 p-8 sm:p-10 lg:p-12">
+          <div data-reveal data-reveal-direction="up" className="reveal-on-scroll rounded-xl border border-glacier-border bg-glacier-50 p-8 sm:p-10 lg:p-12">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
               <div className="lg:col-span-7 space-y-4">
                 <Tag variant="ice">1. Explore the collection</Tag>
@@ -240,7 +244,7 @@ export default function Home() {
           {/* TWO ASYMMETRICAL BLOCKS SIDE-BY-SIDE */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
             {/* BLOCK 2: See where expeditions went (Deep Navy, Geographic & Station Focus) */}
-            <div className="lg:col-span-6 rounded-xl bg-polar-900 text-glacier-50 p-8 sm:p-10 flex flex-col justify-between space-y-8 border border-polar-800">
+            <div data-reveal data-reveal-direction="left" data-reveal-delay="100" className="reveal-on-scroll lg:col-span-6 rounded-xl bg-polar-900 text-glacier-50 p-8 sm:p-10 flex flex-col justify-between space-y-8 border border-polar-800">
               <div className="space-y-4">
                 <Tag variant="dark">2. See where expeditions went</Tag>
                 <h3 className="font-serif text-2xl sm:text-3xl font-normal text-white">
@@ -274,7 +278,7 @@ export default function Home() {
             </div>
 
             {/* BLOCK 3: Create ready-to-post content (Editorial Light Block with Workflow Demonstration) */}
-            <div className="lg:col-span-6 rounded-xl border border-aurora-200/70 bg-aurora-50/50 p-8 sm:p-10 flex flex-col justify-between space-y-8">
+            <div data-reveal data-reveal-direction="right" data-reveal-delay="200" className="reveal-on-scroll lg:col-span-6 rounded-xl border border-aurora-200/70 bg-aurora-50/50 p-8 sm:p-10 flex flex-col justify-between space-y-8">
               <div className="space-y-4">
                 <Tag variant="aurora">3. Create ready-to-post content</Tag>
                 <h3 className="font-serif text-2xl sm:text-3xl text-polar-950 font-normal">
@@ -313,7 +317,7 @@ export default function Home() {
       </section>
 
       {/* WHY THIS MATTERS SECTION: EXPANDED WITH AUTHENTIC SCIENTIFIC PILLARS */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section data-reveal data-reveal-direction="up" className="reveal-on-scroll max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="rounded-2xl bg-polar-950 text-glacier-50 p-8 sm:p-12 lg:p-16 relative overflow-hidden space-y-10">
           {/* Subtle aurora green glow effect */}
           <div className="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-aurora-500/10 blur-3xl pointer-events-none"></div>
@@ -332,7 +336,7 @@ export default function Home() {
 
           {/* Three Concrete Scientific Pillars */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-4 border-t border-polar-800">
-            <div className="space-y-2.5">
+            <div data-reveal data-reveal-delay="100" className="reveal-card space-y-2.5">
               <span className="text-xs uppercase tracking-wider font-semibold text-aurora-400">
                 1. Monsoon Teleconnections
               </span>
@@ -344,7 +348,7 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="space-y-2.5">
+            <div data-reveal data-reveal-delay="200" className="reveal-card space-y-2.5">
               <span className="text-xs uppercase tracking-wider font-semibold text-aurora-400">
                 2. Coastal Inundation Risk
               </span>
@@ -356,7 +360,7 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="space-y-2.5">
+            <div data-reveal data-reveal-delay="300" className="reveal-card space-y-2.5">
               <span className="text-xs uppercase tracking-wider font-semibold text-aurora-400">
                 3. The Third Pole Water Tower
               </span>

@@ -157,7 +157,7 @@ export default function ExpeditionDetail() {
       </div>
 
       {/* 2. TITLE BLOCK & SUMMARY */}
-      <div className="space-y-6 max-w-4xl">
+      <div data-reveal data-reveal-direction="up" className="reveal-on-scroll space-y-6 max-w-4xl">
         <div className="flex flex-wrap items-center gap-3">
           <div className="flex items-center gap-1">
             <Tag variant={expedition.region === 'Antarctic' ? 'ice' : expedition.region === 'Arctic' ? 'aurora' : 'default'}>
@@ -210,7 +210,7 @@ export default function ExpeditionDetail() {
 
         {/* 3 Key Findings */}
         {expedition.keyFindings && expedition.keyFindings.length > 0 && (
-          <div className="bg-glacier-50 border border-glacier-border rounded-xl p-5 sm:p-6 space-y-2.5">
+          <div data-reveal data-reveal-direction="up" className="reveal-on-scroll bg-glacier-50 border border-glacier-border rounded-xl p-5 sm:p-6 space-y-2.5">
             <h3 className="text-xs uppercase tracking-wider font-semibold text-aurora-700">
               Key Discoveries Reported
             </h3>
@@ -227,7 +227,7 @@ export default function ExpeditionDetail() {
         {/* Deep Authentic Scientific Sections */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-2">
           {expedition.missionMandate && (
-            <div className="p-6 rounded-xl border border-glacier-border bg-white shadow-2xs space-y-2.5">
+            <div data-reveal data-reveal-direction="left" data-reveal-delay="100" className="reveal-card p-6 rounded-xl border border-glacier-border bg-white shadow-2xs space-y-2.5">
               <h3 className="font-serif text-lg font-normal text-polar-950 flex items-center gap-2">
                 <span>National Mandate & Scientific Objectives</span>
               </h3>
@@ -238,7 +238,7 @@ export default function ExpeditionDetail() {
           )}
 
           {expedition.logisticsOverview && (
-            <div className="p-6 rounded-xl border border-glacier-border bg-white shadow-2xs space-y-2.5">
+            <div data-reveal data-reveal-direction="right" data-reveal-delay="200" className="reveal-card p-6 rounded-xl border border-glacier-border bg-white shadow-2xs space-y-2.5">
               <h3 className="font-serif text-lg font-normal text-polar-950 flex items-center gap-2">
                 <span>Field Logistics & Harsh Environment Operations</span>
               </h3>

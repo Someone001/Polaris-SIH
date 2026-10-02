@@ -28,6 +28,8 @@ export default function ItemCard({ item, expedition, onClick, dataTour }) {
   return (
     <article
       data-tour={dataTour}
+      data-reveal
+      data-reveal-direction="up"
       onClick={() => onClick(item)}
       onKeyDown={(e) => {
         if (e.key === 'Enter' || e.key === ' ') {
@@ -37,7 +39,7 @@ export default function ItemCard({ item, expedition, onClick, dataTour }) {
       }}
       tabIndex={0}
       role="button"
-      className="group relative flex flex-col h-full text-left bg-glacier-50 border border-glacier-border rounded-xl overflow-hidden hover:border-ice-300 hover:shadow-xs transition-all duration-200 cursor-pointer focus:outline-none focus:ring-2 focus:ring-aurora-500 focus:ring-offset-2"
+      className="reveal-card group relative flex flex-col h-full text-left bg-glacier-50 border border-glacier-border rounded-xl overflow-hidden hover:border-ice-300 hover:shadow-xs transition-all duration-200 cursor-pointer focus:outline-none focus:ring-2 focus:ring-aurora-500 focus:ring-offset-2"
     >
       {/* Generated Polar SVG Visual */}
       <div className="relative aspect-[16/10] w-full overflow-hidden border-b border-glacier-border/70">

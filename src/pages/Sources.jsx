@@ -169,7 +169,7 @@ export default function Sources() {
   return (
     <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-20 space-y-16">
       {/* 1. Header */}
-      <div className="space-y-4 max-w-3xl">
+      <div data-reveal data-reveal-direction="up" className="reveal-on-scroll space-y-4 max-w-3xl">
         <Tag variant="aurora">Data Provenance & Citations</Tag>
         <SectionHeading
           kicker="AUTHENTIC SCIENTIFIC PROVENANCE"
@@ -179,7 +179,7 @@ export default function Sources() {
       </div>
 
       {/* 2. SIH26063 Statement & Verification Guarantee */}
-      <div className="p-8 sm:p-10 rounded-2xl border border-glacier-border bg-glacier-50 space-y-4 shadow-xs">
+      <div data-reveal data-reveal-direction="up" className="reveal-on-scroll p-8 sm:p-10 rounded-2xl border border-glacier-border bg-glacier-50 space-y-4 shadow-xs">
         <div className="flex items-center gap-2 text-aurora-700">
           <ShieldCheck className="w-5 h-5" />
           <span className="text-xs uppercase tracking-wider font-semibold">
@@ -198,7 +198,7 @@ export default function Sources() {
       </div>
 
       {/* 3. Primary Government Data Repositories */}
-      <div className="space-y-6">
+      <div data-reveal data-reveal-direction="up" className="reveal-on-scroll space-y-6">
         <div className="space-y-1">
           <p className="text-xs uppercase tracking-widest font-semibold text-aurora-600">
             PRIMARY GOVERNMENT REPOSITORIES
@@ -215,7 +215,10 @@ export default function Sources() {
           {govSources.map((src, idx) => (
             <div
               key={idx}
-              className="p-6 rounded-xl border border-glacier-border bg-white shadow-2xs space-y-3 hover:border-ice-300 transition-all"
+              data-reveal
+              data-reveal-direction="up"
+              data-reveal-delay={Math.min((idx % 4) * 80, 240)}
+              className="reveal-card p-6 rounded-xl border border-glacier-border bg-white shadow-2xs space-y-3 hover:border-ice-300 transition-all"
             >
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
                 <div>
