@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-import { X, ChevronLeft, ChevronRight, Sparkles, Calendar, MapPin, Compass, Tag as TagIcon, Play } from 'lucide-react';
+import { X, ChevronLeft, ChevronRight, Sparkles, Calendar, MapPin, Compass, Tag as TagIcon, Play, ExternalLink } from 'lucide-react';
 import ItemVisual from './ItemVisual';
 import Tag from './Tag';
 import InfoTip from './InfoTip';
@@ -253,14 +253,33 @@ export default function ItemDetail({
         <div className="p-6 sm:p-8 space-y-8 flex-1">
           {/* Large Visual or Interactive Video Player */}
           {item.type === 'Video' && item.videoUrl ? (
-            <div className="rounded-xl overflow-hidden border border-glacier-border shadow-md aspect-video bg-polar-950">
-              <iframe
-                src={item.videoUrl}
-                title={item.title}
-                className="w-full h-full border-0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              />
+            <div className="space-y-3">
+              <div className="rounded-xl overflow-hidden border border-glacier-border shadow-md aspect-video bg-polar-950">
+                <iframe
+                  src={item.videoUrl}
+                  title={item.title}
+                  className="w-full h-full border-0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                />
+              </div>
+              <div className="flex items-center justify-between text-xs text-polar-700 bg-glacier-100 p-2.5 rounded-lg border border-glacier-border">
+                <span className="flex items-center gap-1.5 font-medium">
+                  <Play className="w-3.5 h-3.5 text-aurora-600 fill-aurora-600" />
+                  <span>Verified MoES / NCPOR Documentary Stream</span>
+                </span>
+                {item.watchUrl && (
+                  <a
+                    href={item.watchUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 text-aurora-700 hover:text-aurora-800 font-semibold transition-colors"
+                  >
+                    <span>Watch on YouTube</span>
+                    <ExternalLink className="w-3 h-3" />
+                  </a>
+                )}
+              </div>
             </div>
           ) : (
             <div className="rounded-xl overflow-hidden border border-glacier-border/80 shadow-xs">

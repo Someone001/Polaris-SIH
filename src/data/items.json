@@ -113,7 +113,7 @@
       "id": "item-005",
       "expeditionId": "exp-ant-43",
       "type": "Video",
-      "title": "Emperor Penguins and Iceberg Drifting Past the Bay",
+      "title": "Documentary: India's Antarctic Research Stations (Maitri & Bharati)",
       "date": "2024-02-02",
       "description": "Official 4K documentary video footage capturing Emperor penguin (Aptenodytes forsteri) colonies navigating coastal fast ice as tabular icebergs drift past Prydz Bay. The footage captures the reality of polar life: the roar of 100 km/h katabatic winds, ship maneuvers through dense pack ice, and the daily camaraderie of scientists living isolated for up to 14 months during the polar winter.",
       "tags": [
@@ -124,13 +124,14 @@
       ],
       "visualSeed": 5,
       "imageUrl": "/images/emperor-penguins.jpg",
-      "videoUrl": "https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ?enablejsapi=1",
-      "duration": "12m 45s",
-      "institution": "Films Division & National Centre for Polar and Ocean Research, MoES",
-      "author": "MoES Official Polar Media Contingent",
+      "videoUrl": "https://www.youtube.com/embed/9A2w1JTylUs?rel=0&modestbranding=1",
+      "duration": "26m 14s",
+      "institution": "Ministry of Earth Sciences (MoES) & NCPOR",
+      "author": "DD India & Ministry of Earth Sciences (MoES)",
       "methodology": "Professional 4K polar broadcast footage and scientific documentary recording produced by the Ministry of Earth Sciences and NCPOR. Captured across multiple field seasons to record logistical operations, deep ice core extraction, station maintenance under blizzard conditions, and interviews with leading polar researchers.",
       "instrumentation": "Ultra-HD cinema broadcast cameras with heated battery packs, stabilized gimbal rigs, drone aerial photogrammetry units, and professional directional wind-attenuated microphones.",
-      "significance": "Broadcast documentaries bridge the gap between high-latitude scientific laboratories and the citizen public, demonstrating the grit of Indian scientists and fostering nationwide scientific temper among students and young researchers."
+      "significance": "Broadcast documentaries bridge the gap between high-latitude scientific laboratories and the citizen public, demonstrating the grit of Indian scientists and fostering nationwide scientific temper among students and young researchers.",
+      "watchUrl": "https://www.youtube.com/watch?v=9A2w1JTylUs"
     },
     {
       "id": "item-006",
@@ -349,7 +350,7 @@
       "id": "item-014",
       "expeditionId": "exp-ant-44",
       "type": "Video",
-      "title": "Deploying an Automated Weather Mast on the Ice",
+      "title": "Documentary: Maitri Station - India’s Antarctic Base Since 1989",
       "date": "2025-02-04",
       "description": "Technical video showing the complete assembly and cold-testing of an autonomous satellite-linked weather mast on the East Antarctic ice sheet. The footage captures the reality of polar life: the roar of 100 km/h katabatic winds, ship maneuvers through dense pack ice, and the daily camaraderie of scientists living isolated for up to 14 months during the polar winter.",
       "tags": [
@@ -359,13 +360,14 @@
       ],
       "visualSeed": 14,
       "imageUrl": "/images/ncpor-bharati-cropped.jpg",
-      "videoUrl": "https://www.youtube-nocookie.com/embed/g2qC4XyJb_8",
-      "duration": "08m 15s",
-      "institution": "India Meteorological Department (IMD) & MoES",
-      "author": "NCPOR Instrumentation Division",
+      "videoUrl": "https://www.youtube.com/embed/-KjMHRfUWC4?rel=0&modestbranding=1",
+      "duration": "04m 58s",
+      "institution": "MoES Official Channel & NCPOR",
+      "author": "Ministry of Earth Sciences (MoES), Govt. of India",
       "methodology": "Professional 4K polar broadcast footage and scientific documentary recording produced by the Ministry of Earth Sciences and NCPOR. Captured across multiple field seasons to record logistical operations, deep ice core extraction, station maintenance under blizzard conditions, and interviews with leading polar researchers.",
       "instrumentation": "Ultra-HD cinema broadcast cameras with heated battery packs, stabilized gimbal rigs, drone aerial photogrammetry units, and professional directional wind-attenuated microphones.",
-      "significance": "Broadcast documentaries bridge the gap between high-latitude scientific laboratories and the citizen public, demonstrating the grit of Indian scientists and fostering nationwide scientific temper among students and young researchers."
+      "significance": "Broadcast documentaries bridge the gap between high-latitude scientific laboratories and the citizen public, demonstrating the grit of Indian scientists and fostering nationwide scientific temper among students and young researchers.",
+      "watchUrl": "https://www.youtube.com/watch?v=-KjMHRfUWC4"
     },
     {
       "id": "item-015",
@@ -606,7 +608,7 @@
       "id": "item-024",
       "expeditionId": "exp-arc-17",
       "type": "Video",
-      "title": "Kittiwake Birds Feeding Along Iceberg Edges",
+      "title": "Documentary: India in the Arctic - Himadri Station & Ny-Ålesund Science",
       "date": "2025-02-08",
       "description": "Documentary footage documenting black-legged kittiwake (Rissa tridactyla) flocks foraging on ice-edge amphipods and polar cod near Svalbard glacial fronts. The footage captures the reality of polar life: the roar of 100 km/h katabatic winds, ship maneuvers through dense pack ice, and the daily camaraderie of scientists living isolated for up to 14 months during the polar winter.",
       "tags": [
@@ -616,13 +618,14 @@
       ],
       "visualSeed": 24,
       "imageUrl": "/images/kittiwake-arctic-seabird.jpg",
-      "videoUrl": "https://www.youtube-nocookie.com/embed/d23n2yX02gA",
-      "duration": "18m 20s",
-      "institution": "Films Division & NCPOR, Ministry of Earth Sciences",
-      "author": "MoES Marine Biology Documentarians",
+      "videoUrl": "https://www.youtube.com/embed/sr7u49jLuKI?rel=0&modestbranding=1",
+      "duration": "14m 10s",
+      "institution": "National Centre for Polar and Ocean Research (NCPOR), MoES",
+      "author": "Ministry of Earth Sciences & Indian Polar Contingent",
       "methodology": "Professional 4K polar broadcast footage and scientific documentary recording produced by the Ministry of Earth Sciences and NCPOR. Captured across multiple field seasons to record logistical operations, deep ice core extraction, station maintenance under blizzard conditions, and interviews with leading polar researchers.",
       "instrumentation": "Ultra-HD cinema broadcast cameras with heated battery packs, stabilized gimbal rigs, drone aerial photogrammetry units, and professional directional wind-attenuated microphones.",
-      "significance": "Broadcast documentaries bridge the gap between high-latitude scientific laboratories and the citizen public, demonstrating the grit of Indian scientists and fostering nationwide scientific temper among students and young researchers."
+      "significance": "Broadcast documentaries bridge the gap between high-latitude scientific laboratories and the citizen public, demonstrating the grit of Indian scientists and fostering nationwide scientific temper among students and young researchers.",
+      "watchUrl": "https://www.youtube.com/watch?v=sr7u49jLuKI"
     },
     {
       "id": "item-025",
@@ -885,7 +888,7 @@
       "id": "item-035",
       "expeditionId": "exp-so-12",
       "type": "Video",
-      "title": "Humpback Whales Breaching in Sub-Zero Swells",
+      "title": "Documentary: Antarctica & Southern Ocean - As the Seasons Change",
       "date": "2023-03-04",
       "description": "Documentary footage documenting Humpback whale (Megaptera novaeangliae) pod feeding behavior in rich Antarctic krill upwelling zones. The footage captures the reality of polar life: the roar of 100 km/h katabatic winds, ship maneuvers through dense pack ice, and the daily camaraderie of scientists living isolated for up to 14 months during the polar winter.",
       "tags": [
@@ -895,13 +898,14 @@
       ],
       "visualSeed": 35,
       "imageUrl": "/images/humpback-whale-polar.jpg",
-      "videoUrl": "https://www.youtube-nocookie.com/embed/5DqjhJ8W30w",
-      "duration": "24m 50s",
-      "institution": "Films Division & National Centre for Polar and Ocean Research, MoES",
-      "author": "MoES Marine Mammal Survey Team",
+      "videoUrl": "https://www.youtube.com/embed/iGVZvuCNZuc?rel=0&modestbranding=1",
+      "duration": "09m 45s",
+      "institution": "National Centre for Polar and Ocean Research (NCPOR), MoES",
+      "author": "35th Indian Scientific Expedition to Antarctica",
       "methodology": "Professional 4K polar broadcast footage and scientific documentary recording produced by the Ministry of Earth Sciences and NCPOR. Captured across multiple field seasons to record logistical operations, deep ice core extraction, station maintenance under blizzard conditions, and interviews with leading polar researchers.",
       "instrumentation": "Ultra-HD cinema broadcast cameras with heated battery packs, stabilized gimbal rigs, drone aerial photogrammetry units, and professional directional wind-attenuated microphones.",
-      "significance": "Broadcast documentaries bridge the gap between high-latitude scientific laboratories and the citizen public, demonstrating the grit of Indian scientists and fostering nationwide scientific temper among students and young researchers."
+      "significance": "Broadcast documentaries bridge the gap between high-latitude scientific laboratories and the citizen public, demonstrating the grit of Indian scientists and fostering nationwide scientific temper among students and young researchers.",
+      "watchUrl": "https://www.youtube.com/watch?v=iGVZvuCNZuc"
     },
     {
       "id": "item-036",
