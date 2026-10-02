@@ -1,78 +1,90 @@
-import React from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Compass, FileText, Globe2, Sparkles, MapPin } from 'lucide-react';
+import { ArrowRight, Compass, FileText, Globe2, Sparkles, MapPin, Play, Pause } from 'lucide-react';
 import SectionHeading from '../components/SectionHeading';
 import Tag from '../components/Tag';
 import { getPortalStats, getExpeditions } from '../lib/dataLoader';
+import { useExplaining } from '../context/ExplainingContext';
 
 export default function Home() {
   const stats = getPortalStats();
   const sampleExpeditions = getExpeditions().slice(0, 3);
+  const { reducedMotion } = useExplaining();
+
+  const videoRef = useRef(null);
+  const [isPlaying, setIsPlaying] = useState(true);
+
+  useEffect(() => {
+    if (reducedMotion && videoRef.current) {
+      videoRef.current.pause();
+      setIsPlaying(false);
+    }
+  }, [reducedMotion]);
+
+  const toggleVideo = () => {
+    if (!videoRef.current) return;
+    if (isPlaying) {
+      videoRef.current.pause();
+      setIsPlaying(false);
+    } else {
+      videoRef.current.play();
+      setIsPlaying(true);
+    }
+  };
 
   return (
     <div className="space-y-24 sm:space-y-32 pb-24">
-      {/* HERO SECTION */}
-      <section className="relative overflow-hidden pt-12 sm:pt-20 lg:pt-28 pb-16 sm:pb-24 border-b border-glacier-border/70 bg-gradient-to-b from-glacier-50 via-glacier-100 to-ice-50/40">
-        {/* Subtle abstract polar topography / contour vector overlay */}
-        <div className="absolute inset-0 pointer-events-none opacity-40">
-          <svg
-            className="w-full h-full object-cover"
-            viewBox="0 0 1440 600"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            preserveAspectRatio="none"
-          >
-            <path
-              d="M-50 420 C 280 410, 440 520, 780 470 C 1100 420, 1300 510, 1500 480 L 1500 620 L -50 620 Z"
-              fill="rgba(194, 221, 237, 0.25)"
+      {/* HERO SECTION WITH CINEMATIC POLAR BACKGROUND VIDEO */}
+      <section className="relative overflow-hidden pt-12 sm:pt-20 lg:pt-24 pb-16 sm:pb-24 border-b border-glacier-border/70 bg-glacier-100">
+        {/* Cinematic Polar Video Background */}
+        <div className="absolute inset-0 pointer-events-none overflow-hidden select-none">
+          {!reducedMotion ? (
+            <video
+              ref={videoRef}
+              autoPlay
+              loop
+              muted
+              playsInline
+              poster="/videos/polar-hero-poster.jpg"
+              className="w-full h-full object-cover object-center filter brightness-[0.96] contrast-[1.08] transition-opacity duration-1000"
+            >
+              <source src="/videos/polar-hero-bg.webm" type="video/webm" />
+              <source src="/videos/polar-hero-bg.mp4" type="video/mp4" />
+            </video>
+          ) : (
+            <img
+              src="/videos/polar-hero-poster.jpg"
+              alt="Antarctic ice shelf aerial vista"
+              className="w-full h-full object-cover object-center filter brightness-[0.96]"
             />
-            <path
-              d="M-50 490 C 320 460, 520 540, 840 510 C 1180 480, 1340 560, 1500 530 L 1500 620 L -50 620 Z"
-              fill="rgba(209, 233, 245, 0.4)"
-            />
-            {/* Subtle contour lines */}
-            <path
-              d="M0 380 Q 360 340 720 390 T 1440 370"
-              stroke="rgba(34, 103, 146, 0.08)"
-              strokeWidth="1.2"
-              fill="none"
-            />
-            <path
-              d="M0 430 Q 380 400 760 450 T 1440 420"
-              stroke="rgba(34, 103, 146, 0.08)"
-              strokeWidth="1.2"
-              fill="none"
-            />
-            <path
-              d="M0 480 Q 420 460 820 490 T 1440 470"
-              stroke="rgba(34, 103, 146, 0.08)"
-              strokeWidth="1.2"
-              fill="none"
-            />
-          </svg>
+          )}
+
+          {/* Carefully tuned dual gradient scrim: keeps text 100% accessible while keeping polar ice visible */}
+          <div className="absolute inset-0 bg-gradient-to-r from-glacier-50/95 via-glacier-50/80 to-glacier-50/20 sm:to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-glacier-100/90 via-transparent to-glacier-50/60" />
         </div>
 
         {/* Hero Content */}
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl space-y-8">
+          <div className="max-w-3xl backdrop-blur-[2px] bg-glacier-50/70 sm:bg-glacier-50/60 p-6 sm:p-10 rounded-3xl border border-white/60 shadow-xs space-y-6 sm:space-y-8">
             {/* Plain-Language Eyebrow */}
-            <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-polar-100/90 border border-polar-200 text-polar-800 text-xs sm:text-sm font-medium tracking-wide">
+            <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-polar-100/90 border border-polar-200 text-polar-800 text-xs sm:text-sm font-medium tracking-wide w-fit">
               <span className="w-2 h-2 rounded-full bg-aurora-500 animate-pulse"></span>
               <span>Ministry of Earth Sciences &bull; National Polar Portal</span>
             </div>
 
             {/* Confident, Large Serif Heading */}
-            <h1 className="font-serif text-4xl sm:text-5xl lg:text-[64px] font-normal text-polar-950 tracking-tight leading-[1.12]">
+            <h1 className="font-serif text-4xl sm:text-5xl lg:text-[60px] font-normal text-polar-950 tracking-tight leading-[1.12]">
               Everything India has learned at the poles, in one place.
             </h1>
 
             {/* Short Supporting Sentence */}
-            <p className="text-lg sm:text-xl text-polar-700 leading-relaxed max-w-2xl font-normal">
+            <p className="text-lg sm:text-xl text-polar-700 leading-relaxed font-normal">
               Read true stories, browse clean field records, and follow Indian scientists working across Antarctica, the Arctic, and the Southern Ocean.
             </p>
 
             {/* Primary Action Buttons */}
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-3">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-1">
               <Link
                 to="/archive"
                 className="inline-flex items-center justify-center gap-2.5 px-7 py-4 rounded-md bg-polar-900 text-glacier-50 font-medium text-base hover:bg-polar-800 transition-colors shadow-sm focus:outline-none"
@@ -82,12 +94,31 @@ export default function Home() {
               </Link>
               <Link
                 to="/studio"
-                className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-md bg-glacier-50/90 text-polar-900 border border-polar-300 hover:bg-glacier-200/60 font-medium text-base transition-colors focus:outline-none"
+                className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-md bg-white/90 text-polar-900 border border-polar-300 hover:bg-glacier-100 font-medium text-base transition-colors focus:outline-none shadow-2xs"
               >
                 <span>Try the Content Studio</span>
               </Link>
             </div>
           </div>
+        </div>
+
+        {/* Ambient Video Control Badge */}
+        <div className="absolute bottom-4 right-4 sm:bottom-6 sm:right-8 z-20 flex items-center gap-2">
+          <div className="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-polar-950/65 backdrop-blur-md text-[11px] font-medium text-glacier-100 border border-white/10 shadow-xs">
+            <span className="w-1.5 h-1.5 rounded-full bg-aurora-400 animate-pulse"></span>
+            <span>Live Aerial Survey &bull; Antarctic Ice Shelf</span>
+          </div>
+          {!reducedMotion && (
+            <button
+              type="button"
+              onClick={toggleVideo}
+              className="p-2 rounded-full bg-polar-950/70 hover:bg-polar-900 text-white backdrop-blur-md border border-white/20 transition-all cursor-pointer shadow-sm hover:scale-105"
+              title={isPlaying ? 'Pause background video' : 'Play background video'}
+              aria-label={isPlaying ? 'Pause background video' : 'Play background video'}
+            >
+              {isPlaying ? <Pause className="w-3.5 h-3.5" /> : <Play className="w-3.5 h-3.5" />}
+            </button>
+          )}
         </div>
       </section>
 
