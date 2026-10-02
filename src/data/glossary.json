@@ -1,0 +1,74 @@
+{
+  "dataset": {
+    "term": "Dataset",
+    "definition": "A collected batch of measured numbers, such as wind speeds, ocean temperatures, or ice thickness readings, organized in rows and columns for scientists to analyze."
+  },
+  "metadata": {
+    "term": "Metadata",
+    "definition": "Simple summary details that tell you who collected a file, what day it was recorded, where the expedition went, and what instruments were used."
+  },
+  "coordinates": {
+    "term": "Coordinates",
+    "definition": "Two numbers (latitude and longitude) that pinpoint an exact spot on Earth's surface, measured in degrees north/south of the equator and east/west of the prime meridian."
+  },
+  "latitude": {
+    "term": "Latitude",
+    "definition": "Distance north or south of Earth's equator. The North Pole is at 90 degrees North, and the South Pole is at 90 degrees South."
+  },
+  "longitude": {
+    "term": "Longitude",
+    "definition": "Distance east or west of the prime meridian line in Greenwich, helping pinpoint positions across the globe."
+  },
+  "projection": {
+    "term": "Map Projection",
+    "definition": "A mathematical method used to draw Earth's curved, spherical surface onto a flat screen or paper map."
+  },
+  "publication": {
+    "term": "Publication",
+    "definition": "A formal scientific paper or research report reviewed and published in an academic journal so other researchers worldwide can verify the discoveries."
+  },
+  "doi": {
+    "term": "DOI (Digital Object Identifier)",
+    "definition": "A permanent unique web link assigned to an official scientific publication that never breaks or changes."
+  },
+  "activity": {
+    "term": "Activity",
+    "definition": "Public outreach events, school video calls, live science exhibits, and station celebrations conducted by expedition members to connect with citizens."
+  },
+  "report": {
+    "term": "Expedition Report",
+    "definition": "An official written record prepared by the voyage leader summarizing daily weather logs, equipment performance, safety checks, and science operations."
+  },
+  "status": {
+    "term": "Mission Status",
+    "definition": "Indicates whether an expedition is currently active in the field, completed and back home, or planned for an upcoming season."
+  },
+  "completed": {
+    "term": "Completed",
+    "definition": "The expedition crew has concluded field research, safely returned home, and archived their samples and initial reports."
+  },
+  "active": {
+    "term": "Active",
+    "definition": "The expedition crew or automated sensors are currently on site at the research station or ship, actively logging new observations."
+  },
+  "planned": {
+    "term": "Planned",
+    "definition": "An upcoming voyage scheduled for future seasonal deployment, currently finalizing logistics, crew training, and equipment staging."
+  },
+  "region": {
+    "term": "Region",
+    "definition": "The major cold polar geographical zone where the mission operates: Antarctica (South Pole), Arctic (North Pole), or the Southern Ocean."
+  },
+  "expedition": {
+    "term": "Scientific Expedition",
+    "definition": "A planned journey of scientists, engineers, and logistical specialists dispatched to high-latitude environments to conduct research for months or years."
+  },
+  "year": {
+    "term": "Voyage Year",
+    "definition": "The calendar year during which the expedition departed from port or began primary field measurements."
+  },
+  "tags": {
+    "term": "Topic Tags",
+    "definition": "Simple topic keywords (like #ice, #wildlife, #ocean) assigned to help visitors quickly find matching records."
+  }
+}

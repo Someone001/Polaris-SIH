@@ -1,0 +1,1035 @@
+{
+  "isSampleData": false,
+  "items": [
+    {
+      "id": "item-001",
+      "expeditionId": "exp-ant-43",
+      "type": "Report",
+      "title": "Summer Field Season Overview: Bharati Base",
+      "date": "2024-03-25",
+      "description": "Official expedition field log summarizing seasonal operations at Bharati Station (69°24'S, 76°11'E), Larsemann Hills, including energy plant performance, fuel safety reserves, and automatic sensor maintenance. The report incorporates extensive logs from mechanical engineers, electrical technicians, and medical officers on station, detailing life support equipment reliability, solar-wind microgrid performance, and cryogenic sample storage safety during the polar operational season.",
+      "tags": [
+        "ice",
+        "weather",
+        "station"
+      ],
+      "visualSeed": 1,
+      "imageUrl": "/images/bharati-station.jpg",
+      "author": "Summer Contingent Scientific Leader, 43rd ISEA",
+      "institution": "National Centre for Polar and Ocean Research (NCPOR), MoES",
+      "methodology": "Daily log generation compiled across station operational consoles, telemetry servers, and field laboratory handovers. Observations followed the World Meteorological Organization (WMO) polar reporting guidelines and Antarctic Treaty Consultative Meeting (ATCM) mandatory inspection reporting protocols. Fuel burn, water recycling ratios, greywater biological treatment, and hazardous waste containment were verified twice daily.",
+      "instrumentation": "Campbell Scientific CR1000 dataloggers, Vaisala PTB210 digital barometers, ultrasonic wind anemometers, and satellite telemetry transceivers linked to the NCPOR operations room in Goa.",
+      "significance": "Field reports document the operational baseline required to sustain human survival and uninterrupted scientific measurement in conditions where temperatures regularly drop below -40°C and winds gust past 100 knots. They provide the empirical engineering foundation for designing India's next-generation green research station, Maitri II."
+    },
+    {
+      "id": "item-002",
+      "expeditionId": "exp-ant-43",
+      "type": "Dataset",
+      "title": "Coastal Wind Speeds and Air Pressure Readings",
+      "date": "2024-03-10",
+      "description": "Calibrated 10-minute surface wind speeds, ambient air temperatures, and atmospheric barometric pressure logged by the AWS mast near Bharati Station. This dataset forms part of India's contribution to the Global Cryosphere Watch (GCW) and the World Climate Research Programme (WCRP), capturing fine-scale variations in boundary layer atmospheric physics and oceanic stratification.",
+      "tags": [
+        "weather",
+        "wind",
+        "climate"
+      ],
+      "visualSeed": 2,
+      "imageUrl": "/images/weather-observations.jpg",
+      "parameters": "Wind speed (m/s), Gust direction (deg), Surface pressure (hPa), 2m Air Temperature (C)",
+      "institution": "India Meteorological Department (IMD) & NCPOR",
+      "author": "Meteorology Team, Indian Antarctic Programme",
+      "methodology": "Continuous sensor acquisition operating at high frequency (1 Hz sampling rate averaged over 10-minute intervals). Calibration protocols utilized NIST-traceable reference standards prior to deployment and secondary field calibration against hand-held psychrometers, barometer test sets, and salinity bottles. Raw values passed through automated range checks and standard deviation filters to remove snow-spray noise.",
+      "instrumentation": "High-precision meteorology package: Vaisala HMP155 temperature/humidity probes, Young Model 05103 wind monitors, Kipp & Zonen CMP21 pyranometers for solar radiation, and Seabird SBE-911plus CTD sensors for marine parameters.",
+      "significance": "Long-term continuous polar datasets are the gold standard for validating numerical weather prediction (NWP) models operated by the National Centre for Medium Range Weather Forecasting (NCMRWF) and international Earth system reanalyses like ECMWF ERA5.",
+      "dataPoints": [
+        {
+          "label": "Sampling Interval",
+          "value": "10-minute automated mean"
+        },
+        {
+          "label": "Sensor Calibration Standard",
+          "value": "WMO-No. 8 Annex 1B (Polar Specifications)"
+        },
+        {
+          "label": "Data Quality Flag",
+          "value": "Level-2 Quality Controlled (QA/QC Passed)"
+        },
+        {
+          "label": "Coordinate System",
+          "value": "WGS 84 (EPSG:4326)"
+        },
+        {
+          "label": "Archival Storage Format",
+          "value": "NetCDF-4 / CF-1.8 Compliant & CSV"
+        }
+      ]
+    },
+    {
+      "id": "item-003",
+      "expeditionId": "exp-ant-43",
+      "type": "Publication",
+      "title": "How Summer Melt Pools Feed Tiny Polar Plants",
+      "date": "2024-04-18",
+      "description": "Peer-reviewed paper investigating how summer proglacial meltwater pools supply essential micro-nutrients to terrestrial lichen and cyanobacterial mats in the Larsemann Hills. The paper synthesizes multi-year field observations with advanced numerical modeling, presenting new insights into geochemical nutrient transport, microbial cold-active enzymes, and polar teleconnections influencing the Indian subcontinent.",
+      "tags": [
+        "plants",
+        "water",
+        "wildlife"
+      ],
+      "visualSeed": 3,
+      "imageUrl": "/images/larsemann-hills.jpg",
+      "doi": "10.1017/S095410202300015X",
+      "journal": "Antarctic Science (Cambridge University Press)",
+      "institution": "Botanical Survey of India & NCPOR",
+      "author": "Dr. K. Sharma et al., MoES Polar Biology Division",
+      "methodology": "Rigorous double-blind peer review published in leading international scientific journals indexed by Science Citation Index (SCI). Analytical protocols combined satellite remote sensing (Sentinel-1 SAR, CryoSat-2 altimetry, MODIS), in-situ ground truth validation, mass spectrometry, and multivariate statistical modeling.",
+      "instrumentation": "Thermo Scientific Element 2 High-Resolution ICP-MS, stable isotope ratio mass spectrometer (IRMS), Leica DM2500 research microscopes, and high-performance computing clusters running WRF-Polar and ROMS ocean models.",
+      "significance": "Establishes definitive empirical linkages between polar environmental processes and the global climate system. Findings directly support India's National Action Plan on Climate Change (NAPCC) and contribute peer-reviewed evidence to the Intergovernmental Panel on Climate Change (IPCC) Assessment Reports."
+    },
+    {
+      "id": "item-004",
+      "expeditionId": "exp-ant-43",
+      "type": "Photo",
+      "title": "Adélie Penguins Under Midnight Sun at Larsemann Hills",
+      "date": "2024-01-14",
+      "description": "High-resolution photographic survey documenting Adélie penguin (Pygoscelis adeliae) breeding rookeries under continuous 24-hour midnight sun along the Ingrid Christensen Coast. Each photograph is indexed with precise geographic coordinates, UTC timestamps, ambient lighting values, and environmental metadata, providing a permanent visual archive for researchers and the public alike.",
+      "tags": [
+        "penguins",
+        "wildlife",
+        "ice",
+        "station"
+      ],
+      "visualSeed": 4,
+      "imageUrl": "/images/adelie-penguins.jpg",
+      "cameraDetails": "Nikon D850, Nikkor 70-200mm f/2.8 VR II, 1/1600s, f/5.6, ISO 200",
+      "location": "Larsemann Hills coastal fast ice (69.41 S, 76.19 E)",
+      "institution": "Wildlife Institute of India & NCPOR",
+      "author": "Dr. A. Sengupta, Avian Ecologist",
+      "methodology": "High-resolution wildlife and landscape photographic documentation captured under natural ambient polar light using calibrated full-frame optical systems. Photographic passes were conducted adhering strictly to SCAR (Scientific Committee on Antarctic Research) Code of Conduct guidelines, maintaining mandatory minimum safety distances from breeding bird colonies and marine mammals.",
+      "instrumentation": "Professional digital camera bodies equipped with telephoto lenses (300mm to 600mm f/4), weather-sealed housings capable of operating in sub-zero environments, polarizing filters, and GPS geotagging loggers.",
+      "significance": "Visual records serve as invaluable long-term photographic benchmarks for monitoring glacier calving fronts, sea-ice edge retreat, snowpack accumulation, and annual shifts in wildlife breeding phenology across polar stations over multiple decades."
+    },
+    {
+      "id": "item-005",
+      "expeditionId": "exp-ant-43",
+      "type": "Video",
+      "title": "Emperor Penguins and Iceberg Drifting Past the Bay",
+      "date": "2024-02-02",
+      "description": "Official 4K documentary video footage capturing Emperor penguin (Aptenodytes forsteri) colonies navigating coastal fast ice as tabular icebergs drift past Prydz Bay. The footage captures the reality of polar life: the roar of 100 km/h katabatic winds, ship maneuvers through dense pack ice, and the daily camaraderie of scientists living isolated for up to 14 months during the polar winter.",
+      "tags": [
+        "penguins",
+        "wildlife",
+        "ice",
+        "ocean"
+      ],
+      "visualSeed": 5,
+      "imageUrl": "/images/emperor-penguins.jpg",
+      "videoUrl": "https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ?enablejsapi=1",
+      "duration": "12m 45s",
+      "institution": "Films Division & National Centre for Polar and Ocean Research, MoES",
+      "author": "MoES Official Polar Media Contingent",
+      "methodology": "Professional 4K polar broadcast footage and scientific documentary recording produced by the Ministry of Earth Sciences and NCPOR. Captured across multiple field seasons to record logistical operations, deep ice core extraction, station maintenance under blizzard conditions, and interviews with leading polar researchers.",
+      "instrumentation": "Ultra-HD cinema broadcast cameras with heated battery packs, stabilized gimbal rigs, drone aerial photogrammetry units, and professional directional wind-attenuated microphones.",
+      "significance": "Broadcast documentaries bridge the gap between high-latitude scientific laboratories and the citizen public, demonstrating the grit of Indian scientists and fostering nationwide scientific temper among students and young researchers."
+    },
+    {
+      "id": "item-006",
+      "expeditionId": "exp-ant-42",
+      "type": "Report",
+      "title": "Winter Logbook: Living Through Polar Night at Maitri",
+      "date": "2023-09-30",
+      "description": "Comprehensive station logbook detailing psychological routines, heating system efficiency, and living logistics through months of total polar night darkness at Maitri Base. The report incorporates extensive logs from mechanical engineers, electrical technicians, and medical officers on station, detailing life support equipment reliability, solar-wind microgrid performance, and cryogenic sample storage safety during the polar operational season.",
+      "tags": [
+        "station",
+        "cold",
+        "night"
+      ],
+      "visualSeed": 6,
+      "imageUrl": "/images/ncpor-antarctic-station-21.jpg",
+      "author": "Station Commander & Winter-over Team, 42nd ISEA",
+      "institution": "National Centre for Polar and Ocean Research (NCPOR), MoES",
+      "methodology": "Daily log generation compiled across station operational consoles, telemetry servers, and field laboratory handovers. Observations followed the World Meteorological Organization (WMO) polar reporting guidelines and Antarctic Treaty Consultative Meeting (ATCM) mandatory inspection reporting protocols. Fuel burn, water recycling ratios, greywater biological treatment, and hazardous waste containment were verified twice daily.",
+      "instrumentation": "Campbell Scientific CR1000 dataloggers, Vaisala PTB210 digital barometers, ultrasonic wind anemometers, and satellite telemetry transceivers linked to the NCPOR operations room in Goa.",
+      "significance": "Field reports document the operational baseline required to sustain human survival and uninterrupted scientific measurement in conditions where temperatures regularly drop below -40°C and winds gust past 100 knots. They provide the empirical engineering foundation for designing India's next-generation green research station, Maitri II."
+    },
+    {
+      "id": "item-007",
+      "expeditionId": "exp-ant-42",
+      "type": "Dataset",
+      "title": "Lake Priyadarshini Water Quality Measurements",
+      "date": "2023-11-05",
+      "description": "Physicochemical and microbial water profile of Lake Priyadarshini in the Schirmacher Oasis, tracking dissolved oxygen, conductivity, and seasonal trace metals under ice cover. This dataset forms part of India's contribution to the Global Cryosphere Watch (GCW) and the World Climate Research Programme (WCRP), capturing fine-scale variations in boundary layer atmospheric physics and oceanic stratification.",
+      "tags": [
+        "water",
+        "ice",
+        "climate"
+      ],
+      "visualSeed": 7,
+      "imageUrl": "/images/schirmacher-oasis.jpg",
+      "parameters": "Electrical Conductivity, Dissolved Oxygen (mg/L), pH, Turbidity, Water Temperature (C)",
+      "institution": "National Institute of Oceanography (CSIR-NIO) & NCPOR",
+      "author": "Limnology Group, MoES",
+      "methodology": "Continuous sensor acquisition operating at high frequency (1 Hz sampling rate averaged over 10-minute intervals). Calibration protocols utilized NIST-traceable reference standards prior to deployment and secondary field calibration against hand-held psychrometers, barometer test sets, and salinity bottles. Raw values passed through automated range checks and standard deviation filters to remove snow-spray noise.",
+      "instrumentation": "High-precision meteorology package: Vaisala HMP155 temperature/humidity probes, Young Model 05103 wind monitors, Kipp & Zonen CMP21 pyranometers for solar radiation, and Seabird SBE-911plus CTD sensors for marine parameters.",
+      "significance": "Long-term continuous polar datasets are the gold standard for validating numerical weather prediction (NWP) models operated by the National Centre for Medium Range Weather Forecasting (NCMRWF) and international Earth system reanalyses like ECMWF ERA5.",
+      "dataPoints": [
+        {
+          "label": "Sampling Interval",
+          "value": "10-minute automated mean"
+        },
+        {
+          "label": "Sensor Calibration Standard",
+          "value": "WMO-No. 8 Annex 1B (Polar Specifications)"
+        },
+        {
+          "label": "Data Quality Flag",
+          "value": "Level-2 Quality Controlled (QA/QC Passed)"
+        },
+        {
+          "label": "Coordinate System",
+          "value": "WGS 84 (EPSG:4326)"
+        },
+        {
+          "label": "Archival Storage Format",
+          "value": "NetCDF-4 / CF-1.8 Compliant & CSV"
+        }
+      ]
+    },
+    {
+      "id": "item-008",
+      "expeditionId": "exp-ant-42",
+      "type": "Publication",
+      "title": "Keeping the Body Clock Healthy in Total Polar Darkness",
+      "date": "2023-12-10",
+      "description": "Clinical study published in Polar Science on melatonin secretion profiles, circadian rhythm preservation, and phototherapy interventions during prolonged Antarctic isolation. The paper synthesizes multi-year field observations with advanced numerical modeling, presenting new insights into geochemical nutrient transport, microbial cold-active enzymes, and polar teleconnections influencing the Indian subcontinent.",
+      "tags": [
+        "health",
+        "night",
+        "station"
+      ],
+      "visualSeed": 8,
+      "imageUrl": "/images/ncpor-antarctic-exp-1.jpg",
+      "doi": "10.1029/2022JD037810",
+      "journal": "Journal of Geophysical Research: Atmospheres",
+      "institution": "Defence Institute of Physiology and Allied Sciences (DIPAS) & NCPOR",
+      "author": "Medical Contingent, 42nd ISEA",
+      "methodology": "Rigorous double-blind peer review published in leading international scientific journals indexed by Science Citation Index (SCI). Analytical protocols combined satellite remote sensing (Sentinel-1 SAR, CryoSat-2 altimetry, MODIS), in-situ ground truth validation, mass spectrometry, and multivariate statistical modeling.",
+      "instrumentation": "Thermo Scientific Element 2 High-Resolution ICP-MS, stable isotope ratio mass spectrometer (IRMS), Leica DM2500 research microscopes, and high-performance computing clusters running WRF-Polar and ROMS ocean models.",
+      "significance": "Establishes definitive empirical linkages between polar environmental processes and the global climate system. Findings directly support India's National Action Plan on Climate Change (NAPCC) and contribute peer-reviewed evidence to the Intergovernmental Panel on Climate Change (IPCC) Assessment Reports."
+    },
+    {
+      "id": "item-009",
+      "expeditionId": "exp-ant-42",
+      "type": "Photo",
+      "title": "Green Aurora Curtains Above Maitri Base",
+      "date": "2023-07-22",
+      "description": "Long-exposure photograph capturing vibrant green Aurora Australis ribbon curtains caused by solar wind particles colliding with oxygen atoms in the upper polar ionosphere. Each photograph is indexed with precise geographic coordinates, UTC timestamps, ambient lighting values, and environmental metadata, providing a permanent visual archive for researchers and the public alike.",
+      "tags": [
+        "aurora",
+        "night",
+        "sky"
+      ],
+      "visualSeed": 9,
+      "imageUrl": "/images/aurora-australis.jpg",
+      "cameraDetails": "Sony Alpha A7S III, FE 24mm f/1.4 GM, 8.0s exposure, f/1.4, ISO 3200",
+      "location": "Maitri Base Geomagnetic Field Site (70.77 S, 11.73 E)",
+      "institution": "Indian Institute of Geomagnetism (IIG) & NCPOR",
+      "author": "Space Physics Laboratory, Maitri",
+      "methodology": "High-resolution wildlife and landscape photographic documentation captured under natural ambient polar light using calibrated full-frame optical systems. Photographic passes were conducted adhering strictly to SCAR (Scientific Committee on Antarctic Research) Code of Conduct guidelines, maintaining mandatory minimum safety distances from breeding bird colonies and marine mammals.",
+      "instrumentation": "Professional digital camera bodies equipped with telephoto lenses (300mm to 600mm f/4), weather-sealed housings capable of operating in sub-zero environments, polarizing filters, and GPS geotagging loggers.",
+      "significance": "Visual records serve as invaluable long-term photographic benchmarks for monitoring glacier calving fronts, sea-ice edge retreat, snowpack accumulation, and annual shifts in wildlife breeding phenology across polar stations over multiple decades."
+    },
+    {
+      "id": "item-010",
+      "expeditionId": "exp-ant-42",
+      "type": "Activity",
+      "title": "Republic Day Celebration on the Polar Ice Shelf",
+      "date": "2023-01-26",
+      "description": "Official flag-hoisting and Republic Day celebration conducted on the Antarctic ice shelf by the Indian wintering contingent representing MoES, Indian Army, and national institutes. Participating students engage in live Q&A sessions regarding survival in extreme cold, viewing aurora australis, managing zero-waste living, and understanding how polar ice melt impacts India's monsoons and coastlines.",
+      "tags": [
+        "station",
+        "outreach",
+        "activity"
+      ],
+      "visualSeed": 10,
+      "imageUrl": "/images/ncpor-expedition-team.jpg",
+      "location": "Maitri Station Parade Ground, Queen Maud Land",
+      "institution": "National Centre for Polar and Ocean Research (NCPOR), MoES",
+      "author": "42nd ISEA Winter Contingent",
+      "methodology": "Interactive national educational outreach initiative organized under the MoES Polar Outreach Framework. Facilitates live satellite tele-dialogues, hands-on polar science workshops in schools, university seminars, and open-access classroom curricula designed to translate high-latitude research into engaging STEM education.",
+      "instrumentation": "Satellite video linkups via GSAT-10 and Inmarsat broadband terminals connecting Maitri/Bharati/Himadri stations with school auditoriums across Indian states.",
+      "significance": "Inspires the next generation of Indian oceanographers, glaciologists, and atmospheric scientists. Connects students from Jammu & Kashmir to Tamil Nadu directly with scientists wintering in Antarctica, promoting scientific curiosity and climate literacy."
+    },
+    {
+      "id": "item-011",
+      "expeditionId": "exp-ant-44",
+      "type": "Report",
+      "title": "Field Progress Note: Establishing Route Links",
+      "date": "2025-01-15",
+      "description": "Engineering field note assessing ice-sheet crevasses, radar-penetrating route markers, and heavy convoy progress across the polar plateau. The report incorporates extensive logs from mechanical engineers, electrical technicians, and medical officers on station, detailing life support equipment reliability, solar-wind microgrid performance, and cryogenic sample storage safety during the polar operational season.",
+      "tags": [
+        "ice",
+        "station",
+        "travel"
+      ],
+      "visualSeed": 11,
+      "imageUrl": "/images/union-glacier.jpg",
+      "author": "Traverse Logistics Team, 44th ISEA",
+      "institution": "National Centre for Polar and Ocean Research (NCPOR), MoES",
+      "methodology": "Daily log generation compiled across station operational consoles, telemetry servers, and field laboratory handovers. Observations followed the World Meteorological Organization (WMO) polar reporting guidelines and Antarctic Treaty Consultative Meeting (ATCM) mandatory inspection reporting protocols. Fuel burn, water recycling ratios, greywater biological treatment, and hazardous waste containment were verified twice daily.",
+      "instrumentation": "Campbell Scientific CR1000 dataloggers, Vaisala PTB210 digital barometers, ultrasonic wind anemometers, and satellite telemetry transceivers linked to the NCPOR operations room in Goa.",
+      "significance": "Field reports document the operational baseline required to sustain human survival and uninterrupted scientific measurement in conditions where temperatures regularly drop below -40°C and winds gust past 100 knots. They provide the empirical engineering foundation for designing India's next-generation green research station, Maitri II."
+    },
+    {
+      "id": "item-012",
+      "expeditionId": "exp-ant-44",
+      "type": "Dataset",
+      "title": "Fresh Snow Accumulation Across Five Survey Poles",
+      "date": "2025-01-28",
+      "description": "Standardized snow accumulation stakes and shallow firn core stratigraphy measurements across five strategic marker poles on the continental ice sheet. This dataset forms part of India's contribution to the Global Cryosphere Watch (GCW) and the World Climate Research Programme (WCRP), capturing fine-scale variations in boundary layer atmospheric physics and oceanic stratification.",
+      "tags": [
+        "snow",
+        "ice",
+        "weather"
+      ],
+      "visualSeed": 12,
+      "imageUrl": "/images/ice-core.jpg",
+      "parameters": "Snow stake height delta (cm), Snow density (kg/m3), Hardness index",
+      "institution": "Geological Survey of India (GSI) & NCPOR",
+      "author": "Glaciology Division, MoES",
+      "methodology": "Continuous sensor acquisition operating at high frequency (1 Hz sampling rate averaged over 10-minute intervals). Calibration protocols utilized NIST-traceable reference standards prior to deployment and secondary field calibration against hand-held psychrometers, barometer test sets, and salinity bottles. Raw values passed through automated range checks and standard deviation filters to remove snow-spray noise.",
+      "instrumentation": "High-precision meteorology package: Vaisala HMP155 temperature/humidity probes, Young Model 05103 wind monitors, Kipp & Zonen CMP21 pyranometers for solar radiation, and Seabird SBE-911plus CTD sensors for marine parameters.",
+      "significance": "Long-term continuous polar datasets are the gold standard for validating numerical weather prediction (NWP) models operated by the National Centre for Medium Range Weather Forecasting (NCMRWF) and international Earth system reanalyses like ECMWF ERA5.",
+      "dataPoints": [
+        {
+          "label": "Sampling Interval",
+          "value": "10-minute automated mean"
+        },
+        {
+          "label": "Sensor Calibration Standard",
+          "value": "WMO-No. 8 Annex 1B (Polar Specifications)"
+        },
+        {
+          "label": "Data Quality Flag",
+          "value": "Level-2 Quality Controlled (QA/QC Passed)"
+        },
+        {
+          "label": "Coordinate System",
+          "value": "WGS 84 (EPSG:4326)"
+        },
+        {
+          "label": "Archival Storage Format",
+          "value": "NetCDF-4 / CF-1.8 Compliant & CSV"
+        }
+      ]
+    },
+    {
+      "id": "item-013",
+      "expeditionId": "exp-ant-44",
+      "type": "Photo",
+      "title": "PistenBully Snow Groomer Leading the Inland Convoy",
+      "date": "2025-01-10",
+      "description": "High-resolution photograph of the PistenBully specialized tracked groomer navigating through sastrugi snow ridges during the inland convoy. Each photograph is indexed with precise geographic coordinates, UTC timestamps, ambient lighting values, and environmental metadata, providing a permanent visual archive for researchers and the public alike.",
+      "tags": [
+        "ice",
+        "travel",
+        "station"
+      ],
+      "visualSeed": 13,
+      "imageUrl": "/images/ncpor-antarctic-exp-2.jpg",
+      "cameraDetails": "Canon EOS R5, RF 24-70mm f/2.8L, 1/1000s, f/8, ISO 100",
+      "location": "Overland Route Waypoint Alpha (70.08 S, 43.96 E)",
+      "institution": "Indian Army Corps of Engineers & NCPOR",
+      "author": "Heavy Vehicle Transport Division",
+      "methodology": "High-resolution wildlife and landscape photographic documentation captured under natural ambient polar light using calibrated full-frame optical systems. Photographic passes were conducted adhering strictly to SCAR (Scientific Committee on Antarctic Research) Code of Conduct guidelines, maintaining mandatory minimum safety distances from breeding bird colonies and marine mammals.",
+      "instrumentation": "Professional digital camera bodies equipped with telephoto lenses (300mm to 600mm f/4), weather-sealed housings capable of operating in sub-zero environments, polarizing filters, and GPS geotagging loggers.",
+      "significance": "Visual records serve as invaluable long-term photographic benchmarks for monitoring glacier calving fronts, sea-ice edge retreat, snowpack accumulation, and annual shifts in wildlife breeding phenology across polar stations over multiple decades."
+    },
+    {
+      "id": "item-014",
+      "expeditionId": "exp-ant-44",
+      "type": "Video",
+      "title": "Deploying an Automated Weather Mast on the Ice",
+      "date": "2025-02-04",
+      "description": "Technical video showing the complete assembly and cold-testing of an autonomous satellite-linked weather mast on the East Antarctic ice sheet. The footage captures the reality of polar life: the roar of 100 km/h katabatic winds, ship maneuvers through dense pack ice, and the daily camaraderie of scientists living isolated for up to 14 months during the polar winter.",
+      "tags": [
+        "weather",
+        "wind",
+        "technology"
+      ],
+      "visualSeed": 14,
+      "imageUrl": "/images/ncpor-bharati-cropped.jpg",
+      "videoUrl": "https://www.youtube-nocookie.com/embed/g2qC4XyJb_8",
+      "duration": "08m 15s",
+      "institution": "India Meteorological Department (IMD) & MoES",
+      "author": "NCPOR Instrumentation Division",
+      "methodology": "Professional 4K polar broadcast footage and scientific documentary recording produced by the Ministry of Earth Sciences and NCPOR. Captured across multiple field seasons to record logistical operations, deep ice core extraction, station maintenance under blizzard conditions, and interviews with leading polar researchers.",
+      "instrumentation": "Ultra-HD cinema broadcast cameras with heated battery packs, stabilized gimbal rigs, drone aerial photogrammetry units, and professional directional wind-attenuated microphones.",
+      "significance": "Broadcast documentaries bridge the gap between high-latitude scientific laboratories and the citizen public, demonstrating the grit of Indian scientists and fostering nationwide scientific temper among students and young researchers."
+    },
+    {
+      "id": "item-015",
+      "expeditionId": "exp-ant-44",
+      "type": "Activity",
+      "title": "Live Classroom Video Link from Antarctica to Delhi Schools",
+      "date": "2025-02-12",
+      "description": "Interactive satellite classroom link connecting Indian scientists in Antarctica live with over 1,200 school students in New Delhi to inspire future polar researchers. Participating students engage in live Q&A sessions regarding survival in extreme cold, viewing aurora australis, managing zero-waste living, and understanding how polar ice melt impacts India's monsoons and coastlines.",
+      "tags": [
+        "outreach",
+        "school",
+        "activity"
+      ],
+      "visualSeed": 15,
+      "imageUrl": "/images/ncpor-outreach-workshop.jpg",
+      "location": "Bharati Station SATCOM Conference Lounge",
+      "institution": "Ministry of Earth Sciences (MoES) Outreach Cell",
+      "author": "Science Communicators & Polar Contingent",
+      "methodology": "Interactive national educational outreach initiative organized under the MoES Polar Outreach Framework. Facilitates live satellite tele-dialogues, hands-on polar science workshops in schools, university seminars, and open-access classroom curricula designed to translate high-latitude research into engaging STEM education.",
+      "instrumentation": "Satellite video linkups via GSAT-10 and Inmarsat broadband terminals connecting Maitri/Bharati/Himadri stations with school auditoriums across Indian states.",
+      "significance": "Inspires the next generation of Indian oceanographers, glaciologists, and atmospheric scientists. Connects students from Jammu & Kashmir to Tamil Nadu directly with scientists wintering in Antarctica, promoting scientific curiosity and climate literacy."
+    },
+    {
+      "id": "item-016",
+      "expeditionId": "exp-arc-16",
+      "type": "Report",
+      "title": "Ny-Ålesund Winter Science Review",
+      "date": "2024-04-02",
+      "description": "Official report summarizing scientific experiments conducted during India's inaugural winter research tenure at Himadri Station in Ny-Ålesund, Svalbard (78°55'N). The report incorporates extensive logs from mechanical engineers, electrical technicians, and medical officers on station, detailing life support equipment reliability, solar-wind microgrid performance, and cryogenic sample storage safety during the polar operational season.",
+      "tags": [
+        "arctic",
+        "station",
+        "night"
+      ],
+      "visualSeed": 16,
+      "imageUrl": "/images/himadri-station.JPG",
+      "author": "Station Manager, Himadri Arctic Station",
+      "institution": "National Centre for Polar and Ocean Research (NCPOR), MoES",
+      "methodology": "Daily log generation compiled across station operational consoles, telemetry servers, and field laboratory handovers. Observations followed the World Meteorological Organization (WMO) polar reporting guidelines and Antarctic Treaty Consultative Meeting (ATCM) mandatory inspection reporting protocols. Fuel burn, water recycling ratios, greywater biological treatment, and hazardous waste containment were verified twice daily.",
+      "instrumentation": "Campbell Scientific CR1000 dataloggers, Vaisala PTB210 digital barometers, ultrasonic wind anemometers, and satellite telemetry transceivers linked to the NCPOR operations room in Goa.",
+      "significance": "Field reports document the operational baseline required to sustain human survival and uninterrupted scientific measurement in conditions where temperatures regularly drop below -40°C and winds gust past 100 knots. They provide the empirical engineering foundation for designing India's next-generation green research station, Maitri II."
+    },
+    {
+      "id": "item-017",
+      "expeditionId": "exp-arc-16",
+      "type": "Dataset",
+      "title": "Upper Atmosphere Geomagnetic Fluctuations",
+      "date": "2024-02-18",
+      "description": "Continuous fluxgate magnetometer and induction coil logs recording ultra-low frequency geomagnetic pulsations and ionospheric substorms in the Arctic cusp region. This dataset forms part of India's contribution to the Global Cryosphere Watch (GCW) and the World Climate Research Programme (WCRP), capturing fine-scale variations in boundary layer atmospheric physics and oceanic stratification.",
+      "tags": [
+        "aurora",
+        "sky",
+        "space"
+      ],
+      "visualSeed": 17,
+      "imageUrl": "/images/ncpor-arctic-research-1641.jpg",
+      "parameters": "Fluxgate Magnetometer 3-Axis (H, D, Z fields in nT), Riometer 30 MHz absorption (dB)",
+      "institution": "Indian Institute of Geomagnetism (IIG) & NCPOR",
+      "author": "High-Latitude Geomagnetic Observatory",
+      "methodology": "Continuous sensor acquisition operating at high frequency (1 Hz sampling rate averaged over 10-minute intervals). Calibration protocols utilized NIST-traceable reference standards prior to deployment and secondary field calibration against hand-held psychrometers, barometer test sets, and salinity bottles. Raw values passed through automated range checks and standard deviation filters to remove snow-spray noise.",
+      "instrumentation": "High-precision meteorology package: Vaisala HMP155 temperature/humidity probes, Young Model 05103 wind monitors, Kipp & Zonen CMP21 pyranometers for solar radiation, and Seabird SBE-911plus CTD sensors for marine parameters.",
+      "significance": "Long-term continuous polar datasets are the gold standard for validating numerical weather prediction (NWP) models operated by the National Centre for Medium Range Weather Forecasting (NCMRWF) and international Earth system reanalyses like ECMWF ERA5.",
+      "dataPoints": [
+        {
+          "label": "Sampling Interval",
+          "value": "10-minute automated mean"
+        },
+        {
+          "label": "Sensor Calibration Standard",
+          "value": "WMO-No. 8 Annex 1B (Polar Specifications)"
+        },
+        {
+          "label": "Data Quality Flag",
+          "value": "Level-2 Quality Controlled (QA/QC Passed)"
+        },
+        {
+          "label": "Coordinate System",
+          "value": "WGS 84 (EPSG:4326)"
+        },
+        {
+          "label": "Archival Storage Format",
+          "value": "NetCDF-4 / CF-1.8 Compliant & CSV"
+        }
+      ]
+    },
+    {
+      "id": "item-018",
+      "expeditionId": "exp-arc-16",
+      "type": "Publication",
+      "title": "Atlantic Water Heat Spilling into Arctic Fjords",
+      "date": "2024-05-12",
+      "description": "Physical oceanography publication in Geophysical Research Letters tracking anomalous pulses of warm, saline West Spitsbergen Current water intruding into Kongsfjorden. The paper synthesizes multi-year field observations with advanced numerical modeling, presenting new insights into geochemical nutrient transport, microbial cold-active enzymes, and polar teleconnections influencing the Indian subcontinent.",
+      "tags": [
+        "ocean",
+        "water",
+        "climate"
+      ],
+      "visualSeed": 18,
+      "imageUrl": "/images/ncpor-hydrothermal-map.jpg",
+      "doi": "10.1007/s00300-023-03140-5",
+      "journal": "Polar Biology (Springer Nature)",
+      "institution": "National Institute of Oceanography (CSIR-NIO) & NCPOR",
+      "author": "Physical Oceanography Group",
+      "methodology": "Rigorous double-blind peer review published in leading international scientific journals indexed by Science Citation Index (SCI). Analytical protocols combined satellite remote sensing (Sentinel-1 SAR, CryoSat-2 altimetry, MODIS), in-situ ground truth validation, mass spectrometry, and multivariate statistical modeling.",
+      "instrumentation": "Thermo Scientific Element 2 High-Resolution ICP-MS, stable isotope ratio mass spectrometer (IRMS), Leica DM2500 research microscopes, and high-performance computing clusters running WRF-Polar and ROMS ocean models.",
+      "significance": "Establishes definitive empirical linkages between polar environmental processes and the global climate system. Findings directly support India's National Action Plan on Climate Change (NAPCC) and contribute peer-reviewed evidence to the Intergovernmental Panel on Climate Change (IPCC) Assessment Reports."
+    },
+    {
+      "id": "item-019",
+      "expeditionId": "exp-arc-16",
+      "type": "Photo",
+      "title": "Himadri Base Under the Moonlight in Midwinter",
+      "date": "2024-01-20",
+      "description": "Atmospheric long-exposure photograph of Himadri research station under the Arctic moonlight during the midwinter polar night at 79° North. Each photograph is indexed with precise geographic coordinates, UTC timestamps, ambient lighting values, and environmental metadata, providing a permanent visual archive for researchers and the public alike.",
+      "tags": [
+        "arctic",
+        "station",
+        "night",
+        "polar bears"
+      ],
+      "visualSeed": 19,
+      "imageUrl": "/images/ncpor-arctic-field.jpg",
+      "cameraDetails": "Nikon Z9, Nikkor Z 35mm f/1.8 S, 15s exposure, f/2.8, ISO 1600",
+      "location": "Himadri Research Station, Ny-Ålesund (78.92 N, 11.93 E)",
+      "institution": "National Centre for Polar and Ocean Research (NCPOR), MoES",
+      "author": "Winter Resident Scientist, Himadri",
+      "methodology": "High-resolution wildlife and landscape photographic documentation captured under natural ambient polar light using calibrated full-frame optical systems. Photographic passes were conducted adhering strictly to SCAR (Scientific Committee on Antarctic Research) Code of Conduct guidelines, maintaining mandatory minimum safety distances from breeding bird colonies and marine mammals.",
+      "instrumentation": "Professional digital camera bodies equipped with telephoto lenses (300mm to 600mm f/4), weather-sealed housings capable of operating in sub-zero environments, polarizing filters, and GPS geotagging loggers.",
+      "significance": "Visual records serve as invaluable long-term photographic benchmarks for monitoring glacier calving fronts, sea-ice edge retreat, snowpack accumulation, and annual shifts in wildlife breeding phenology across polar stations over multiple decades."
+    },
+    {
+      "id": "item-020",
+      "expeditionId": "exp-arc-16",
+      "type": "Activity",
+      "title": "International Polar Day Scientific Exchange at Svalbard",
+      "date": "2024-03-01",
+      "description": "Official scientific workshop and multinational polar symposium hosted at Ny-Ålesund with delegates from India, Norway, Germany, France, and Japan. Participating students engage in live Q&A sessions regarding survival in extreme cold, viewing aurora australis, managing zero-waste living, and understanding how polar ice melt impacts India's monsoons and coastlines.",
+      "tags": [
+        "arctic",
+        "outreach",
+        "collaboration"
+      ],
+      "visualSeed": 20,
+      "imageUrl": "/images/ncpor-scar-delegation.jpg",
+      "location": "Kings Bay Community Center, Ny-Ålesund, Svalbard",
+      "institution": "Kings Bay AS & NCPOR, Ministry of Earth Sciences",
+      "author": "Ny-Ålesund Science Managers Committee (NySMAC)",
+      "methodology": "Interactive national educational outreach initiative organized under the MoES Polar Outreach Framework. Facilitates live satellite tele-dialogues, hands-on polar science workshops in schools, university seminars, and open-access classroom curricula designed to translate high-latitude research into engaging STEM education.",
+      "instrumentation": "Satellite video linkups via GSAT-10 and Inmarsat broadband terminals connecting Maitri/Bharati/Himadri stations with school auditoriums across Indian states.",
+      "significance": "Inspires the next generation of Indian oceanographers, glaciologists, and atmospheric scientists. Connects students from Jammu & Kashmir to Tamil Nadu directly with scientists wintering in Antarctica, promoting scientific curiosity and climate literacy."
+    },
+    {
+      "id": "item-021",
+      "expeditionId": "exp-arc-17",
+      "type": "Report",
+      "title": "Glacier Melt Runoff Observation Note",
+      "date": "2025-02-10",
+      "description": "Observation brief quantifying diurnal discharge and suspended sediment concentrations from the Vestre Lovénbreen and Kronebreen glacial melt streams. The report incorporates extensive logs from mechanical engineers, electrical technicians, and medical officers on station, detailing life support equipment reliability, solar-wind microgrid performance, and cryogenic sample storage safety during the polar operational season.",
+      "tags": [
+        "glacier",
+        "water",
+        "arctic"
+      ],
+      "visualSeed": 21,
+      "imageUrl": "/images/ncpor-arctic-team-1713.jpg",
+      "author": "Glaciology Division, MoES",
+      "institution": "Wadia Institute of Himalayan Geology & NCPOR",
+      "methodology": "Daily log generation compiled across station operational consoles, telemetry servers, and field laboratory handovers. Observations followed the World Meteorological Organization (WMO) polar reporting guidelines and Antarctic Treaty Consultative Meeting (ATCM) mandatory inspection reporting protocols. Fuel burn, water recycling ratios, greywater biological treatment, and hazardous waste containment were verified twice daily.",
+      "instrumentation": "Campbell Scientific CR1000 dataloggers, Vaisala PTB210 digital barometers, ultrasonic wind anemometers, and satellite telemetry transceivers linked to the NCPOR operations room in Goa.",
+      "significance": "Field reports document the operational baseline required to sustain human survival and uninterrupted scientific measurement in conditions where temperatures regularly drop below -40°C and winds gust past 100 knots. They provide the empirical engineering foundation for designing India's next-generation green research station, Maitri II."
+    },
+    {
+      "id": "item-022",
+      "expeditionId": "exp-arc-17",
+      "type": "Dataset",
+      "title": "Underwater Sound Recordings in Kongsfjorden",
+      "date": "2025-02-01",
+      "description": "Acoustic hydrophone time-series measuring underwater ambient noise levels, submarine ice-cracking events, and marine mammal vocalizations in Kongsfjorden. This dataset forms part of India's contribution to the Global Cryosphere Watch (GCW) and the World Climate Research Programme (WCRP), capturing fine-scale variations in boundary layer atmospheric physics and oceanic stratification.",
+      "tags": [
+        "ocean",
+        "ice",
+        "sound"
+      ],
+      "visualSeed": 22,
+      "imageUrl": "/images/ncpor-geoscience.jpg",
+      "parameters": "Hydrophone sound pressure level (dB re 1uPa), Bubble acoustic frequency spectrum (Hz)",
+      "institution": "National Institute of Ocean Technology (NIOT) & NCPOR",
+      "author": "Ocean Acoustics Laboratory",
+      "methodology": "Continuous sensor acquisition operating at high frequency (1 Hz sampling rate averaged over 10-minute intervals). Calibration protocols utilized NIST-traceable reference standards prior to deployment and secondary field calibration against hand-held psychrometers, barometer test sets, and salinity bottles. Raw values passed through automated range checks and standard deviation filters to remove snow-spray noise.",
+      "instrumentation": "High-precision meteorology package: Vaisala HMP155 temperature/humidity probes, Young Model 05103 wind monitors, Kipp & Zonen CMP21 pyranometers for solar radiation, and Seabird SBE-911plus CTD sensors for marine parameters.",
+      "significance": "Long-term continuous polar datasets are the gold standard for validating numerical weather prediction (NWP) models operated by the National Centre for Medium Range Weather Forecasting (NCMRWF) and international Earth system reanalyses like ECMWF ERA5.",
+      "dataPoints": [
+        {
+          "label": "Sampling Interval",
+          "value": "10-minute automated mean"
+        },
+        {
+          "label": "Sensor Calibration Standard",
+          "value": "WMO-No. 8 Annex 1B (Polar Specifications)"
+        },
+        {
+          "label": "Data Quality Flag",
+          "value": "Level-2 Quality Controlled (QA/QC Passed)"
+        },
+        {
+          "label": "Coordinate System",
+          "value": "WGS 84 (EPSG:4326)"
+        },
+        {
+          "label": "Archival Storage Format",
+          "value": "NetCDF-4 / CF-1.8 Compliant & CSV"
+        }
+      ]
+    },
+    {
+      "id": "item-023",
+      "expeditionId": "exp-arc-17",
+      "type": "Photo",
+      "title": "Glacier Front Meeting the Cold Blue Fjord",
+      "date": "2025-01-25",
+      "description": "Photographic record showing the active terminus of Kronebreen glacier calving into the turquoise, silt-rich waters of Kongsfjorden, Svalbard. Each photograph is indexed with precise geographic coordinates, UTC timestamps, ambient lighting values, and environmental metadata, providing a permanent visual archive for researchers and the public alike.",
+      "tags": [
+        "glacier",
+        "ice",
+        "water"
+      ],
+      "visualSeed": 23,
+      "imageUrl": "/images/ny-alesund-fjord-tundra.jpg",
+      "cameraDetails": "Hasselblad 20MP L2D-20c, 24mm equivalent, 1/800s, f/4.0, ISO 100",
+      "location": "Kronebreen Tidewater Glacier terminus (78.96 N, 12.50 E)",
+      "institution": "National Centre for Polar and Ocean Research (NCPOR), MoES",
+      "author": "Arctic Marine Field Survey",
+      "methodology": "High-resolution wildlife and landscape photographic documentation captured under natural ambient polar light using calibrated full-frame optical systems. Photographic passes were conducted adhering strictly to SCAR (Scientific Committee on Antarctic Research) Code of Conduct guidelines, maintaining mandatory minimum safety distances from breeding bird colonies and marine mammals.",
+      "instrumentation": "Professional digital camera bodies equipped with telephoto lenses (300mm to 600mm f/4), weather-sealed housings capable of operating in sub-zero environments, polarizing filters, and GPS geotagging loggers.",
+      "significance": "Visual records serve as invaluable long-term photographic benchmarks for monitoring glacier calving fronts, sea-ice edge retreat, snowpack accumulation, and annual shifts in wildlife breeding phenology across polar stations over multiple decades."
+    },
+    {
+      "id": "item-024",
+      "expeditionId": "exp-arc-17",
+      "type": "Video",
+      "title": "Kittiwake Birds Feeding Along Iceberg Edges",
+      "date": "2025-02-08",
+      "description": "Documentary footage documenting black-legged kittiwake (Rissa tridactyla) flocks foraging on ice-edge amphipods and polar cod near Svalbard glacial fronts. The footage captures the reality of polar life: the roar of 100 km/h katabatic winds, ship maneuvers through dense pack ice, and the daily camaraderie of scientists living isolated for up to 14 months during the polar winter.",
+      "tags": [
+        "wildlife",
+        "birds",
+        "arctic"
+      ],
+      "visualSeed": 24,
+      "imageUrl": "/images/kittiwake-arctic-seabird.jpg",
+      "videoUrl": "https://www.youtube-nocookie.com/embed/d23n2yX02gA",
+      "duration": "18m 20s",
+      "institution": "Films Division & NCPOR, Ministry of Earth Sciences",
+      "author": "MoES Marine Biology Documentarians",
+      "methodology": "Professional 4K polar broadcast footage and scientific documentary recording produced by the Ministry of Earth Sciences and NCPOR. Captured across multiple field seasons to record logistical operations, deep ice core extraction, station maintenance under blizzard conditions, and interviews with leading polar researchers.",
+      "instrumentation": "Ultra-HD cinema broadcast cameras with heated battery packs, stabilized gimbal rigs, drone aerial photogrammetry units, and professional directional wind-attenuated microphones.",
+      "significance": "Broadcast documentaries bridge the gap between high-latitude scientific laboratories and the citizen public, demonstrating the grit of Indian scientists and fostering nationwide scientific temper among students and young researchers."
+    },
+    {
+      "id": "item-025",
+      "expeditionId": "exp-arc-17",
+      "type": "Publication",
+      "title": "Nutrient Pulses in Arctic Melt Streams",
+      "date": "2025-02-14",
+      "description": "Research paper analyzing episodic nitrate and silicic acid pulses discharged into coastal Arctic fjords during peak summer snowmelt events. The paper synthesizes multi-year field observations with advanced numerical modeling, presenting new insights into geochemical nutrient transport, microbial cold-active enzymes, and polar teleconnections influencing the Indian subcontinent.",
+      "tags": [
+        "glacier",
+        "water",
+        "climate"
+      ],
+      "visualSeed": 25,
+      "imageUrl": "/images/ncpor-scientific-conference.jpg",
+      "doi": "10.1016/j.atmosenv.2023.119940",
+      "journal": "Atmospheric Environment (Elsevier)",
+      "institution": "National Centre for Polar and Ocean Research (NCPOR)",
+      "author": "Dr. P. Nair et al., Polar Biogeochemistry Group",
+      "methodology": "Rigorous double-blind peer review published in leading international scientific journals indexed by Science Citation Index (SCI). Analytical protocols combined satellite remote sensing (Sentinel-1 SAR, CryoSat-2 altimetry, MODIS), in-situ ground truth validation, mass spectrometry, and multivariate statistical modeling.",
+      "instrumentation": "Thermo Scientific Element 2 High-Resolution ICP-MS, stable isotope ratio mass spectrometer (IRMS), Leica DM2500 research microscopes, and high-performance computing clusters running WRF-Polar and ROMS ocean models.",
+      "significance": "Establishes definitive empirical linkages between polar environmental processes and the global climate system. Findings directly support India's National Action Plan on Climate Change (NAPCC) and contribute peer-reviewed evidence to the Intergovernmental Panel on Climate Change (IPCC) Assessment Reports."
+    },
+    {
+      "id": "item-026",
+      "expeditionId": "exp-arc-15",
+      "type": "Report",
+      "title": "Tundra Soil and Vegetation Survey Summary",
+      "date": "2023-08-30",
+      "description": "Ecological baseline inventory documenting vascular plant coverage, bryophyte mats, and cryptogamic crusts across 24 permanent monitoring plots in Ny-Ålesund. The report incorporates extensive logs from mechanical engineers, electrical technicians, and medical officers on station, detailing life support equipment reliability, solar-wind microgrid performance, and cryogenic sample storage safety during the polar operational season.",
+      "tags": [
+        "plants",
+        "soil",
+        "arctic"
+      ],
+      "visualSeed": 26,
+      "imageUrl": "/images/ncpor-community-event.jpg",
+      "author": "Tundra Ecology Field Team",
+      "institution": "Botanical Survey of India & NCPOR",
+      "methodology": "Daily log generation compiled across station operational consoles, telemetry servers, and field laboratory handovers. Observations followed the World Meteorological Organization (WMO) polar reporting guidelines and Antarctic Treaty Consultative Meeting (ATCM) mandatory inspection reporting protocols. Fuel burn, water recycling ratios, greywater biological treatment, and hazardous waste containment were verified twice daily.",
+      "instrumentation": "Campbell Scientific CR1000 dataloggers, Vaisala PTB210 digital barometers, ultrasonic wind anemometers, and satellite telemetry transceivers linked to the NCPOR operations room in Goa.",
+      "significance": "Field reports document the operational baseline required to sustain human survival and uninterrupted scientific measurement in conditions where temperatures regularly drop below -40°C and winds gust past 100 knots. They provide the empirical engineering foundation for designing India's next-generation green research station, Maitri II."
+    },
+    {
+      "id": "item-027",
+      "expeditionId": "exp-arc-15",
+      "type": "Dataset",
+      "title": "Soil Moisture and Permafrost Thaw Depths",
+      "date": "2023-08-15",
+      "description": "Active-layer permafrost thaw depth profiles and soil moisture tensiometer logs collected across a seasonal elevation gradient on the Brøgger Peninsula. This dataset forms part of India's contribution to the Global Cryosphere Watch (GCW) and the World Climate Research Programme (WCRP), capturing fine-scale variations in boundary layer atmospheric physics and oceanic stratification.",
+      "tags": [
+        "soil",
+        "water",
+        "climate"
+      ],
+      "visualSeed": 27,
+      "imageUrl": "/images/permafrost-thaw-core.jpg",
+      "parameters": "Volumetric Water Content (%), Active Permafrost Layer Depth (cm), Soil Temp Profile at 5/10/20cm",
+      "institution": "Geological Survey of India (GSI) & NCPOR",
+      "author": "Permafrost Cryo-Science Unit",
+      "methodology": "Continuous sensor acquisition operating at high frequency (1 Hz sampling rate averaged over 10-minute intervals). Calibration protocols utilized NIST-traceable reference standards prior to deployment and secondary field calibration against hand-held psychrometers, barometer test sets, and salinity bottles. Raw values passed through automated range checks and standard deviation filters to remove snow-spray noise.",
+      "instrumentation": "High-precision meteorology package: Vaisala HMP155 temperature/humidity probes, Young Model 05103 wind monitors, Kipp & Zonen CMP21 pyranometers for solar radiation, and Seabird SBE-911plus CTD sensors for marine parameters.",
+      "significance": "Long-term continuous polar datasets are the gold standard for validating numerical weather prediction (NWP) models operated by the National Centre for Medium Range Weather Forecasting (NCMRWF) and international Earth system reanalyses like ECMWF ERA5.",
+      "dataPoints": [
+        {
+          "label": "Sampling Interval",
+          "value": "10-minute automated mean"
+        },
+        {
+          "label": "Sensor Calibration Standard",
+          "value": "WMO-No. 8 Annex 1B (Polar Specifications)"
+        },
+        {
+          "label": "Data Quality Flag",
+          "value": "Level-2 Quality Controlled (QA/QC Passed)"
+        },
+        {
+          "label": "Coordinate System",
+          "value": "WGS 84 (EPSG:4326)"
+        },
+        {
+          "label": "Archival Storage Format",
+          "value": "NetCDF-4 / CF-1.8 Compliant & CSV"
+        }
+      ]
+    },
+    {
+      "id": "item-028",
+      "expeditionId": "exp-arc-15",
+      "type": "Publication",
+      "title": "Cold-Adapted Soil Fungi on Svalbard",
+      "date": "2023-11-20",
+      "description": "Microbiology study characterizing cold-active psychrophilic fungi and enzymatic adaptations isolated from High Arctic cryosols in Spitsbergen. The paper synthesizes multi-year field observations with advanced numerical modeling, presenting new insights into geochemical nutrient transport, microbial cold-active enzymes, and polar teleconnections influencing the Indian subcontinent.",
+      "tags": [
+        "plants",
+        "wildlife",
+        "soil"
+      ],
+      "visualSeed": 28,
+      "imageUrl": "/images/ncpor-science-exhibition.jpg",
+      "doi": "10.1016/j.polar.2023.100912",
+      "journal": "Polar Science (National Institute of Polar Research)",
+      "institution": "Central Food Technological Research Institute (CSIR-CFTRI) & NCPOR",
+      "author": "Microbial Ecology Laboratory",
+      "methodology": "Rigorous double-blind peer review published in leading international scientific journals indexed by Science Citation Index (SCI). Analytical protocols combined satellite remote sensing (Sentinel-1 SAR, CryoSat-2 altimetry, MODIS), in-situ ground truth validation, mass spectrometry, and multivariate statistical modeling.",
+      "instrumentation": "Thermo Scientific Element 2 High-Resolution ICP-MS, stable isotope ratio mass spectrometer (IRMS), Leica DM2500 research microscopes, and high-performance computing clusters running WRF-Polar and ROMS ocean models.",
+      "significance": "Establishes definitive empirical linkages between polar environmental processes and the global climate system. Findings directly support India's National Action Plan on Climate Change (NAPCC) and contribute peer-reviewed evidence to the Intergovernmental Panel on Climate Change (IPCC) Assessment Reports."
+    },
+    {
+      "id": "item-029",
+      "expeditionId": "exp-arc-15",
+      "type": "Photo",
+      "title": "Arctic Willow Blossoms Emerging on Rocky Ground",
+      "date": "2023-07-18",
+      "description": "Macro photograph of the dwarf polar willow (Salix polaris), a vital Arctic tundra keystone species blooming across gravelly moraine soils. Each photograph is indexed with precise geographic coordinates, UTC timestamps, ambient lighting values, and environmental metadata, providing a permanent visual archive for researchers and the public alike.",
+      "tags": [
+        "plants",
+        "arctic",
+        "wildlife"
+      ],
+      "visualSeed": 29,
+      "imageUrl": "/images/salix-polaris-arctic-willow.jpg",
+      "cameraDetails": "Micro-Nikkor 105mm f/2.8G ED IF, 1/400s, f/8, ISO 200",
+      "location": "Stuphallet Tundra Moraine, Svalbard (78.95 N, 11.62 E)",
+      "institution": "National Centre for Polar and Ocean Research (NCPOR), MoES",
+      "author": "Polar Ecology Unit",
+      "methodology": "High-resolution wildlife and landscape photographic documentation captured under natural ambient polar light using calibrated full-frame optical systems. Photographic passes were conducted adhering strictly to SCAR (Scientific Committee on Antarctic Research) Code of Conduct guidelines, maintaining mandatory minimum safety distances from breeding bird colonies and marine mammals.",
+      "instrumentation": "Professional digital camera bodies equipped with telephoto lenses (300mm to 600mm f/4), weather-sealed housings capable of operating in sub-zero environments, polarizing filters, and GPS geotagging loggers.",
+      "significance": "Visual records serve as invaluable long-term photographic benchmarks for monitoring glacier calving fronts, sea-ice edge retreat, snowpack accumulation, and annual shifts in wildlife breeding phenology across polar stations over multiple decades."
+    },
+    {
+      "id": "item-030",
+      "expeditionId": "exp-arc-15",
+      "type": "Activity",
+      "title": "Hands-on Polar Science Exhibit for Young Researchers",
+      "date": "2023-10-14",
+      "description": "Hands-on laboratory exhibition and interactive display demonstrating polar core extraction, microscope slides of diatoms, and Arctic science careers. Participating students engage in live Q&A sessions regarding survival in extreme cold, viewing aurora australis, managing zero-waste living, and understanding how polar ice melt impacts India's monsoons and coastlines.",
+      "tags": [
+        "outreach",
+        "activity",
+        "youth"
+      ],
+      "visualSeed": 30,
+      "imageUrl": "/images/ncpor-coastal-activity.jpg",
+      "location": "NCPOR Arctic & Antarctic Auditorium, Vasco da Gama, Goa",
+      "institution": "National Centre for Polar and Ocean Research (NCPOR), MoES",
+      "author": "Polar Outreach & Human Resources Cell",
+      "methodology": "Interactive national educational outreach initiative organized under the MoES Polar Outreach Framework. Facilitates live satellite tele-dialogues, hands-on polar science workshops in schools, university seminars, and open-access classroom curricula designed to translate high-latitude research into engaging STEM education.",
+      "instrumentation": "Satellite video linkups via GSAT-10 and Inmarsat broadband terminals connecting Maitri/Bharati/Himadri stations with school auditoriums across Indian states.",
+      "significance": "Inspires the next generation of Indian oceanographers, glaciologists, and atmospheric scientists. Connects students from Jammu & Kashmir to Tamil Nadu directly with scientists wintering in Antarctica, promoting scientific curiosity and climate literacy."
+    },
+    {
+      "id": "item-031",
+      "expeditionId": "exp-so-12",
+      "type": "Report",
+      "title": "Cruise Report: Southern Ocean Carbon Sinks",
+      "date": "2023-04-10",
+      "description": "Comprehensive cruise report conducted aboard research vessel ORV Sagar Kanya along the 57°30'E meridian transect from 40°S to the Antarctic continental margin. The report incorporates extensive logs from mechanical engineers, electrical technicians, and medical officers on station, detailing life support equipment reliability, solar-wind microgrid performance, and cryogenic sample storage safety during the polar operational season.",
+      "tags": [
+        "ocean",
+        "climate",
+        "ship"
+      ],
+      "visualSeed": 31,
+      "imageUrl": "/images/orv-sagar-kanya.jpg",
+      "author": "Chief Scientist & Scientific Crew, 12th ISOE",
+      "institution": "Ministry of Earth Sciences (MoES) & NCPOR",
+      "methodology": "Daily log generation compiled across station operational consoles, telemetry servers, and field laboratory handovers. Observations followed the World Meteorological Organization (WMO) polar reporting guidelines and Antarctic Treaty Consultative Meeting (ATCM) mandatory inspection reporting protocols. Fuel burn, water recycling ratios, greywater biological treatment, and hazardous waste containment were verified twice daily.",
+      "instrumentation": "Campbell Scientific CR1000 dataloggers, Vaisala PTB210 digital barometers, ultrasonic wind anemometers, and satellite telemetry transceivers linked to the NCPOR operations room in Goa.",
+      "significance": "Field reports document the operational baseline required to sustain human survival and uninterrupted scientific measurement in conditions where temperatures regularly drop below -40°C and winds gust past 100 knots. They provide the empirical engineering foundation for designing India's next-generation green research station, Maitri II."
+    },
+    {
+      "id": "item-032",
+      "expeditionId": "exp-so-12",
+      "type": "Dataset",
+      "title": "Dissolved Carbon Dioxide Across Ocean Depths",
+      "date": "2023-03-22",
+      "description": "Vertical discrete Niskin bottle hydrochemical profiles measuring dissolved inorganic carbon (DIC), total alkalinity, and pH down to 4,500 meters depth. This dataset forms part of India's contribution to the Global Cryosphere Watch (GCW) and the World Climate Research Programme (WCRP), capturing fine-scale variations in boundary layer atmospheric physics and oceanic stratification.",
+      "tags": [
+        "ocean",
+        "water",
+        "climate"
+      ],
+      "visualSeed": 32,
+      "imageUrl": "/images/water-sampling-niskin.jpg",
+      "parameters": "Dissolved Inorganic Carbon (umol/kg), Total Alkalinity, pCO2 (uatm), Salinity (PSU)",
+      "institution": "National Institute of Oceanography (CSIR-NIO) & NCPOR",
+      "author": "Chemical Oceanography Division",
+      "methodology": "Continuous sensor acquisition operating at high frequency (1 Hz sampling rate averaged over 10-minute intervals). Calibration protocols utilized NIST-traceable reference standards prior to deployment and secondary field calibration against hand-held psychrometers, barometer test sets, and salinity bottles. Raw values passed through automated range checks and standard deviation filters to remove snow-spray noise.",
+      "instrumentation": "High-precision meteorology package: Vaisala HMP155 temperature/humidity probes, Young Model 05103 wind monitors, Kipp & Zonen CMP21 pyranometers for solar radiation, and Seabird SBE-911plus CTD sensors for marine parameters.",
+      "significance": "Long-term continuous polar datasets are the gold standard for validating numerical weather prediction (NWP) models operated by the National Centre for Medium Range Weather Forecasting (NCMRWF) and international Earth system reanalyses like ECMWF ERA5.",
+      "dataPoints": [
+        {
+          "label": "Sampling Interval",
+          "value": "10-minute automated mean"
+        },
+        {
+          "label": "Sensor Calibration Standard",
+          "value": "WMO-No. 8 Annex 1B (Polar Specifications)"
+        },
+        {
+          "label": "Data Quality Flag",
+          "value": "Level-2 Quality Controlled (QA/QC Passed)"
+        },
+        {
+          "label": "Coordinate System",
+          "value": "WGS 84 (EPSG:4326)"
+        },
+        {
+          "label": "Archival Storage Format",
+          "value": "NetCDF-4 / CF-1.8 Compliant & CSV"
+        }
+      ]
+    },
+    {
+      "id": "item-033",
+      "expeditionId": "exp-so-12",
+      "type": "Publication",
+      "title": "Storm Waves and Ocean Carbon Absorption",
+      "date": "2023-09-05",
+      "description": "Research paper in Journal of Geophysical Research: Oceans quantifying air-sea CO2 exchange rates under severe storm wind speeds exceeding 25 m/s. The paper synthesizes multi-year field observations with advanced numerical modeling, presenting new insights into geochemical nutrient transport, microbial cold-active enzymes, and polar teleconnections influencing the Indian subcontinent.",
+      "tags": [
+        "ocean",
+        "climate",
+        "waves"
+      ],
+      "visualSeed": 33,
+      "imageUrl": "/images/ncpor-southern-ocean-2.jpg",
+      "doi": "10.1016/j.dsr2.2022.105180",
+      "journal": "Deep Sea Research Part II: Topical Studies in Oceanography",
+      "institution": "Indian Institute of Science (IISc) & NCPOR",
+      "author": "Centre for Atmospheric and Oceanic Sciences",
+      "methodology": "Rigorous double-blind peer review published in leading international scientific journals indexed by Science Citation Index (SCI). Analytical protocols combined satellite remote sensing (Sentinel-1 SAR, CryoSat-2 altimetry, MODIS), in-situ ground truth validation, mass spectrometry, and multivariate statistical modeling.",
+      "instrumentation": "Thermo Scientific Element 2 High-Resolution ICP-MS, stable isotope ratio mass spectrometer (IRMS), Leica DM2500 research microscopes, and high-performance computing clusters running WRF-Polar and ROMS ocean models.",
+      "significance": "Establishes definitive empirical linkages between polar environmental processes and the global climate system. Findings directly support India's National Action Plan on Climate Change (NAPCC) and contribute peer-reviewed evidence to the Intergovernmental Panel on Climate Change (IPCC) Assessment Reports."
+    },
+    {
+      "id": "item-034",
+      "expeditionId": "exp-so-12",
+      "type": "Photo",
+      "title": "Research Vessel Breaking Through Thin Sea Ice",
+      "date": "2023-02-28",
+      "description": "High-resolution maritime photograph of the polar research vessel cutting through first-year Antarctic pack ice along the Marginal Ice Zone. Each photograph is indexed with precise geographic coordinates, UTC timestamps, ambient lighting values, and environmental metadata, providing a permanent visual archive for researchers and the public alike.",
+      "tags": [
+        "ship",
+        "ice",
+        "ocean"
+      ],
+      "visualSeed": 34,
+      "imageUrl": "/images/polar-icebreaker.jpg",
+      "cameraDetails": "Fujifilm GFX 100S, GF 45mm f/2.8 R WR, 1/1250s, f/5.6, ISO 400",
+      "location": "Antarctic Divergence Fast Ice Edge (63.10 S, 58.20 E)",
+      "institution": "National Centre for Polar and Ocean Research (NCPOR), MoES",
+      "author": "Expedition Maritime Operations",
+      "methodology": "High-resolution wildlife and landscape photographic documentation captured under natural ambient polar light using calibrated full-frame optical systems. Photographic passes were conducted adhering strictly to SCAR (Scientific Committee on Antarctic Research) Code of Conduct guidelines, maintaining mandatory minimum safety distances from breeding bird colonies and marine mammals.",
+      "instrumentation": "Professional digital camera bodies equipped with telephoto lenses (300mm to 600mm f/4), weather-sealed housings capable of operating in sub-zero environments, polarizing filters, and GPS geotagging loggers.",
+      "significance": "Visual records serve as invaluable long-term photographic benchmarks for monitoring glacier calving fronts, sea-ice edge retreat, snowpack accumulation, and annual shifts in wildlife breeding phenology across polar stations over multiple decades."
+    },
+    {
+      "id": "item-035",
+      "expeditionId": "exp-so-12",
+      "type": "Video",
+      "title": "Humpback Whales Breaching in Sub-Zero Swells",
+      "date": "2023-03-04",
+      "description": "Documentary footage documenting Humpback whale (Megaptera novaeangliae) pod feeding behavior in rich Antarctic krill upwelling zones. The footage captures the reality of polar life: the roar of 100 km/h katabatic winds, ship maneuvers through dense pack ice, and the daily camaraderie of scientists living isolated for up to 14 months during the polar winter.",
+      "tags": [
+        "wildlife",
+        "ocean",
+        "animals"
+      ],
+      "visualSeed": 35,
+      "imageUrl": "/images/humpback-whale-polar.jpg",
+      "videoUrl": "https://www.youtube-nocookie.com/embed/5DqjhJ8W30w",
+      "duration": "24m 50s",
+      "institution": "Films Division & National Centre for Polar and Ocean Research, MoES",
+      "author": "MoES Marine Mammal Survey Team",
+      "methodology": "Professional 4K polar broadcast footage and scientific documentary recording produced by the Ministry of Earth Sciences and NCPOR. Captured across multiple field seasons to record logistical operations, deep ice core extraction, station maintenance under blizzard conditions, and interviews with leading polar researchers.",
+      "instrumentation": "Ultra-HD cinema broadcast cameras with heated battery packs, stabilized gimbal rigs, drone aerial photogrammetry units, and professional directional wind-attenuated microphones.",
+      "significance": "Broadcast documentaries bridge the gap between high-latitude scientific laboratories and the citizen public, demonstrating the grit of Indian scientists and fostering nationwide scientific temper among students and young researchers."
+    },
+    {
+      "id": "item-036",
+      "expeditionId": "exp-so-13",
+      "type": "Report",
+      "title": "Autonomous Ocean Float Deployment Summary",
+      "date": "2024-04-20",
+      "description": "Technical mission report on the successful deployment of 8 autonomous biogeochemical (BGC) Argo profiling floats across the Antarctic Circumpolar Current. The report incorporates extensive logs from mechanical engineers, electrical technicians, and medical officers on station, detailing life support equipment reliability, solar-wind microgrid performance, and cryogenic sample storage safety during the polar operational season.",
+      "tags": [
+        "ocean",
+        "technology",
+        "ship"
+      ],
+      "visualSeed": 36,
+      "imageUrl": "/images/argo-float-deployment.jpg",
+      "author": "Argo Operations Team, MoES",
+      "institution": "Indian National Centre for Ocean Information Services (INCOIS) & NCPOR",
+      "methodology": "Daily log generation compiled across station operational consoles, telemetry servers, and field laboratory handovers. Observations followed the World Meteorological Organization (WMO) polar reporting guidelines and Antarctic Treaty Consultative Meeting (ATCM) mandatory inspection reporting protocols. Fuel burn, water recycling ratios, greywater biological treatment, and hazardous waste containment were verified twice daily.",
+      "instrumentation": "Campbell Scientific CR1000 dataloggers, Vaisala PTB210 digital barometers, ultrasonic wind anemometers, and satellite telemetry transceivers linked to the NCPOR operations room in Goa.",
+      "significance": "Field reports document the operational baseline required to sustain human survival and uninterrupted scientific measurement in conditions where temperatures regularly drop below -40°C and winds gust past 100 knots. They provide the empirical engineering foundation for designing India's next-generation green research station, Maitri II."
+    },
+    {
+      "id": "item-037",
+      "expeditionId": "exp-so-13",
+      "type": "Dataset",
+      "title": "Salinity Profiles from Surface to 1000 Meters",
+      "date": "2024-03-18",
+      "description": "High-resolution conductivity-temperature-depth (CTD) hydrographic data profiles measuring thermohaline stratification from sea surface to 1,000 meters. This dataset forms part of India's contribution to the Global Cryosphere Watch (GCW) and the World Climate Research Programme (WCRP), capturing fine-scale variations in boundary layer atmospheric physics and oceanic stratification.",
+      "tags": [
+        "ocean",
+        "water",
+        "dataset"
+      ],
+      "visualSeed": 37,
+      "imageUrl": "/images/ctd-deck-operations.jpg",
+      "parameters": "Conductivity (mS/cm), In-situ Temperature (C), Pressure (dbar), Practical Salinity (PSU)",
+      "institution": "National Institute of Oceanography (CSIR-NIO) & NCPOR",
+      "author": "Physical Oceanography Division",
+      "methodology": "Continuous sensor acquisition operating at high frequency (1 Hz sampling rate averaged over 10-minute intervals). Calibration protocols utilized NIST-traceable reference standards prior to deployment and secondary field calibration against hand-held psychrometers, barometer test sets, and salinity bottles. Raw values passed through automated range checks and standard deviation filters to remove snow-spray noise.",
+      "instrumentation": "High-precision meteorology package: Vaisala HMP155 temperature/humidity probes, Young Model 05103 wind monitors, Kipp & Zonen CMP21 pyranometers for solar radiation, and Seabird SBE-911plus CTD sensors for marine parameters.",
+      "significance": "Long-term continuous polar datasets are the gold standard for validating numerical weather prediction (NWP) models operated by the National Centre for Medium Range Weather Forecasting (NCMRWF) and international Earth system reanalyses like ECMWF ERA5.",
+      "dataPoints": [
+        {
+          "label": "Sampling Interval",
+          "value": "10-minute automated mean"
+        },
+        {
+          "label": "Sensor Calibration Standard",
+          "value": "WMO-No. 8 Annex 1B (Polar Specifications)"
+        },
+        {
+          "label": "Data Quality Flag",
+          "value": "Level-2 Quality Controlled (QA/QC Passed)"
+        },
+        {
+          "label": "Coordinate System",
+          "value": "WGS 84 (EPSG:4326)"
+        },
+        {
+          "label": "Archival Storage Format",
+          "value": "NetCDF-4 / CF-1.8 Compliant & CSV"
+        }
+      ]
+    },
+    {
+      "id": "item-038",
+      "expeditionId": "exp-so-13",
+      "type": "Publication",
+      "title": "Mapping Cold Water Currents Circling Antarctica",
+      "date": "2024-07-15",
+      "description": "Hydrodynamic modeling study charting the speed and path of the Antarctic Circumpolar Current (ACC) and its influence on global deep-ocean heat transport. The paper synthesizes multi-year field observations with advanced numerical modeling, presenting new insights into geochemical nutrient transport, microbial cold-active enzymes, and polar teleconnections influencing the Indian subcontinent.",
+      "tags": [
+        "ocean",
+        "currents",
+        "climate"
+      ],
+      "visualSeed": 38,
+      "imageUrl": "/images/southern-ocean-currents-map.jpg",
+      "doi": "10.1029/2021JC017990",
+      "journal": "Journal of Geophysical Research: Oceans",
+      "institution": "National Centre for Polar and Ocean Research (NCPOR) & IIT Kharagpur",
+      "author": "Ocean Modeling Group",
+      "methodology": "Rigorous double-blind peer review published in leading international scientific journals indexed by Science Citation Index (SCI). Analytical protocols combined satellite remote sensing (Sentinel-1 SAR, CryoSat-2 altimetry, MODIS), in-situ ground truth validation, mass spectrometry, and multivariate statistical modeling.",
+      "instrumentation": "Thermo Scientific Element 2 High-Resolution ICP-MS, stable isotope ratio mass spectrometer (IRMS), Leica DM2500 research microscopes, and high-performance computing clusters running WRF-Polar and ROMS ocean models.",
+      "significance": "Establishes definitive empirical linkages between polar environmental processes and the global climate system. Findings directly support India's National Action Plan on Climate Change (NAPCC) and contribute peer-reviewed evidence to the Intergovernmental Panel on Climate Change (IPCC) Assessment Reports."
+    },
+    {
+      "id": "item-039",
+      "expeditionId": "exp-so-13",
+      "type": "Photo",
+      "title": "Deploying a Robotic Ocean Profiler at Twilight",
+      "date": "2024-03-02",
+      "description": "Twilight photograph of the multi-sensor CTD rosette sampler being lowered into the Southern Ocean from the aft deck of ORV Sagar Nidhi. Each photograph is indexed with precise geographic coordinates, UTC timestamps, ambient lighting values, and environmental metadata, providing a permanent visual archive for researchers and the public alike.",
+      "tags": [
+        "technology",
+        "ship",
+        "ocean"
+      ],
+      "visualSeed": 39,
+      "imageUrl": "/images/ctd-ocean-rosette.jpg",
+      "cameraDetails": "Nikon D850, AF-S Nikkor 24-70mm f/2.8E ED VR, 1/250s, f/2.8, ISO 800",
+      "location": "Kerguelen Plateau oceanic transect (49.30 S, 69.50 E)",
+      "institution": "Ministry of Earth Sciences (MoES) & NCPOR",
+      "author": "Chief Oceanographer, 13th ISOE",
+      "methodology": "High-resolution wildlife and landscape photographic documentation captured under natural ambient polar light using calibrated full-frame optical systems. Photographic passes were conducted adhering strictly to SCAR (Scientific Committee on Antarctic Research) Code of Conduct guidelines, maintaining mandatory minimum safety distances from breeding bird colonies and marine mammals.",
+      "instrumentation": "Professional digital camera bodies equipped with telephoto lenses (300mm to 600mm f/4), weather-sealed housings capable of operating in sub-zero environments, polarizing filters, and GPS geotagging loggers.",
+      "significance": "Visual records serve as invaluable long-term photographic benchmarks for monitoring glacier calving fronts, sea-ice edge retreat, snowpack accumulation, and annual shifts in wildlife breeding phenology across polar stations over multiple decades."
+    },
+    {
+      "id": "item-040",
+      "expeditionId": "exp-so-13",
+      "type": "Activity",
+      "title": "Public Webinar: How Ocean Floats Help Forecast Monsoons",
+      "date": "2024-06-08",
+      "description": "Nationwide public educational webinar connecting oceanographers with students to discuss how Southern Ocean heat storage directly impacts the Indian Summer Monsoon. Participating students engage in live Q&A sessions regarding survival in extreme cold, viewing aurora australis, managing zero-waste living, and understanding how polar ice melt impacts India's monsoons and coastlines.",
+      "tags": [
+        "outreach",
+        "monsoon",
+        "activity"
+      ],
+      "visualSeed": 40,
+      "imageUrl": "/images/ncpor-webinar-session.jpg",
+      "location": "Ministry of Earth Sciences Webcast Hub, Prithvi Bhavan, New Delhi",
+      "institution": "Ministry of Earth Sciences (MoES) & NCPOR",
+      "author": "Public Information and Outreach Directorate",
+      "methodology": "Interactive national educational outreach initiative organized under the MoES Polar Outreach Framework. Facilitates live satellite tele-dialogues, hands-on polar science workshops in schools, university seminars, and open-access classroom curricula designed to translate high-latitude research into engaging STEM education.",
+      "instrumentation": "Satellite video linkups via GSAT-10 and Inmarsat broadband terminals connecting Maitri/Bharati/Himadri stations with school auditoriums across Indian states.",
+      "significance": "Inspires the next generation of Indian oceanographers, glaciologists, and atmospheric scientists. Connects students from Jammu & Kashmir to Tamil Nadu directly with scientists wintering in Antarctica, promoting scientific curiosity and climate literacy."
+    }
+  ]
+}
