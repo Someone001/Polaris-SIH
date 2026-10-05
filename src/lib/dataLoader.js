@@ -14,8 +14,8 @@ export function getExpeditions() {
 export function getExpeditionsSortedByDate(ascending = true) {
   const expeditions = [...getExpeditions()];
   return expeditions.sort((a, b) => {
-    const dateA = a.start || `${a.year}-01-01`;
-    const dateB = b.start || `${b.year}-01-01`;
+    const dateA = a.launchDate || a.flagOffDate || a.start || `${a.year || 2020}-01-01`;
+    const dateB = b.launchDate || b.flagOffDate || b.start || `${b.year || 2020}-01-01`;
     return ascending ? dateA.localeCompare(dateB) : dateB.localeCompare(dateA);
   });
 }
@@ -72,7 +72,10 @@ export function getItem(id) {
 export function getPortalStats() {
   const expeditions = getExpeditions();
   const items = getItems();
-  const regions = new Set(expeditions.map((e) => e.region));
+  const regions = new Set([
+    ...expeditions.map((e) => e.region),
+    ...items.map((i) => i.region).filter(Boolean),
+  ]);
 
   return {
     expeditionsCount: expeditions.length,

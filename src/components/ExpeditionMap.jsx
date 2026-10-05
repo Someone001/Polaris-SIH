@@ -251,7 +251,7 @@ export default function ExpeditionMap({
             ${formatCoordinates(stop.lat, stop.lon)}
           </div>
           <div class="text-[11px] text-polar-300 mt-1 leading-snug">
-            ${stop.name.includes('Station') ? 'Official Indian Polar Research Facility' : 'Expedition field waypoint & observation station'}
+            ${stop.name.includes('Station') ? 'Indian Polar Research Station' : 'Expedition field waypoint & observation location'}
           </div>
         </div>
       `;

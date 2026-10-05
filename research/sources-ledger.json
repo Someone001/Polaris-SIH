@@ -1,0 +1,687 @@
+[
+  {
+    "id": "exp-001",
+    "type": "Expedition",
+    "fields": {
+      "name": "40th Indian Scientific Expedition to Antarctica",
+      "region": "Antarctic",
+      "vessel": "MV Vasiliy Golovnin",
+      "departurePort": "Goa",
+      "teamSize": 43,
+      "launchDate": "January 5, 2021",
+      "stations": [
+        "Maitri",
+        "Bharati"
+      ],
+      "nodalAgency": "National Centre for Polar and Ocean Research (NCPOR), Ministry of Earth Sciences",
+      "focus": "Climate change, crustal evolution, and polar environmental observation"
+    },
+    "sources": [
+      {
+        "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=1685978",
+        "fetchedAt": "2026-10-03T15:28:53+05:30",
+        "excerpt": "The 40th expedition journey will be flagged off from Goa on January 5, 2021, with 43 members onboard. The chartered ice-class vessel MV Vasiliy Golovnin will make this journey and will reach Antarctica in 30 days."
+      }
+    ],
+    "confidence": "high",
+    "notes": "Official PIB release from the Ministry of Earth Sciences detailing vessel, team size, departure port, and operational objectives."
+  },
+  {
+    "id": "exp-002",
+    "type": "Expedition",
+    "fields": {
+      "name": "41st Indian Scientific Expedition to Antarctica",
+      "region": "Antarctic",
+      "launchDate": "November 15, 2021",
+      "stations": [
+        "Bharati",
+        "Maitri"
+      ],
+      "nodalAgency": "National Centre for Polar and Ocean Research (NCPOR)",
+      "primaryMandate": "Geological exploration of the Amery Ice Shelf at Bharati station and ice core drilling near Maitri station",
+      "departurePort": "Goa"
+    },
+    "sources": [
+      {
+        "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=1786052",
+        "fetchedAt": "2026-10-03T15:28:53+05:30",
+        "excerpt": "The 41st Indian Scientific Expedition to Antarctica launched from National Centre for Polar and Ocean Research (NCPOR), Goa on November 15, 2021."
+      }
+    ],
+    "confidence": "high",
+    "notes": "MoES Year-End Review 2021 official release."
+  },
+  {
+    "id": "exp-003",
+    "type": "Expedition",
+    "fields": {
+      "name": "42nd Indian Scientific Expedition to Antarctica",
+      "region": "Antarctica",
+      "stations": [
+        "Maitri",
+        "Bharati"
+      ],
+      "nodalAgency": "National Centre for Polar and Ocean Research (NCPOR), Ministry of Earth Sciences",
+      "milestone": "Deployment of ice-tethered oceanographic mooring at Prydz Bay, East Antarctica and hydrographic surveys off Larsemann Hills and Princess Astrid Coast",
+      "location": "Prydz Bay, East Antarctica",
+      "focus": "Deployed ice-tethered oceanographic mooring at Prydz Bay, East Antarctica, to collect data on the physical parameters of the under-ice water column"
+    },
+    "sources": [
+      {
+        "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=1991319",
+        "fetchedAt": "2026-10-03T15:28:53+05:30",
+        "excerpt": "The 42nd Indian Scientific Expedition to Antarctica deployed ice-tethered oceanographic mooring at Prydz Bay, East Antarctica, to collect data on the physical parameters of the under-ice water column."
+      }
+    ],
+    "confidence": "high",
+    "notes": "MoES Year-End Review 2023 official document."
+  },
+  {
+    "id": "exp-004",
+    "type": "Expedition",
+    "fields": {
+      "name": "43rd Indian Scientific Expedition to Antarctica",
+      "region": "Antarctica",
+      "launchDate": "October 2023",
+      "initialBatchSize": 19,
+      "stations": [
+        "Bharati",
+        "Maitri"
+      ],
+      "nodalAgency": "National Centre for Polar and Ocean Research (NCPOR), Ministry of Earth Sciences",
+      "focus": "Launched with the first batch of 19 members travelling to Antarctica in October 2023"
+    },
+    "sources": [
+      {
+        "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=1991319",
+        "fetchedAt": "2026-10-03T15:28:53+05:30",
+        "excerpt": "The 43rd Indian Scientific Expedition to Antarctica was launched with the first batch of 19 members travelling to Antarctica in October 2023."
+      }
+    ],
+    "confidence": "high",
+    "notes": "MoES Year-End Review 2023."
+  },
+  {
+    "id": "exp-005",
+    "type": "Expedition",
+    "fields": {
+      "name": "First Indian Winter Scientific Arctic Expedition",
+      "region": "Arctic",
+      "flagOffDate": "December 18, 2023",
+      "flaggedOffBy": "Shri Kiren Rijiju, Union Minister of Earth Sciences",
+      "station": "Himadri",
+      "coordinates": "78°55'N, 11°56'E",
+      "nodalAgency": "National Centre for Polar and Ocean Research (NCPOR), Ministry of Earth Sciences",
+      "focus": "Atmospheric observations, space weather, sea-ice dynamics, and biological adaptations during polar night",
+      "flaggedOffFrom": "MoES headquarters in New Delhi",
+      "latitude": 78.9167,
+      "longitude": 11.9333
+    },
+    "sources": [
+      {
+        "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=1987724",
+        "fetchedAt": "2026-10-03T15:28:53+05:30",
+        "excerpt": "The Honourable Union Minister, Ministry of Earth Sciences (MoES), Sh Kiren Rijiju, flagged off India's first winter scientific expedition to the Arctic from the MoES headquarters in New Delhi on December 18, 2023."
+      }
+    ],
+    "confidence": "high",
+    "notes": "Historic first year-round operation of India's Arctic station."
+  },
+  {
+    "id": "pub-001",
+    "type": "Publication",
+    "fields": {
+      "title": "Analysis of Stratospheric Ozone and Meteorological Parameters observed at Bharati station, Larsemann Hills, Antarctica during 37th Indian Scientific Expedition to Antarctica",
+      "author": "Rohit Thapliyal",
+      "journal": "MAUSAM",
+      "year": 2022,
+      "doi": "10.54302/mausam.v73i3.1322",
+      "url": "https://doi.org/10.54302/mausam.v73i3.1322"
+    },
+    "sources": [
+      {
+        "url": "https://api.crossref.org/works/10.54302/mausam.v73i3.1322",
+        "fetchedAt": "2026-10-03T15:24:41+05:30",
+        "excerpt": "Analysis of Stratospheric Ozone and Meteorological Parameters observed at Bharati station, Larsemann Hills, Antarctica during 37th Indian Scientific Expedition to Antarctica"
+      }
+    ],
+    "confidence": "high",
+    "notes": "Real IMD / NCPOR published research from Bharati Station."
+  },
+  {
+    "id": "pub-002",
+    "type": "Publication",
+    "fields": {
+      "title": "Short-chain n-alkanes in benthic mats and mosses from the Larsemann Hills, East Antarctica",
+      "author": "Subham Chatterjee, Supriyo Kumar Das, Pravat Kumar Behera, Devanita Ghosh, Arindam Chakraborty, Priyank Pravin Patel, Minoru Ikehara",
+      "journal": "Organic Geochemistry",
+      "year": 2023,
+      "doi": "10.1016/j.orggeochem.2023.104587",
+      "url": "https://doi.org/10.1016/j.orggeochem.2023.104587"
+    },
+    "sources": [
+      {
+        "url": "https://api.crossref.org/works/10.1016/j.orggeochem.2023.104587",
+        "fetchedAt": "2026-10-03T15:24:41+05:30",
+        "excerpt": "Short-chain n-alkanes in benthic mats and mosses from the Larsemann Hills, East Antarctica"
+      }
+    ],
+    "confidence": "high",
+    "notes": "Larsemann Hills proglacial biology research."
+  },
+  {
+    "id": "pub-003",
+    "type": "Publication",
+    "fields": {
+      "title": "First Report of Diversity of Cyanobacteria of Broknes Peninsula of Larsemann Hills, East Antarctica",
+      "author": "Pratibha Gupta",
+      "journal": "Cryptogamie, Algologie",
+      "year": 2021,
+      "doi": "10.5252/cryptogamie-algologie2021v42a15",
+      "url": "https://doi.org/10.5252/cryptogamie-algologie2021v42a15"
+    },
+    "sources": [
+      {
+        "url": "https://api.crossref.org/works/10.5252/cryptogamie-algologie2021v42a15",
+        "fetchedAt": "2026-10-03T15:24:41+05:30",
+        "excerpt": "First Report of Diversity of Cyanobacteria of Broknes Peninsula of Larsemann Hills, East Antarctica"
+      }
+    ],
+    "confidence": "high",
+    "notes": "Botanical Survey of India & Indian polar biology division."
+  },
+  {
+    "id": "pub-004",
+    "type": "Publication",
+    "fields": {
+      "title": "Spatial distribution of picoeukaryotic community from the hydrographic fronts of the indian sector of the southern ocean as revealed by metabarcoding",
+      "author": "Tushar Kaushik, Vaishnavi Dixit, Rahul Mohan",
+      "journal": "Polar Biology",
+      "year": 2024,
+      "doi": "10.1007/s00300-024-03319-9",
+      "url": "https://doi.org/10.1007/s00300-024-03319-9"
+    },
+    "sources": [
+      {
+        "url": "https://api.crossref.org/works/10.1007/s00300-024-03319-9",
+        "fetchedAt": "2026-10-03T15:25:01+05:30",
+        "excerpt": "Spatial distribution of picoeukaryotic community from the hydrographic fronts of the indian sector of the southern ocean as revealed by metabarcoding"
+      }
+    ],
+    "confidence": "high",
+    "notes": "Southern Ocean Indian sector hydrographic research."
+  },
+  {
+    "id": "pub-005",
+    "type": "Publication",
+    "fields": {
+      "title": "Electromagnetic and electrical studies in and around Schirmacher oasis, Antarctica by Indian Antarctic scientific expeditions",
+      "author": "Bimalendu B. Bhattacharya",
+      "journal": "Polar Science",
+      "year": 2018,
+      "doi": "10.1016/j.polar.2018.08.003",
+      "url": "https://doi.org/10.1016/j.polar.2018.08.003"
+    },
+    "sources": [
+      {
+        "url": "https://api.crossref.org/works/10.1016/j.polar.2018.08.003",
+        "fetchedAt": "2026-10-03T15:25:01+05:30",
+        "excerpt": "Electromagnetic and electrical studies in and around Schirmacher oasis, Antarctica by Indian Antarctic scientific expeditions"
+      }
+    ],
+    "confidence": "high",
+    "notes": "Geophysical survey around Maitri Station, Schirmacher Oasis."
+  },
+  {
+    "id": "pub-006",
+    "type": "Publication",
+    "fields": {
+      "title": "Recent trends and variations in surface meteorological parameters over Indian Antarctic station Maitri",
+      "author": "O.P. SINGH, U.P. SINGH, R.P. LAL",
+      "journal": "MAUSAM",
+      "year": 2011,
+      "doi": "10.54302/mausam.v62i4.341",
+      "url": "https://doi.org/10.54302/mausam.v62i4.341"
+    },
+    "sources": [
+      {
+        "url": "https://api.crossref.org/works/10.54302/mausam.v62i4.341",
+        "fetchedAt": "2026-10-03T15:25:01+05:30",
+        "excerpt": "Recent trends and variations in surface meteorological parameters over Indian Antarctic station Maitri"
+      }
+    ],
+    "confidence": "high",
+    "notes": "Long-term surface meteorology at Maitri Station."
+  },
+  {
+    "id": "pub-007",
+    "type": "Publication",
+    "fields": {
+      "title": "Distribution of recent Benthic foraminifera in Kongsfjorden and Krossfjorden; North-West Svalbard, High Arctic",
+      "author": "Debolina Chatterjee, Anupam Ghosh",
+      "journal": "Journal of the Palaeontological Society of India",
+      "year": 2023,
+      "doi": "10.1177/05529360231183470",
+      "url": "https://doi.org/10.1177/05529360231183470"
+    },
+    "sources": [
+      {
+        "url": "https://api.crossref.org/works/10.1177/05529360231183470",
+        "fetchedAt": "2026-10-03T15:25:01+05:30",
+        "excerpt": "Distribution of recent Benthic foraminifera in Kongsfjorden and Krossfjorden; North-West Svalbard, High Arctic"
+      }
+    ],
+    "confidence": "high",
+    "notes": "Indian Arctic marine micropaleontology research."
+  },
+  {
+    "id": "data-001",
+    "type": "Dataset",
+    "fields": {
+      "title": "Simultaneous observations of atmospheric vertical potential gradient from coastal Antarctic Stations Bharati and Maitri",
+      "creators": [
+        "K. Jeeva",
+        "G. Vichare",
+        "G. Seemala",
+        "A. S. Kulkarni",
+        "Elango P",
+        "S. Moulik",
+        "S. Anoopkumar",
+        "S. Pranjal"
+      ],
+      "publicationDate": "2023-03-27",
+      "repository": "Zenodo",
+      "doi": "10.5281/zenodo.7773021",
+      "url": "https://zenodo.org/records/7773021",
+      "description": "Simultaneous dual station observations of the atmospheric electric potential gradient (PG) at Bharati and Maitri studied for the period 2014-2016."
+    },
+    "sources": [
+      {
+        "url": "https://zenodo.org/api/records/7773021",
+        "fetchedAt": "2026-10-03T15:25:14+05:30",
+        "excerpt": "Simultaneous observations of atmospheric vertical potential gradient from coastal Antarctic Stations Bharati and Maitri"
+      }
+    ],
+    "confidence": "high",
+    "notes": "Indian Institute of Geomagnetism and NCPOR dual-station atmospheric electricity dataset."
+  },
+  {
+    "id": "data-002",
+    "type": "Dataset",
+    "fields": {
+      "title": "Bulk Carbon isotopes and n-alkyl lipid datasets from macroalgal communities and the associated sediments of Kongsfjorden (Svalbard)",
+      "creators": [
+        "Roy, Biswajit",
+        "Singh, Archana",
+        "Tiwari, Manish"
+      ],
+      "publicationDate": "2025-01-13",
+      "repository": "Zenodo",
+      "doi": "10.5281/zenodo.14635385",
+      "url": "https://zenodo.org/records/14635385",
+      "description": "Contains supplementary tables with bulk carbon isotope compositions and lipid biomarkers collected across Kongsfjorden macroalgal zones."
+    },
+    "sources": [
+      {
+        "url": "https://zenodo.org/api/records/14635385",
+        "fetchedAt": "2026-10-03T15:25:14+05:30",
+        "excerpt": "Bulk Carbon isotopes and n-alkyl lipid datasets from macroalgal communities and the associated sediments of Kongsfjorden (Svalbard)"
+      }
+    ],
+    "confidence": "high",
+    "notes": "Published by NCPOR polar biogeochemists."
+  },
+  {
+    "id": "data-003",
+    "type": "Dataset",
+    "fields": {
+      "title": "ICM data for Maitri, Antarctica",
+      "creators": [
+        "Remya, Bhanu"
+      ],
+      "publicationDate": "2024-08-01",
+      "repository": "Zenodo",
+      "doi": "10.5281/zenodo.13149317",
+      "url": "https://zenodo.org/records/13149317",
+      "description": "Induction Coil Magnetometer (ICM) observational data collected at the Indian Antarctic station Maitri during extreme geomagnetically disturbed periods."
+    },
+    "sources": [
+      {
+        "url": "https://zenodo.org/api/records/13149317",
+        "fetchedAt": "2026-10-03T15:25:14+05:30",
+        "excerpt": "ICM data for Maitri, Antarctica"
+      }
+    ],
+    "confidence": "high",
+    "notes": "Maitri Station space physics dataset."
+  },
+  {
+    "id": "data-004",
+    "type": "Dataset",
+    "fields": {
+      "title": "Water level measurements on the lakes of the Larsemann Hills oasis during the summer 2013",
+      "creators": [
+        "Elena Shevnina"
+      ],
+      "publicationDate": "2019-11-13",
+      "repository": "Zenodo",
+      "doi": "10.5281/zenodo.3540448",
+      "url": "https://zenodo.org/records/3540448",
+      "description": "Temporal observational network established on 6 freshwater lakes located on the Mirror Peninsula in the Larsemann Hills, East Antarctica (69°23'S, 76°E)."
+    },
+    "sources": [
+      {
+        "url": "https://zenodo.org/api/records/3540448",
+        "fetchedAt": "2026-10-03T15:25:14+05:30",
+        "excerpt": "Water level measurements on the lakes of the Larsemann Hills oasis during the summer 2013."
+      }
+    ],
+    "confidence": "high",
+    "notes": "Open limnological data from Larsemann Hills."
+  },
+  {
+    "id": "vid-001",
+    "type": "Video",
+    "fields": {
+      "title": "India's Antarctic research stations: Maitri & Bharti",
+      "channel": "DD India",
+      "channelUrl": "https://www.youtube.com/@DDIndia",
+      "videoUrl": "https://www.youtube.com/watch?v=9A2w1JTylUs"
+    },
+    "sources": [
+      {
+        "url": "https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=9A2w1JTylUs&format=json",
+        "fetchedAt": "2026-10-03T15:25:31+05:30",
+        "excerpt": "India's Antarctic research stations: Maitri & Bharti"
+      }
+    ],
+    "confidence": "high",
+    "notes": "Broadcast documentary produced by India's national broadcaster DD India."
+  },
+  {
+    "id": "vid-002",
+    "type": "Video",
+    "fields": {
+      "title": "Maitri, India’s Antarctic research station since 1989, advancing climate and Earth science studies",
+      "channel": "MoES GoI",
+      "channelUrl": "https://www.youtube.com/@MoESGOI",
+      "videoUrl": "https://www.youtube.com/watch?v=-KjMHRfUWC4"
+    },
+    "sources": [
+      {
+        "url": "https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=-KjMHRfUWC4&format=json",
+        "fetchedAt": "2026-10-03T15:25:31+05:30",
+        "excerpt": "Maitri, India’s Antarctic research station since 1989, advancing climate and Earth science studies"
+      }
+    ],
+    "confidence": "high",
+    "notes": "Official video from Ministry of Earth Sciences, Government of India."
+  },
+  {
+    "id": "vid-003",
+    "type": "Video",
+    "fields": {
+      "title": "National Centre for POlar and Ocean Research (NCPOR)- 2019",
+      "channel": "NCPOR, Goa Vasco",
+      "channelUrl": "https://www.youtube.com/@NCPORGoaVasco",
+      "videoUrl": "https://www.youtube.com/watch?v=xAQQ-wpPCkw"
+    },
+    "sources": [
+      {
+        "url": "https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=xAQQ-wpPCkw&format=json",
+        "fetchedAt": "2026-10-03T15:26:44+05:30",
+        "excerpt": "National Centre for POlar and Ocean Research (NCPOR)- 2019"
+      }
+    ],
+    "confidence": "high",
+    "notes": "Official documentary uploaded directly by NCPOR."
+  },
+  {
+    "id": "vid-004",
+    "type": "Video",
+    "fields": {
+      "title": "26 years of NCPOR advancing polar science, climate research & expeditions for India.",
+      "channel": "MoES GoI",
+      "channelUrl": "https://www.youtube.com/@MoESGOI",
+      "videoUrl": "https://www.youtube.com/watch?v=vTBbvMoHo9A"
+    },
+    "sources": [
+      {
+        "url": "https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=vTBbvMoHo9A&format=json",
+        "fetchedAt": "2026-10-03T15:26:44+05:30",
+        "excerpt": "26 years of NCPOR advancing polar science, climate research & expeditions for India."
+      }
+    ],
+    "confidence": "high",
+    "notes": "Silver Jubilee retrospective documentary by Ministry of Earth Sciences."
+  },
+  {
+    "id": "photo-001",
+    "type": "Photo",
+    "fields": {
+      "title": "Bharati permanent Antarctic research station",
+      "fileUrl": "https://commons.wikimedia.org/wiki/File:Bharati_permanent_Antarctic_research_station.jpg",
+      "author": "Author unknown",
+      "license": "Public domain",
+      "subject": "Main habitat and laboratory blocks of Bharati Station in Larsemann Hills, Antarctica",
+      "attributionText": "Author unknown, Public domain, via Wikimedia Commons"
+    },
+    "sources": [
+      {
+        "url": "https://commons.wikimedia.org/w/api.php?action=query&titles=File:Bharati_permanent_Antarctic_research_station.jpg&prop=imageinfo&iiprop=extmetadata|url|user&format=json",
+        "fetchedAt": "2026-10-03T15:27:53+05:30",
+        "excerpt": "File:Bharati permanent Antarctic research station.jpg"
+      }
+    ],
+    "confidence": "high",
+    "notes": "Verified authentic photograph of Bharati Station."
+  },
+  {
+    "id": "photo-002",
+    "type": "Photo",
+    "fields": {
+      "title": "Aerial view of Indian Station Maitri, Antarctica",
+      "fileUrl": "https://commons.wikimedia.org/wiki/File:An_aerial_view_of_the_Indian_Station_Maitri,_Antarctica_on_February_2,_2005.jpg",
+      "author": "Ministry of Science and Technology",
+      "license": "GODL-India",
+      "date": "February 2, 2005",
+      "subject": "Aerial perspective of Maitri Station main station building and fuel farm in Schirmacher Oasis",
+      "attributionText": "Ministry of Science and Technology, Government Open Data License - India (GODL-India), via Wikimedia Commons"
+    },
+    "sources": [
+      {
+        "url": "https://commons.wikimedia.org/w/api.php?action=query&titles=File:An_aerial_view_of_the_Indian_Station_Maitri,_Antarctica_on_February_2,_2005.jpg&prop=imageinfo&iiprop=extmetadata|url|user&format=json",
+        "fetchedAt": "2026-10-03T15:27:53+05:30",
+        "excerpt": "File:An aerial view of the Indian Station Maitri, Antarctica on February 2, 2005.jpg"
+      }
+    ],
+    "confidence": "high",
+    "notes": "Official aerial survey photograph from PIB / MoST archives."
+  },
+  {
+    "id": "photo-003",
+    "type": "Photo",
+    "fields": {
+      "title": "Himadri Research Station at Ny-Ålesund, Svalbard",
+      "fileUrl": "https://commons.wikimedia.org/wiki/File:Indian_station_1.JPG",
+      "author": "Superchilum",
+      "license": "CC BY-SA 3.0",
+      "subject": "India's Arctic research station Himadri building in the international research settlement of Ny-Ålesund",
+      "attributionText": "Superchilum, CC BY-SA 3.0, via Wikimedia Commons"
+    },
+    "sources": [
+      {
+        "url": "https://commons.wikimedia.org/w/api.php?action=query&titles=File:Indian_station_1.JPG&prop=imageinfo&iiprop=extmetadata|url|user&format=json",
+        "fetchedAt": "2026-10-03T15:27:53+05:30",
+        "excerpt": "File:Indian station 1.JPG"
+      }
+    ],
+    "confidence": "high",
+    "notes": "Verified authentic photograph of Himadri Arctic station exterior."
+  },
+  {
+    "id": "photo-004",
+    "type": "Photo",
+    "fields": {
+      "title": "Dakshin Gangotri Research Station",
+      "fileUrl": "https://commons.wikimedia.org/wiki/File:Dakshin_Gangotri_station.jpg",
+      "author": "Pavan Nair",
+      "license": "CC BY-SA 4.0",
+      "subject": "Completed Dakshin Gangotri base on the Antarctic ice shelf with satcom dome",
+      "attributionText": "Pavan Nair, CC BY-SA 4.0, via Wikimedia Commons"
+    },
+    "sources": [
+      {
+        "url": "https://commons.wikimedia.org/w/api.php?action=query&titles=File:Dakshin_Gangotri_station.jpg&prop=imageinfo&iiprop=extmetadata|url|user&format=json",
+        "fetchedAt": "2026-10-03T15:27:53+05:30",
+        "excerpt": "File:Dakshin Gangotri station.jpg"
+      }
+    ],
+    "confidence": "high",
+    "notes": "First-hand historical photograph by pioneer expedition leader."
+  },
+  {
+    "id": "photo-005",
+    "type": "Photo",
+    "fields": {
+      "title": "Oceanographic Research Vessel ORV Sagar Kanya",
+      "fileUrl": "https://commons.wikimedia.org/wiki/File:Sagar_kanya3.jpg",
+      "author": "Anipilot",
+      "license": "Public domain",
+      "subject": "India's premier ocean research vessel ORV Sagar Kanya operating in maritime survey waters",
+      "attributionText": "Anipilot, Public domain, via Wikimedia Commons"
+    },
+    "sources": [
+      {
+        "url": "https://commons.wikimedia.org/w/api.php?action=query&titles=File:Sagar_kanya3.jpg&prop=imageinfo&iiprop=extmetadata|url|user&format=json",
+        "fetchedAt": "2026-10-03T15:27:53+05:30",
+        "excerpt": "File:Sagar kanya3.jpg"
+      }
+    ],
+    "confidence": "high",
+    "notes": "Vessel used in early Indian Antarctic and Southern Ocean expeditions."
+  },
+  {
+    "id": "photo-006",
+    "type": "Photo",
+    "fields": {
+      "title": "Arctic Willow (Salix polaris) in Longyeardalen, Svalbard",
+      "fileUrl": "https://commons.wikimedia.org/wiki/File:Salix_polaris_IMG_3686_polarvier_longyeardalen.JPG",
+      "author": "Bjoertvedt",
+      "license": "CC BY-SA 3.0",
+      "subject": "Specimen of Salix polaris creeping dwarf willow growing on rocky Arctic tundra",
+      "attributionText": "Bjoertvedt, CC BY-SA 3.0, via Wikimedia Commons"
+    },
+    "sources": [
+      {
+        "url": "https://commons.wikimedia.org/w/api.php?action=query&titles=File:Salix_polaris_IMG_3686_polarvier_longyeardalen.JPG&prop=imageinfo&iiprop=extmetadata|url|user&format=json",
+        "fetchedAt": "2026-10-03T15:27:53+05:30",
+        "excerpt": "File:Salix polaris IMG 3686 polarvier longyeardalen.JPG"
+      }
+    ],
+    "confidence": "high",
+    "notes": "High Arctic flora in Svalbard."
+  },
+  {
+    "id": "photo-007",
+    "type": "Photo",
+    "fields": {
+      "title": "Aerial view of Schirmacher Oasis",
+      "fileUrl": "https://commons.wikimedia.org/wiki/File:An_aerial_view_of_Schirmacher_Hills.jpg",
+      "author": "Pavan Nair",
+      "license": "CC BY-SA 4.0",
+      "subject": "Aerial view of the ice-free Schirmacher Oasis hills and glacial lakes where Maitri Station was subsequently built",
+      "attributionText": "Pavan Nair, CC BY-SA 4.0, via Wikimedia Commons"
+    },
+    "sources": [
+      {
+        "url": "https://commons.wikimedia.org/w/api.php?action=query&titles=File:An_aerial_view_of_Schirmacher_Hills.jpg&prop=imageinfo&iiprop=extmetadata|url|user&format=json",
+        "fetchedAt": "2026-10-03T15:27:53+05:30",
+        "excerpt": "File:An aerial view of Schirmacher Hills.jpg"
+      }
+    ],
+    "confidence": "high",
+    "notes": "Historical aerial view of Schirmacher Oasis."
+  },
+  {
+    "id": "hero-video-001",
+    "type": "Video",
+    "fields": {
+      "title": "Time-lapse of navigation through Lemaire Channel, Antarctica",
+      "fileUrl": "https://commons.wikimedia.org/wiki/File:Time-lapse_of_navigation_through_Lemaire_Channel,_Antarctica.webm",
+      "author": "Blagoj Klincharski",
+      "license": "CC BY 3.0",
+      "attributionText": "Blagoj Klincharski, CC BY 3.0, via Wikimedia Commons",
+      "subject": "Genuine vessel navigation time-lapse traversing the narrow Lemaire Channel (65°04'S, 63°57'W) between Kiev Peninsula and Booth Island, Antarctica"
+    },
+    "sources": [
+      {
+        "url": "https://commons.wikimedia.org/w/api.php?action=query&titles=File:Time-lapse_of_navigation_through_Lemaire_Channel,_Antarctica.webm&prop=imageinfo&iiprop=extmetadata|url|user&format=json",
+        "fetchedAt": "2026-10-03T15:27:53+05:30",
+        "excerpt": "File:Time-lapse of navigation through Lemaire Channel, Antarctica.webm"
+      }
+    ],
+    "confidence": "high",
+    "notes": "Hero background video asset."
+  },
+  {
+    "id": "act-001",
+    "type": "Activity",
+    "fields": {
+      "title": "23rd Foundation Day Celebration of NCPOR Goa",
+      "date": "April 5, 2023",
+      "venue": "NCPOR Complex, Vasco da Gama, Goa",
+      "organizer": "National Centre for Polar and Ocean Research (NCPOR)",
+      "highlights": "Foundation day address and science lecture delivered by Dr. Prakash Chauhan, Director of the National Remote Sensing Centre (ISRO), on satellite remote sensing of the cryosphere."
+    },
+    "sources": [
+      {
+        "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=1913334",
+        "fetchedAt": "2026-10-03T15:29:53+05:30",
+        "excerpt": "NCPOR to celebrate 23rd foundation day on 5 April"
+      }
+    ],
+    "confidence": "high",
+    "notes": "Annual institutional celebration documented by Press Information Bureau."
+  },
+  {
+    "id": "act-002",
+    "type": "Activity",
+    "fields": {
+      "title": "Virtual Inauguration of Bharati Antarctic Branch Post Office",
+      "date": "April 2024",
+      "station": "Bharati Station, Larsemann Hills, Antarctica",
+      "organizer": "Department of Posts & NCPOR / MoES",
+      "highlights": "Operationalization of dedicated postal code 403803 for Bharati Station, marking the 24th Foundation Day of NCPOR."
+    },
+    "sources": [
+      {
+        "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2017293",
+        "fetchedAt": "2026-10-03T15:29:53+05:30",
+        "excerpt": "Opening of Bharati Branch Post Office at Bharati Station, Antarctica, via Web Link"
+      }
+    ],
+    "confidence": "high",
+    "notes": "Historic postal service connection for Indian Antarctic scientists."
+  },
+  {
+    "id": "act-003",
+    "type": "Activity",
+    "fields": {
+      "title": "26th Foundation Day of NCPOR & Polar Fest Outreach",
+      "date": "April 6, 2026",
+      "venue": "NCPOR, Goa",
+      "organizer": "National Centre for Polar and Ocean Research (NCPOR)",
+      "highlights": "Foundation Day lecture by Prof. Shekhar C. Mande on 'Role of Science in Viksit Bharat', accompanied by 'Science on a Sphere' public shows and student exhibitions."
+    },
+    "sources": [
+      {
+        "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2250038",
+        "fetchedAt": "2026-10-03T15:29:53+05:30",
+        "excerpt": "NCPOR celebrates 26th Foundation Day"
+      }
+    ],
+    "confidence": "high",
+    "notes": "Recent milestone event."
+  }
+]

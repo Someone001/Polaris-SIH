@@ -1,42 +1,29 @@
 /**
  * Deterministic Content Generation Engine for Polaris.
- * Pure functions with zero DOM code. Operates strictly on verified record and expedition fields.
+ * Pure functions with zero DOM code. Operates strictly on sourced record fields.
+ * Every output strictly ends with: "Source: <title> (<URL>)".
  */
 
-// Helper to format dates cleanly
-function formatDate(dateStr) {
-  if (!dateStr) return '';
-  try {
-    const d = new Date(dateStr);
-    return d.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
-  } catch {
-    return dateStr;
-  }
+// Helper to extract a displayable source attribution line
+function getSourceCitation(record) {
+  const title = record.title || 'Polaris Archive Record';
+  const url = record.url || record.sourceUrl || record.fileUrl || record.videoUrl || '';
+  return `Source: ${title} (${url})`;
 }
 
-// Generate valid hashtags from existing record & expedition fields only
-function getRelevantHashtags(record, expedition) {
-  const tags = new Set();
-
-  if (expedition?.region) {
-    tags.add(`#${expedition.region.replace(/\s+/g, '')}`);
-  }
-  tags.add('#IndiaInPolarScience');
-  if (expedition?.year) {
-    tags.add(`#PolarResearch${expedition.year}`);
-  }
-  if (Array.isArray(record?.tags)) {
-    record.tags.slice(0, 2).forEach((t) => {
-      const clean = t.replace(/[^a-zA-Z0-9]/g, '');
-      if (clean) tags.add(`#${clean.charAt(0).toUpperCase() + clean.slice(1)}`);
-    });
-  }
-
-  return Array.from(tags).slice(0, 4);
+// Helper to determine the source publisher/organization name neutrally
+function getSourceOrg(record) {
+  if (record.journal) return record.journal;
+  if (record.repository) return record.repository;
+  if (record.channel) return record.channel;
+  if (record.organizer) return record.organizer;
+  if (record.author) return record.author;
+  if (record.creditLine) return record.creditLine.replace(/^Source:\s*/, '');
+  return 'public scientific records';
 }
 
 /**
- * Generate 4 distinct content outputs based on real fields only.
+ * Generate 4 distinct outreach content formats based only on sourced fields.
  */
 export function generate(record, options = {}, expedition = null) {
   const {
@@ -50,93 +37,98 @@ export function generate(record, options = {}, expedition = null) {
     return null;
   }
 
-  const fieldsUsed = ['title', 'type', 'date', 'description'];
-  if (record.tags && record.tags.length > 0) fieldsUsed.push('tags');
-  if (expedition?.name || expedition?.title) fieldsUsed.push('expedition.name');
-  if (expedition?.region) fieldsUsed.push('expedition.region');
-  if (expedition?.locationName) fieldsUsed.push('expedition.locationName');
-  if (expedition?.institution) fieldsUsed.push('expedition.institution');
-  if (expedition?.leaderName) fieldsUsed.push('expedition.leaderName');
-  if (expedition?.keyFindings) fieldsUsed.push('expedition.keyFindings');
+  const fieldsUsed = ['title', 'type'];
+  if (record.author) fieldsUsed.push('author');
+  if (record.creators) fieldsUsed.push('creators');
+  if (record.journal) fieldsUsed.push('journal');
+  if (record.year) fieldsUsed.push('year');
+  if (record.date) fieldsUsed.push('date');
+  if (record.doi) fieldsUsed.push('doi');
+  if (record.region) fieldsUsed.push('region');
+  if (record.description) fieldsUsed.push('description');
+  if (record.subject) fieldsUsed.push('subject');
+  if (record.highlights) fieldsUsed.push('highlights');
+  if (record.sourceUrl) fieldsUsed.push('sourceUrl');
 
   const title = record.title || 'Polar Scientific Record';
-  const desc = record.description || '';
-  const dateFormatted = formatDate(record.date);
-  const expName = expedition?.name || expedition?.title || 'Indian Scientific Expedition';
-  const region = expedition?.region || 'Polar';
-  const location = expedition?.locationName || region;
-  const institution = expedition?.institution || 'Ministry of Earth Sciences';
-  const leader = expedition?.leaderName ? `led by ${expedition.leaderName}` : '';
-  const hashtags = getRelevantHashtags(record, expedition).join(' ');
+  const desc = record.description || record.subject || record.highlights || record.sourceExcerpt || '';
+  const dateStr = record.date || (record.year ? String(record.year) : '');
+  const region = record.region || expedition?.region || '';
 
-  // Tone phrasing variations
-  const tonePrefix = {
-    informative: `Scientific field records from ${region} confirm key observations documented at ${location}.`,
-    inspiring: `Standing at Earth's frozen frontier, Indian researchers continue pushing boundaries at ${location}.`,
-    urgent: `Accelerating shifts at the poles highlight the critical need for continuous observations at ${location}.`,
-  }[tone];
-
-  // Audience introductions
+  // Audience prefix
   const audienceLead = {
-    general: `India's polar mission has logged new observations from ${expName}.`,
-    students: `Did you know Indian scientists travel to the coldest places on Earth to understand climate and wildlife?`,
-    press: `FOR IMMEDIATE RELEASE: The Ministry of Earth Sciences reports verified observations from ${expName}.`,
+    general: region ? `Public polar science update (${region}):` : 'Public polar science update:',
+    students: region ? `Learning note on high-latitude polar research (${region}):` : 'Learning note on high-latitude polar research:',
+    press: region ? `Research communication update (${region}):` : 'Research communication update:',
   }[audience];
 
-  // CTA lines
+  // Optional CTA
   const ctaLine = cta
     ? {
-        general: 'Explore more expedition logs and datasets on the Polaris portal at polaris.gov.in.',
-        students: 'Ask your teachers about India’s polar stations Maitri, Bharati, and Himadri to learn more!',
-        press: 'For media access to complete datasets and expedition imagery, contact the outreach desk.',
+        general: 'Explore the full dataset and public citation on the Polaris portal.',
+        students: 'Review this study to learn more about polar science and environments.',
+        press: 'Refer to the primary source citation below for full details.',
       }[audience]
     : '';
 
   // 1. WEBSITE BLURB
-  const blurbHeadline = `${title} (${region})`;
-  let blurbSummary = `${audienceLead} ${tonePrefix} ${desc}`;
-  if (leader) blurbSummary += ` The research contingent was ${leader}.`;
-  if (ctaLine) blurbSummary += ` ${ctaLine}`;
+  const blurbHeadline = `${title}${record.year ? ` (${record.year})` : ''}`;
+  let blurbSummary = `${audienceLead} ${desc}`;
+  if (authors) {
+    blurbSummary += ` Contributed by ${authors}.`;
+  }
+  if (ctaLine) {
+    blurbSummary += ` ${ctaLine}`;
+  }
 
   const bullets = [];
-  bullets.push(`Location: Documented at ${location} under ${expName}.`);
-  if (record.tags && record.tags.length > 0) {
-    bullets.push(`Key topics observed: ${record.tags.join(', ')}.`);
-  } else {
-    bullets.push(`Recorded officially under Indian polar mission logs.`);
-  }
-  if (expedition?.keyFindings && expedition.keyFindings[0]) {
-    bullets.push(`Related expedition finding: ${expedition.keyFindings[0]}.`);
-  } else {
-    bullets.push(`Field measurements logged on ${dateFormatted}.`);
-  }
+  bullets.push(`Type: ${record.type}.`);
+  if (region) bullets.push(`Region: ${region}.`);
+  if (dateStr) bullets.push(`Date / Year: ${dateStr}.`);
+  if (record.doi) bullets.push(`DOI: ${record.doi}.`);
+  if (record.journal) bullets.push(`Journal: ${record.journal}.`);
+  if (record.repository) bullets.push(`Repository: ${record.repository}.`);
 
   const websiteBlurb = {
     headline: blurbHeadline,
     summary: blurbSummary,
     highlights: bullets,
-    fullText: `${blurbHeadline}\n\n${blurbSummary}\n\nKey Highlights:\n• ${bullets.join('\n• ')}`,
+    fullText: `${blurbHeadline}\n\n${blurbSummary}\n\nKey Details:\n• ${bullets.join('\n• ')}\n\n${sourceCitation}`,
   };
 
   // 2. SOCIAL POSTS
-  // a) Twitter (<= 280 chars)
-  let twitterText = '';
-  if (length === 'short') {
-    twitterText = `India's ${region} team logs ${title.toLowerCase()}: ${desc.slice(0, 110)}... ${hashtags}`;
-  } else {
-    twitterText = `${title}: ${desc.slice(0, 130)} Recorded at ${location} by ${expName}. ${hashtags}`;
+  // a) Twitter (<= 280 chars strictly)
+  const maxTwitterLen = 280;
+  let twitterBase = length === 'short'
+    ? `${title}`
+    : `${title}. ${desc}`;
+  const twitterTail = `\n\n${sourceCitation}`;
+  const allowedBaseLen = maxTwitterLen - twitterTail.length;
+
+  if (twitterBase.length > allowedBaseLen) {
+    twitterBase = twitterBase.slice(0, Math.max(10, allowedBaseLen - 3)).trim() + '...';
   }
-  if (twitterText.length > 280) {
-    twitterText = twitterText.slice(0, 276) + '...';
-  }
+  const twitterText = `${twitterBase}${twitterTail}`;
 
   // b) Instagram (<= 2200 chars)
-  const instagramText = `From the ends of the Earth: ${title} ❄️\n\n${tonePrefix}\n\n${desc}\n\n📍 Location: ${location}\n📅 Date: ${dateFormatted}\n🚢 Expedition: ${expName}\n🏛️ Institute: ${institution}\n\n${ctaLine ? ctaLine + '\n\n' : ''}${hashtags}`;
+  const instagramText = `Polar Research Record: ${title}\n\n${desc}\n\n` +
+    (authors ? `👤 Contributor(s): ${authors}\n` : '') +
+    (region ? `📍 Region: ${region}\n` : '') +
+    (dateStr ? `📅 Year/Date: ${dateStr}\n` : '') +
+    (record.doi ? `🔗 DOI: ${record.doi}\n` : '') +
+    (ctaLine ? `\n${ctaLine}\n` : '') +
+    `\n${sourceCitation}`;
 
   // c) LinkedIn (<= 700 chars)
-  let linkedInText = `India's Polar Science Update | ${region}\n\n${desc}\n\nRecorded at ${location} under the ${expName}, ${institution}. Continuous monitoring in polar zones directly informs national understanding of climate and atmospheric cycles.\n\n${ctaLine ? ctaLine + '\n\n' : ''}${hashtags}`;
+  let linkedInText = `Polar Science Brief${region ? ` | ${region}` : ''}\n\n${title}\n\n${desc}\n\n` +
+    (authors ? `Authors / Contributors: ${authors}.\n` : '') +
+    (ctaLine ? `${ctaLine}\n\n` : '') +
+    `${sourceCitation}`;
+
   if (linkedInText.length > 700) {
-    linkedInText = linkedInText.slice(0, 696) + '...';
+    const tail = `\n\n${sourceCitation}`;
+    const headLen = 700 - tail.length - 3;
+    linkedInText = linkedInText.slice(0, headLen).trim() + '...' + tail;
   }
 
   const socialPosts = {
@@ -145,32 +137,33 @@ export function generate(record, options = {}, expedition = null) {
     linkedin: linkedInText,
   };
 
-  // 3. PRESS NOTE
-  const pressHeadline = `MINISTRY OF EARTH SCIENCES: ${title.toUpperCase()} DOCUMENTED AT ${location.toUpperCase()}`;
-  const dateline = `NEW DELHI / GOA, ${dateFormatted.toUpperCase() || 'RECENT'}`;
-  const leadParagraph = `${dateline} — The ${institution} has documented verified records titled "${title}" during the ${expName} in the ${region}. ${desc}`;
-  const bodyParagraph = `The research, conducted at ${location}${leader ? ` under the leadership of ${expedition.leaderName}` : ''}, forms part of India's ongoing polar observation framework. Scientists emphasized that observations in high-latitude environments provide vital baseline metrics for broader Earth system studies.`;
-  const boilerplate = `About NCPOR: The National Centre for Polar and Ocean Research is India's premier R&D institution responsible for country research stations in Antarctica (Maitri, Bharati) and the Arctic (Himadri).`;
+  // 3. PRESS NOTE (Neutral phrasing, no ministry spokesperson wording, no boilerplate)
+  const pressHeadline = `RESEARCH SUMMARY: ${title.toUpperCase()}`;
+  const dateline = dateStr ? `POLAR OBSERVATION RECORD, ${dateStr.toUpperCase()}` : 'POLAR OBSERVATION RECORD';
+  const leadParagraph = `${dateline} — According to ${sourceOrg}, public records document the following findings regarding "${title}".`;
+  const bodyParagraph = `${desc}${authors ? ` The work is attributed to ${authors}.` : ''}${record.journal ? ` Published in ${record.journal}.` : ''}${record.repository ? ` Preserved in ${record.repository}.` : ''}`;
 
-  const pressNoteText = `${pressHeadline}\n\n${leadParagraph}\n\n${bodyParagraph}\n\n${ctaLine ? ctaLine + '\n\n' : ''}${boilerplate}`;
+  const pressNoteText = `${pressHeadline}\n\n${leadParagraph}\n\n${bodyParagraph}\n\n${ctaLine ? ctaLine + '\n\n' : ''}${sourceCitation}`;
 
   const pressNote = {
     headline: pressHeadline,
     dateline,
     lead: leadParagraph,
     body: bodyParagraph,
-    boilerplate,
     fullText: pressNoteText,
   };
 
   // 4. EMAIL SNIPPET
-  // Subject line <= 60 chars
-  let emailSubject = `Polar Science Brief: ${title}`;
+  let emailSubject = `Polar Science Update: ${title}`;
   if (emailSubject.length > 60) {
     emailSubject = emailSubject.slice(0, 57) + '...';
   }
 
-  const emailBody = `Dear Colleague,\n\nA new polar science entry has been recorded under the ${expName} in ${region}.\n\nOverview:\n${title}\n${desc}\n\nLocation: ${location}\nDate: ${dateFormatted}\nLead Institution: ${institution}\n\n${tonePrefix}\n\n${ctaLine || 'You can review further details directly on the Polaris knowledge portal.'}\n\nWarm regards,\nPolar Outreach & Media Desk\nMinistry of Earth Sciences`;
+  const emailBody = `Dear Colleague,\n\nA public record has been cataloged under polar science documentation${region ? ` for ${region}` : ''}.\n\nTitle:\n${title}\n\nSummary:\n${desc}\n\n` +
+    (authors ? `Contributors: ${authors}\n` : '') +
+    (dateStr ? `Date / Year: ${dateStr}\n` : '') +
+    (ctaLine ? `\n${ctaLine}\n\n` : '\n') +
+    `${sourceCitation}`;
 
   const emailSnippet = {
     subject: emailSubject,

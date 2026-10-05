@@ -48,7 +48,6 @@ export default function Home() {
               poster="/videos/polar-hero-poster.jpg"
               className="w-full h-full object-cover object-center filter brightness-[0.96] contrast-[1.08] transition-opacity duration-1000"
             >
-              <source src="/videos/polar-hero-bg.webm" type="video/webm" />
               <source src="/videos/polar-hero-bg.mp4" type="video/mp4" />
             </video>
           ) : (
@@ -74,7 +73,7 @@ export default function Home() {
             {/* Plain-Language Eyebrow */}
             <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-polar-100/90 border border-polar-200 text-polar-800 text-xs sm:text-sm font-medium tracking-wide w-fit">
               <span className="w-2 h-2 rounded-full bg-aurora-500 animate-pulse"></span>
-              <span>Ministry of Earth Sciences &bull; National Polar Portal</span>
+              <span>Polaris &bull; SIH26063 Student Prototype</span>
             </div>
 
             {/* Confident, Large Serif Heading */}
@@ -106,11 +105,14 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Ambient Video Control Badge */}
-        <div className="absolute bottom-4 right-4 sm:bottom-6 sm:right-8 z-20 flex items-center gap-2">
-          <div className="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-polar-950/65 backdrop-blur-md text-[11px] font-medium text-glacier-100 border border-white/10 shadow-xs">
+        {/* Ambient Video Control Badge & Short Hero Credit */}
+        <div className="absolute bottom-4 right-4 sm:bottom-6 sm:right-8 z-20 flex flex-wrap items-center gap-2">
+          <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-polar-950/70 backdrop-blur-md text-[11px] font-medium text-glacier-100 border border-white/10 shadow-xs">
             <span className="w-1.5 h-1.5 rounded-full bg-aurora-400 animate-pulse"></span>
-            <span>Antarctic Navigation &bull; Lemaire Channel</span>
+            <span>Hero video: Blagoj Klincharski (CC BY 3.0) &bull; </span>
+            <Link to="/credits" className="text-aurora-300 hover:text-aurora-200 underline">
+              Credits
+            </Link>
           </div>
           {!reducedMotion && (
             <button
@@ -316,7 +318,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* WHY THIS MATTERS SECTION: EXPANDED WITH AUTHENTIC SCIENTIFIC PILLARS */}
+      {/* WHY THIS MATTERS SECTION: NATIONAL CLIMATE SIGNIFICANCE */}
       <section data-reveal data-reveal-direction="up" className="reveal-on-scroll max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="rounded-2xl bg-polar-950 text-glacier-50 p-8 sm:p-12 lg:p-16 relative overflow-hidden space-y-10">
           {/* Subtle aurora green glow effect */}

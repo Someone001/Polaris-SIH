@@ -16,7 +16,7 @@ export default function Footer() {
               </span>
               <span className="text-xs text-polar-500">|</span>
               <span className="text-sm font-medium text-polar-600">
-                MoES Polar Knowledge Portal
+                Polar Outreach Portal Prototype
               </span>
             </div>
             <p className="text-base text-polar-600 max-w-md leading-relaxed">
@@ -57,7 +57,12 @@ export default function Footer() {
               </li>
               <li>
                 <Link to="/sources" className="text-polar-700 hover:text-polar-950 transition-colors">
-                  Sources & Citations
+                  Sources Used
+                </Link>
+              </li>
+              <li>
+                <Link to="/credits" className="text-polar-700 hover:text-polar-950 transition-colors">
+                  Media Credits
                 </Link>
               </li>
             </ul>
@@ -69,17 +74,18 @@ export default function Footer() {
               India&apos;s Polar Bases
             </p>
             <ul className="space-y-1 text-sm text-polar-600">
-              <li>Maitri (Antarctica, est. 1989)</li>
-              <li>Bharati (Antarctica, est. 2012)</li>
-              <li>Himadri (Arctic, Svalbard, est. 2008)</li>
+              <li>Maitri (Antarctica)</li>
+              <li>Bharati (Antarctica)</li>
+              <li>Himadri (Arctic, Svalbard)</li>
+              <li>Dakshin Gangotri (Historical)</li>
             </ul>
           </div>
         </div>
 
-        {/* SIH Note & Orientation Control */}
+        {/* Mandatory SIH Prototype Disclaimer & Controls */}
         <div className="mt-10 pt-6 border-t border-glacier-border/70 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-sm text-polar-600">
-          <p>
-            Demo built for Smart India Hackathon 2026 (SIH26063, Ministry of Earth Sciences). All entries shown are sample data.
+          <p className="max-w-2xl leading-relaxed">
+            Polaris is a student prototype built for Smart India Hackathon 2026 (problem statement SIH26063). It is not an official website of MoES or NCPOR. Every record links to its public source.
           </p>
           <div className="flex flex-wrap items-center gap-4 shrink-0 text-xs">
             <button
@@ -91,7 +97,7 @@ export default function Footer() {
             </button>
             <div className="flex items-center gap-2 text-polar-500">
               <span className="w-2 h-2 rounded-full bg-aurora-500"></span>
-              <span>Polaris Portal Demo</span>
+              <span>Polaris Prototype</span>
             </div>
           </div>
         </div>

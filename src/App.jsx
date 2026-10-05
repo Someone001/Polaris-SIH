@@ -8,6 +8,7 @@ import ExpeditionsIndex from './pages/ExpeditionsIndex';
 import ExpeditionDetail from './pages/ExpeditionDetail';
 import About from './pages/About';
 import Sources from './pages/Sources';
+import Credits from './pages/Credits';
 import NotFound from './pages/NotFound';
 
 function ExpeditionRedirect() {
@@ -30,6 +31,7 @@ export default function App() {
         <Route path="/content-studio/:id" element={<ContentStudio />} />
         <Route path="/about" element={<About />} />
         <Route path="/sources" element={<Sources />} />
+        <Route path="/credits" element={<Credits />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </Layout>

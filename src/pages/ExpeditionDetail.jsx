@@ -1,5 +1,5 @@
 import React, { useMemo, useEffect, useState } from 'react';
-import { useParams, useSearchParams, Link, useNavigate, useLocation } from 'react-router-dom';
+import { useParams, Link, useNavigate } from 'react-router-dom';
 import {
   ChevronLeft,
   ChevronRight,
@@ -7,14 +7,17 @@ import {
   Calendar,
   Building2,
   Users,
-  Database,
+  Anchor,
+  Compass,
   ArrowLeft,
   Share2,
   Check,
+  ExternalLink,
+  Shield,
+  Flag,
 } from 'lucide-react';
 import Tag from '../components/Tag';
 import ExpeditionMap from '../components/ExpeditionMap';
-import ExpeditionTimeline from '../components/ExpeditionTimeline';
 import ItemCard from '../components/ItemCard';
 import ItemDetail from '../components/ItemDetail';
 import InfoTip from '../components/InfoTip';
@@ -23,9 +26,7 @@ import { getExpedition, getAdjacentExpeditions, getItemsByExpedition } from '../
 
 export default function ExpeditionDetail() {
   const { id } = useParams();
-  const [searchParams, setSearchParams] = useSearchParams();
   const navigate = useNavigate();
-  const location = useLocation();
 
   const [copiedLink, setCopiedLink] = useState(false);
   const [activeItem, setActiveItem] = useState(null);
@@ -35,23 +36,28 @@ export default function ExpeditionDetail() {
   const adjacent = useMemo(() => getAdjacentExpeditions(id), [id]);
   const expeditionRecords = useMemo(() => getItemsByExpedition(id), [id]);
 
-  // Selected stop from URL query string
-  const selectedStopId = searchParams.get('stop') || expedition?.stops?.[0]?.id || null;
+  // Coordinates check from ledger
+  const hasCoordinates = Boolean(expedition?.latitude && expedition?.longitude);
+  const mapStops = useMemo(() => {
+    if (!hasCoordinates) return [];
+    return [
+      {
+        id: `${expedition.id}-base`,
+        name: expedition.station || `${expedition.name} Station`,
+        lat: expedition.latitude,
+        lon: expedition.longitude,
+        date: expedition.flagOffDate || expedition.launchDate || String(expedition.year || ''),
+      },
+    ];
+  }, [hasCoordinates, expedition]);
 
-  // Sync stop in URL
-  const handleSelectStop = (stopId) => {
-    const current = Object.fromEntries(searchParams.entries());
-    setSearchParams({ ...current, stop: stopId }, { replace: true });
-  };
+  // Has timeline stops check
+  const hasTimeline = Boolean(expedition?.stops && expedition.stops.length > 0);
 
-  // Dynamic document title and meta tags
+  // Dynamic document title
   useEffect(() => {
     if (expedition) {
       document.title = `${expedition.name || expedition.title} — Polaris`;
-      const metaDesc = document.querySelector('meta[name="description"]');
-      if (metaDesc) {
-        metaDesc.setAttribute('content', expedition.summary || "India's Polar Science Portal");
-      }
     }
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, [expedition]);
@@ -67,7 +73,7 @@ export default function ExpeditionDetail() {
           Expedition record not found
         </h1>
         <p className="text-polar-700 text-lg max-w-lg mx-auto leading-relaxed">
-          No expedition matches the code &ldquo;{id}&rdquo;. It may have been relocated or renamed in our polar catalog.
+          No expedition matches the identifier &ldquo;{id}&rdquo;.
         </p>
         <div className="pt-2">
           <Link
@@ -82,17 +88,6 @@ export default function ExpeditionDetail() {
     );
   }
 
-  const formatDateRange = (start, end) => {
-    if (!start) return '';
-    try {
-      const s = new Date(start).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
-      const e = end ? new Date(end).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' }) : 'Ongoing';
-      return `${s} – ${e}`;
-    } catch {
-      return `${start} – ${end || 'Ongoing'}`;
-    }
-  };
-
   const handleShare = () => {
     if (navigator.clipboard) {
       navigator.clipboard.writeText(window.location.href);
@@ -101,120 +96,238 @@ export default function ExpeditionDetail() {
     }
   };
 
-  const isOngoing = expedition.status === 'active' || expedition.status === 'Ongoing';
-
-  // Read return path to archive preserving filters
-  const returnToArchiveUrl = location.state?.fromArchiveSearch
-    ? `/archive?${location.state.fromArchiveSearch}`
-    : `/archive?expedition=${expedition.id}`;
-
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-14 space-y-12 sm:space-y-16">
-      {/* 1. TOP BREADCRUMBS & RETURN NAVIGATION */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-glacier-border/80 pb-5">
-        <nav aria-label="Breadcrumb" className="flex items-center space-x-2 text-sm text-polar-600">
-          <Link to="/" className="hover:text-polar-950 transition-colors">
-            Home
-          </Link>
-          <span className="text-polar-400">/</span>
-          <Link to="/expeditions" className="hover:text-polar-950 transition-colors">
-            Expeditions
-          </Link>
-          <span className="text-polar-400">/</span>
-          <span className="text-polar-950 font-medium truncate max-w-[220px] sm:max-w-xs">
-            {expedition.name || expedition.title}
-          </span>
-        </nav>
+    <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16 space-y-12">
+      {/* 1. TOP BREADCRUMB & UTILITY ROW */}
+      <div className="flex flex-wrap items-center justify-between gap-4 border-b border-glacier-border/70 pb-4">
+        <Link
+          to="/expeditions"
+          className="inline-flex items-center gap-2 text-sm text-polar-600 hover:text-polar-950 font-medium transition-colors"
+        >
+          <ArrowLeft className="w-4 h-4 text-polar-500" />
+          <span>All Expeditions</span>
+        </Link>
 
         <div className="flex items-center gap-3">
-          <Link
-            to={returnToArchiveUrl}
-            className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-medium text-polar-700 hover:text-polar-950 px-3 py-1.5 rounded-md border border-glacier-border hover:bg-glacier-100 transition-colors"
-          >
-            <ArrowLeft className="w-3.5 h-3.5" />
-            <span>Back to Archive</span>
-          </Link>
-
           <button
             type="button"
             onClick={handleShare}
-            className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-medium text-polar-700 hover:text-polar-950 px-3 py-1.5 rounded-md border border-glacier-border hover:bg-glacier-100 transition-colors"
-            title="Copy shareable link"
+            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-glacier-border bg-white text-xs font-medium text-polar-700 hover:text-polar-950 hover:bg-glacier-100 transition-colors shadow-2xs"
+            title="Copy share link to clipboard"
           >
             {copiedLink ? (
               <>
                 <Check className="w-3.5 h-3.5 text-aurora-600" />
-                <span className="text-aurora-700">Link copied</span>
+                <span>Link copied!</span>
               </>
             ) : (
               <>
                 <Share2 className="w-3.5 h-3.5" />
-                <span>Share journey</span>
+                <span>Share mission</span>
               </>
             )}
           </button>
         </div>
       </div>
 
-      {/* 2. TITLE BLOCK & SUMMARY */}
-      <div data-reveal data-reveal-direction="up" className="reveal-on-scroll space-y-6 max-w-4xl">
+      {/* 2. TITLE BLOCK & SOURCED METADATA */}
+      <div data-tour="expedition-header" className="space-y-6 max-w-4xl">
         <div className="flex flex-wrap items-center gap-3">
-          <div className="flex items-center gap-1">
-            <Tag variant={expedition.region === 'Antarctic' ? 'ice' : expedition.region === 'Arctic' ? 'aurora' : 'default'}>
-              {expedition.region}
-            </Tag>
-            <InfoTip termKey="region" />
-          </div>
-          <div className="flex items-center gap-1">
-            <span
-              className={`text-xs px-2.5 py-0.5 rounded-full font-medium ${
-                isOngoing
-                  ? 'bg-aurora-50 text-aurora-700 border border-aurora-200'
-                  : 'bg-polar-100 text-polar-700'
-              }`}
-            >
-              {isOngoing ? 'Active Mission' : 'Completed'}
+          <Tag variant={expedition.region === 'Antarctic' ? 'ice' : expedition.region === 'Arctic' ? 'aurora' : 'default'}>
+            {expedition.region}
+          </Tag>
+          {expedition.year && (
+            <span className="text-xs px-2.5 py-0.5 rounded-full font-medium bg-polar-100 text-polar-800">
+              Season {expedition.year}
             </span>
-            <InfoTip termKey="status" />
-          </div>
+          )}
           <span className="text-xs text-polar-500 font-mono">
             {expedition.id}
           </span>
-          <JudgeBadge step="1" label="Official mission overview, timeline & scientific discoveries" />
+          <JudgeBadge step="1" label="Mission summary and public record overview" />
         </div>
 
         <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-normal text-polar-950 leading-[1.15]">
           {expedition.name || expedition.title}
         </h1>
 
-        {/* Expedition Metadata Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 pt-2 text-sm text-polar-700">
-          <div className="flex items-center gap-2">
-            <Calendar className="w-4 h-4 text-polar-400 shrink-0" />
-            <span>{formatDateRange(expedition.start, expedition.end)}</span>
+        {/* Primary Source Verification Box */}
+        <div data-tour="expedition-source" className="p-4 rounded-xl bg-glacier-100/90 border border-glacier-border space-y-2">
+          <div className="flex items-center justify-between">
+            <span className="text-xs uppercase tracking-wider font-semibold text-polar-800">
+              Primary Source Documentation
+            </span>
+            {expedition.sourceUrl && (
+              <a
+                href={expedition.sourceUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1 text-xs font-semibold text-aurora-700 hover:text-aurora-800 transition-colors"
+              >
+                <span>View Primary Source</span>
+                <ExternalLink className="w-3.5 h-3.5" />
+              </a>
+            )}
           </div>
-          <div className="flex items-center gap-2">
-            <Building2 className="w-4 h-4 text-polar-400 shrink-0" />
-            <span className="truncate">{expedition.institution || 'NCPOR / MoES'}</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <Users className="w-4 h-4 text-polar-400 shrink-0" />
-            <span>{expedition.teamSize} crew &bull; Led by {expedition.leaderName}</span>
-          </div>
+          {expedition.creditLine && (
+            <p className="text-xs text-polar-700 font-medium">
+              {expedition.creditLine}
+            </p>
+          )}
+          {expedition.sourceExcerpt && (
+            <div className="text-xs text-polar-600 border-l-2 border-aurora-500 pl-3 py-1 bg-white/70 rounded-r">
+              <span className="font-semibold text-polar-800 block text-[11px] uppercase tracking-wider">
+                Source Excerpt:
+              </span>
+              <p className="italic mt-0.5">&ldquo;{expedition.sourceExcerpt}&rdquo;</p>
+            </div>
+          )}
         </div>
 
-        {/* Plain-English Summary */}
-        <p className="text-lg sm:text-xl text-polar-800 leading-relaxed font-normal pt-2 border-t border-glacier-border/80">
-          {expedition.summary}
-        </p>
+        {/* Sourced Metadata Grid (Displays only fields present in ledger) */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 pt-2 text-sm text-polar-800">
+          {(expedition.launchDate || expedition.flagOffDate) && (
+            <div className="flex items-start gap-2.5 p-3 rounded-lg bg-white border border-glacier-border">
+              <Calendar className="w-4 h-4 text-aurora-600 mt-0.5 shrink-0" />
+              <div>
+                <span className="text-xs text-polar-500 block">Launch / Flag-off</span>
+                <span className="font-medium text-polar-900">{expedition.launchDate || expedition.flagOffDate}</span>
+              </div>
+            </div>
+          )}
 
-        {/* 3 Key Findings */}
-        {expedition.keyFindings && expedition.keyFindings.length > 0 && (
-          <div data-reveal data-reveal-direction="up" className="reveal-on-scroll bg-glacier-50 border border-glacier-border rounded-xl p-5 sm:p-6 space-y-2.5">
+          {expedition.vessel && (
+            <div className="flex items-start gap-2.5 p-3 rounded-lg bg-white border border-glacier-border">
+              <Anchor className="w-4 h-4 text-aurora-600 mt-0.5 shrink-0" />
+              <div>
+                <span className="text-xs text-polar-500 block">Expedition Vessel</span>
+                <span className="font-medium text-polar-900">{expedition.vessel}</span>
+              </div>
+            </div>
+          )}
+
+          {expedition.departurePort && (
+            <div className="flex items-start gap-2.5 p-3 rounded-lg bg-white border border-glacier-border">
+              <Compass className="w-4 h-4 text-aurora-600 mt-0.5 shrink-0" />
+              <div>
+                <span className="text-xs text-polar-500 block">Departure Port</span>
+                <span className="font-medium text-polar-900">{expedition.departurePort}</span>
+              </div>
+            </div>
+          )}
+
+          {expedition.teamSize && (
+            <div className="flex items-start gap-2.5 p-3 rounded-lg bg-white border border-glacier-border">
+              <Users className="w-4 h-4 text-aurora-600 mt-0.5 shrink-0" />
+              <div>
+                <span className="text-xs text-polar-500 block">Expedition Contingent</span>
+                <span className="font-medium text-polar-900">{expedition.teamSize} members</span>
+              </div>
+            </div>
+          )}
+
+          {expedition.initialBatchSize && (
+            <div className="flex items-start gap-2.5 p-3 rounded-lg bg-white border border-glacier-border">
+              <Users className="w-4 h-4 text-aurora-600 mt-0.5 shrink-0" />
+              <div>
+                <span className="text-xs text-polar-500 block">Initial Batch</span>
+                <span className="font-medium text-polar-900">{expedition.initialBatchSize} members</span>
+              </div>
+            </div>
+          )}
+
+          {expedition.flaggedOffBy && (
+            <div className="flex items-start gap-2.5 p-3 rounded-lg bg-white border border-glacier-border">
+              <Flag className="w-4 h-4 text-aurora-600 mt-0.5 shrink-0" />
+              <div>
+                <span className="text-xs text-polar-500 block">Flagged Off By</span>
+                <span className="font-medium text-polar-900">{expedition.flaggedOffBy}</span>
+              </div>
+            </div>
+          )}
+
+          {expedition.station && (
+            <div className="flex items-start gap-2.5 p-3 rounded-lg bg-white border border-glacier-border">
+              <MapPin className="w-4 h-4 text-aurora-600 mt-0.5 shrink-0" />
+              <div>
+                <span className="text-xs text-polar-500 block">Primary Station</span>
+                <span className="font-medium text-polar-900">{expedition.station}</span>
+              </div>
+            </div>
+          )}
+
+          {expedition.stations && (
+            <div className="flex items-start gap-2.5 p-3 rounded-lg bg-white border border-glacier-border">
+              <MapPin className="w-4 h-4 text-aurora-600 mt-0.5 shrink-0" />
+              <div>
+                <span className="text-xs text-polar-500 block">Operating Stations</span>
+                <span className="font-medium text-polar-900">{expedition.stations.join(', ')}</span>
+              </div>
+            </div>
+          )}
+
+          {expedition.coordinates && (
+            <div className="flex items-start gap-2.5 p-3 rounded-lg bg-white border border-glacier-border">
+              <Compass className="w-4 h-4 text-aurora-600 mt-0.5 shrink-0" />
+              <div>
+                <span className="text-xs text-polar-500 block">Sourced Coordinates</span>
+                <span className="font-mono text-xs text-polar-900">{expedition.coordinates}</span>
+              </div>
+            </div>
+          )}
+
+          {expedition.nodalAgency && (
+            <div className="flex items-start gap-2.5 p-3 rounded-lg bg-white border border-glacier-border sm:col-span-2">
+              <Building2 className="w-4 h-4 text-aurora-600 mt-0.5 shrink-0" />
+              <div>
+                <span className="text-xs text-polar-500 block">Nodal Agency</span>
+                <span className="font-medium text-polar-900">{expedition.nodalAgency}</span>
+              </div>
+            </div>
+          )}
+        </div>
+
+        {/* Focus / Mandate / Milestone Sections */}
+        {expedition.focus && (
+          <div className="p-5 rounded-xl border border-glacier-border bg-white shadow-2xs space-y-1.5">
             <h3 className="text-xs uppercase tracking-wider font-semibold text-aurora-700">
-              Key Discoveries Reported
+              Scientific Focus
             </h3>
-            <ul className="space-y-2 text-sm sm:text-base text-polar-800 list-disc list-inside">
+            <p className="text-sm text-polar-800 leading-relaxed">
+              {expedition.focus}
+            </p>
+          </div>
+        )}
+
+        {expedition.primaryMandate && (
+          <div className="p-5 rounded-xl border border-glacier-border bg-white shadow-2xs space-y-1.5">
+            <h3 className="text-xs uppercase tracking-wider font-semibold text-aurora-700">
+              Primary Mandate
+            </h3>
+            <p className="text-sm text-polar-800 leading-relaxed">
+              {expedition.primaryMandate}
+            </p>
+          </div>
+        )}
+
+        {expedition.milestone && (
+          <div className="p-5 rounded-xl border border-glacier-border bg-white shadow-2xs space-y-1.5">
+            <h3 className="text-xs uppercase tracking-wider font-semibold text-aurora-700">
+              Operational Milestone
+            </h3>
+            <p className="text-sm text-polar-800 leading-relaxed">
+              {expedition.milestone}
+            </p>
+          </div>
+        )}
+
+        {/* Key Findings: Only shown if ledger contains sourced data */}
+        {expedition.keyFindings && expedition.keyFindings.length > 0 && (
+          <div className="bg-glacier-50 border border-glacier-border rounded-xl p-5 space-y-2">
+            <h3 className="text-xs uppercase tracking-wider font-semibold text-aurora-700">
+              Key Findings Reported
+            </h3>
+            <ul className="space-y-1.5 text-sm text-polar-800 list-disc list-inside">
               {expedition.keyFindings.map((finding, idx) => (
                 <li key={idx} className="leading-relaxed">
                   {finding}
@@ -223,212 +336,107 @@ export default function ExpeditionDetail() {
             </ul>
           </div>
         )}
-
-        {/* Deep Authentic Scientific Sections */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-2">
-          {expedition.missionMandate && (
-            <div data-reveal data-reveal-direction="left" data-reveal-delay="100" className="reveal-card p-6 rounded-xl border border-glacier-border bg-white shadow-2xs space-y-2.5">
-              <h3 className="font-serif text-lg font-normal text-polar-950 flex items-center gap-2">
-                <span>National Mandate & Scientific Objectives</span>
-              </h3>
-              <p className="text-sm text-polar-700 leading-relaxed font-sans">
-                {expedition.missionMandate}
-              </p>
-            </div>
-          )}
-
-          {expedition.logisticsOverview && (
-            <div data-reveal data-reveal-direction="right" data-reveal-delay="200" className="reveal-card p-6 rounded-xl border border-glacier-border bg-white shadow-2xs space-y-2.5">
-              <h3 className="font-serif text-lg font-normal text-polar-950 flex items-center gap-2">
-                <span>Field Logistics & Harsh Environment Operations</span>
-              </h3>
-              <p className="text-sm text-polar-700 leading-relaxed font-sans">
-                {expedition.logisticsOverview}
-              </p>
-            </div>
-          )}
-        </div>
-
-        {expedition.climateSignificance && (
-          <div className="p-6 rounded-xl border border-aurora-200/80 bg-aurora-50/40 space-y-2">
-            <h3 className="font-serif text-lg font-normal text-polar-950">
-              Climate Significance & Direct Impact on India
-            </h3>
-            <p className="text-sm text-polar-800 leading-relaxed font-sans">
-              {expedition.climateSignificance}
-            </p>
-          </div>
-        )}
-
-        {expedition.participatingInstitutions && expedition.participatingInstitutions.length > 0 && (
-          <div className="p-5 rounded-xl border border-glacier-border bg-glacier-50 space-y-3">
-            <h4 className="text-xs uppercase tracking-wider font-semibold text-polar-700">
-              Key Collaborating Institutions & Universities
-            </h4>
-            <div className="flex flex-wrap gap-2">
-              {expedition.participatingInstitutions.map((inst, idx) => (
-                <span
-                  key={idx}
-                  className="px-3 py-1 rounded-md bg-white border border-glacier-border text-xs font-medium text-polar-800 shadow-2xs"
-                >
-                  {inst}
-                </span>
-              ))}
-            </div>
-          </div>
-        )}
       </div>
 
-      {/* 3. INTERACTIVE MAP & TIMELINE SECTION */}
-      <section className="space-y-6 pt-4">
-        <div className="space-y-2">
-          <div className="flex items-center gap-2">
+      {/* 3. MAP SECTION: ONLY SHOWN IF COORDINATES EXIST IN LEDGER */}
+      {hasCoordinates && (
+        <section className="space-y-4 pt-4 border-t border-glacier-border">
+          <div className="space-y-1">
             <p className="text-xs uppercase tracking-widest font-semibold text-aurora-600">
-              EXPEDITION PATH & LOGS
+              GEOGRAPHIC LOCATION
             </p>
-            <JudgeBadge step="2" label="Synchronized interactive route map and chronological log" />
+            <h2 className="font-serif text-2xl text-polar-950 font-normal">
+              Base Station Geographic Location
+            </h2>
+            <p className="text-sm text-polar-700">
+              Coordinates ({expedition.coordinates}) sourced directly from the mission announcement.
+            </p>
           </div>
-          <h2 className="font-serif text-2xl sm:text-3xl text-polar-950 font-normal">
-            Track the journey stop by stop
-          </h2>
-          <p className="text-base text-polar-700 max-w-2xl">
-            Click any waypoint on the map or select a timeline event below to see where scientists camped, drilled, and gathered observations.
-          </p>
-        </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
-          {/* Map Pane (Sticky on desktop, above timeline on mobile) */}
-          <div data-tour="expedition-map" className="lg:col-span-7 lg:sticky lg:top-24 space-y-3">
+          <div className="rounded-xl overflow-hidden border border-glacier-border shadow-xs">
             <ExpeditionMap
-              stops={expedition.stops}
-              selectedStopId={selectedStopId}
-              onSelectStop={handleSelectStop}
+              stops={mapStops}
               region={expedition.region}
             />
-            <div className="flex flex-wrap items-center justify-between text-xs text-polar-500 gap-2">
-              <p>Tip: Click waypoints 1 through {expedition.stops?.length || 5} to step through the route.</p>
-              <div className="flex items-center gap-3">
-                <span className="flex items-center gap-1">
-                  <span>Coordinates</span>
-                  <InfoTip termKey="coordinates" />
-                </span>
-                <span className="flex items-center gap-1">
-                  <span>Projection</span>
-                  <InfoTip termKey="projection" />
-                </span>
-              </div>
-            </div>
           </div>
+        </section>
+      )}
 
-          {/* Timeline Pane */}
-          <div data-tour="expedition-timeline" className="lg:col-span-5">
-            <div className="bg-glacier-50/70 border border-glacier-border rounded-2xl p-6 sm:p-7">
-              <h3 className="font-serif text-xl font-normal text-polar-950 mb-6">
-                Chronological Log
-              </h3>
-              <ExpeditionTimeline
-                events={expedition.events}
-                selectedStopId={selectedStopId}
-                onSelectStop={handleSelectStop}
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 4. EXPEDITION ARCHIVE RECORDS */}
-      <section data-tour="expedition-records" className="space-y-6 pt-8 border-t border-glacier-border">
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+      {/* 4. TIMELINE SECTION: ONLY SHOWN IF SOURCED STOPS EXIST IN LEDGER */}
+      {hasTimeline && (
+        <section className="space-y-4 pt-4 border-t border-glacier-border">
           <div className="space-y-1">
-            <div className="flex items-center gap-2">
-              <p className="text-xs uppercase tracking-widest font-semibold text-polar-600">
-                COLLECTION RECORDS
-              </p>
-              <JudgeBadge step="3" label="All data records tied to this voyage" />
-            </div>
-            <h2 className="font-serif text-2xl sm:text-3xl text-polar-950 font-normal">
-              Reports, Photos & Data from this Voyage ({expeditionRecords.length})
+            <p className="text-xs uppercase tracking-widest font-semibold text-aurora-600">
+              CHRONOLOGY
+            </p>
+            <h2 className="font-serif text-2xl text-polar-950 font-normal">
+              Field Waypoint Timeline
             </h2>
           </div>
+          {/* Timeline rendering if sourced data exists */}
+        </section>
+      )}
 
-          <Link
-            to={`/archive?expedition=${expedition.id}`}
-            className="text-sm font-semibold text-aurora-700 hover:text-aurora-600 transition-colors"
-          >
-            Open in full archive &rarr;
-          </Link>
-        </div>
+      {/* 5. CONNECTED ARCHIVE RECORDS (shown only if sourced records exist) */}
+      {expeditionRecords.length > 0 && (
+        <section className="space-y-6 pt-4 border-t border-glacier-border">
+          <div className="space-y-1">
+            <h2 className="font-serif text-2xl sm:text-3xl text-polar-950 font-normal">
+              Archive Records for this Mission
+            </h2>
+            <p className="text-sm text-polar-700">
+              Archival records linked to this expedition in the public sources ledger.
+            </p>
+          </div>
 
-        {expeditionRecords.length > 0 ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {expeditionRecords.map((item) => (
               <ItemCard
                 key={item.id}
                 item={item}
                 expedition={expedition}
-                onClick={(clicked) => setActiveItem(clicked)}
+                onClick={setActiveItem}
               />
             ))}
           </div>
-        ) : (
-          <div className="p-8 text-center bg-glacier-50 rounded-xl border border-glacier-border text-polar-600">
-            No archive records have been added to this expedition yet.
-          </div>
-        )}
-      </section>
+        </section>
+      )}
 
-      {/* 5. PREV / NEXT EXPEDITION NAVIGATION */}
-      <div data-tour="expedition-nav" className="pt-10 border-t border-glacier-border flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4">
+      {/* 6. CHRONOLOGICAL EXPEDITION NAVIGATION */}
+      <div data-tour="expedition-nav" className="pt-8 border-t border-glacier-border flex items-center justify-between gap-4">
         {adjacent.prev ? (
           <Link
             to={`/expeditions/${adjacent.prev.id}`}
-            className="flex-1 p-4 rounded-xl border border-glacier-border bg-glacier-50 hover:bg-glacier-100 hover:border-ice-300 transition-all text-left space-y-1 group"
+            className="inline-flex items-center gap-2 text-sm text-polar-700 hover:text-polar-950 font-medium transition-colors"
           >
-            <span className="text-xs text-polar-500 flex items-center gap-1 group-hover:text-aurora-700">
-              <ChevronLeft className="w-3.5 h-3.5" />
-              <span>Previous Expedition</span>
-            </span>
-            <span className="block font-serif text-base text-polar-950 font-medium truncate">
-              {adjacent.prev.name || adjacent.prev.title}
-            </span>
+            <ChevronLeft className="w-4 h-4" />
+            <span className="hidden sm:inline">{adjacent.prev.name || adjacent.prev.title}</span>
+            <span className="sm:hidden">Previous</span>
           </Link>
         ) : (
-          <div className="flex-1" />
+          <div />
         )}
 
-        {adjacent.next && (
+        {adjacent.next ? (
           <Link
             to={`/expeditions/${adjacent.next.id}`}
-            className="flex-1 p-4 rounded-xl border border-glacier-border bg-glacier-50 hover:bg-glacier-100 hover:border-ice-300 transition-all text-right space-y-1 group"
+            className="inline-flex items-center gap-2 text-sm text-polar-700 hover:text-polar-950 font-medium transition-colors"
           >
-            <span className="text-xs text-polar-500 flex items-center justify-end gap-1 group-hover:text-aurora-700">
-              <span>Next Expedition</span>
-              <ChevronRight className="w-3.5 h-3.5" />
-            </span>
-            <span className="block font-serif text-base text-polar-950 font-medium truncate">
-              {adjacent.next.name || adjacent.next.title}
-            </span>
+            <span className="hidden sm:inline">{adjacent.next.name || adjacent.next.title}</span>
+            <span className="sm:hidden">Next</span>
+            <ChevronRight className="w-4 h-4" />
           </Link>
+        ) : (
+          <div />
         )}
       </div>
 
-      {/* Optional Card Detail Modal if item clicked */}
+      {/* Slide-over item detail when clicked */}
       {activeItem && (
         <ItemDetail
           item={activeItem}
           expedition={expedition}
           onClose={() => setActiveItem(null)}
-          onPrev={() => {
-            const idx = expeditionRecords.findIndex((r) => r.id === activeItem.id);
-            if (idx > 0) setActiveItem(expeditionRecords[idx - 1]);
-          }}
-          onNext={() => {
-            const idx = expeditionRecords.findIndex((r) => r.id === activeItem.id);
-            if (idx < expeditionRecords.length - 1) setActiveItem(expeditionRecords[idx + 1]);
-          }}
-          hasPrev={expeditionRecords.findIndex((r) => r.id === activeItem.id) > 0}
-          hasNext={expeditionRecords.findIndex((r) => r.id === activeItem.id) < expeditionRecords.length - 1}
-          currentIndex={expeditionRecords.findIndex((r) => r.id === activeItem.id)}
           totalCount={expeditionRecords.length}
         />
       )}

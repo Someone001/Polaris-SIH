@@ -38,15 +38,15 @@ export default function Navbar() {
             </div>
             <div>
               <div className="flex items-center gap-2">
-                <span className="font-serif text-2xl font-semibold tracking-tight text-polar-900">
+                <span className="font-serif text-2xl font-semibold tracking-tight text-polar-950">
                   Polaris
                 </span>
                 <span className="text-[11px] font-medium uppercase tracking-wider px-2 py-0.5 rounded bg-polar-100 text-polar-700">
-                  MoES
+                  SIH26063
                 </span>
               </div>
               <p className="text-xs text-polar-600 hidden sm:block">
-                India's polar science portal
+                Polar outreach portal prototype
               </p>
             </div>
           </Link>

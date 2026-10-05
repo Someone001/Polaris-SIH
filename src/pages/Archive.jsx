@@ -162,7 +162,7 @@ export default function Archive() {
         <SectionHeading
           kicker="KNOWLEDGE ARCHIVE"
           title="Explore the Collection"
-          description="Browse forty verified records from Indian polar expeditions, including season reports, raw weather recordings, high-latitude photographs, and public science talks."
+          description={`Browse ${allItems.length} records from Indian polar expeditions, including published research papers, calibrated datasets, high-latitude photographs, videos, and outreach activities.`}
         />
       </div>
 
