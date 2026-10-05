@@ -185,7 +185,7 @@ export function generateItemSvg(item, width = 600, height = 380) {
       <rect x="65" y="225" width="${width - 130}" height="4" rx="2" fill="${lightNavy}" />
       <rect x="65" y="240" width="${width - 210}" height="4" rx="2" fill="${lightNavy}" />
 
-      <!-- Expedition compass mark -->
+      <!-- Expedition emblem / compass mark -->
       <g transform="translate(${width - 110}, ${height - 95})">
         <circle cx="0" cy="0" r="22" fill="none" stroke="${auroraSoft}" stroke-width="1.2" stroke-dasharray="4 2" stroke-opacity="0.7" />
         <circle cx="0" cy="0" r="14" fill="none" stroke="${iceMid}" stroke-width="1" stroke-opacity="0.5" />

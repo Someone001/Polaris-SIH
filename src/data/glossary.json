@@ -25,11 +25,11 @@
   },
   "publication": {
     "term": "Publication",
-    "definition": "A formal scientific paper or research report reviewed and published in an academic journal so other researchers worldwide can review the discoveries."
+    "definition": "A formal scientific paper or research report reviewed and published in an academic journal so other researchers worldwide can verify the discoveries."
   },
   "doi": {
     "term": "DOI (Digital Object Identifier)",
-    "definition": "A permanent unique web link assigned to a scientific publication that does not change."
+    "definition": "A permanent unique web link assigned to an official scientific publication that never breaks or changes."
   },
   "activity": {
     "term": "Activity",
@@ -37,7 +37,7 @@
   },
   "report": {
     "term": "Expedition Report",
-    "definition": "A written record prepared by the voyage team summarizing daily logs, observations, and science operations."
+    "definition": "An official written record prepared by the voyage leader summarizing daily weather logs, equipment performance, safety checks, and science operations."
   },
   "status": {
     "term": "Mission Status",

@@ -1,37 +1,29 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ExternalLink } from 'lucide-react';
 import ItemVisual from './ItemVisual';
 import Tag from './Tag';
 import { TYPE_LABELS } from '../lib/archiveLogic';
 
 /**
  * Clean, hairline-bordered item card in the archive grid.
- * Displays only sourced fields, with visible primary source link and credit line.
  */
 export default function ItemCard({ item, expedition, onClick, dataTour }) {
   const plainType = TYPE_LABELS[item.type] || item.type;
-  const region = item.region || expedition?.region;
 
-  // Format date simply if present; otherwise fallback to year if present; otherwise omitted
-  const dateDisplay = item.date
-    ? (() => {
-        try {
-          return new Date(item.date).toLocaleDateString('en-GB', {
-            day: 'numeric',
-            month: 'short',
-            year: 'numeric',
-          });
-        } catch {
-          return item.date;
-        }
-      })()
-    : item.year
-    ? String(item.year)
-    : null;
-
-  const descriptionSnippet = item.description || item.subject || item.highlights || item.sourceExcerpt || '';
-  const sourceUrl = item.url || item.sourceUrl || item.fileUrl || item.videoUrl;
+  // Format date simply in plain English: "14 Jan 2024"
+  const formatDate = (dateStr) => {
+    if (!dateStr) return '';
+    try {
+      const date = new Date(dateStr);
+      return date.toLocaleDateString('en-GB', {
+        day: 'numeric',
+        month: 'short',
+        year: 'numeric',
+      });
+    } catch {
+      return dateStr;
+    }
+  };
 
   return (
     <article
@@ -49,10 +41,10 @@ export default function ItemCard({ item, expedition, onClick, dataTour }) {
       role="button"
       className="reveal-card group relative flex flex-col h-full text-left bg-glacier-50 border border-glacier-border rounded-xl overflow-hidden hover:border-ice-300 hover:shadow-xs transition-all duration-200 cursor-pointer focus:outline-none focus:ring-2 focus:ring-aurora-500 focus:ring-offset-2"
     >
-      {/* Generated Polar SVG Visual or Image */}
+      {/* Generated Polar SVG Visual */}
       <div className="relative aspect-[16/10] w-full overflow-hidden border-b border-glacier-border/70">
         <ItemVisual item={item} size="md" className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.02]" />
-
+        
         {/* Type pill on top-left of visual */}
         <div className="absolute top-3 left-3">
           <Tag variant="dark" size="sm">
@@ -61,10 +53,10 @@ export default function ItemCard({ item, expedition, onClick, dataTour }) {
         </div>
 
         {/* Region badge on top-right if available */}
-        {region && (
+        {expedition?.region && (
           <div className="absolute top-3 right-3">
             <span className="text-[11px] font-medium tracking-wide uppercase px-2 py-0.5 rounded-full bg-polar-950/80 backdrop-blur-xs text-glacier-100 border border-polar-700/60">
-              {region}
+              {expedition.region}
             </span>
           </div>
         )}
@@ -73,14 +65,12 @@ export default function ItemCard({ item, expedition, onClick, dataTour }) {
       {/* Card Content Body */}
       <div className="p-5 flex-1 flex flex-col justify-between space-y-3">
         <div className="space-y-2">
-          {/* Metadata line: date & expedition (only if present) */}
+          {/* Metadata line: date & expedition */}
           <div className="flex items-center justify-between text-xs text-polar-500 font-medium">
-            {dateDisplay && <span>{dateDisplay}</span>}
-            {expedition && (
-              <span className="truncate max-w-[170px]" title={expedition.title || expedition.name}>
-                {expedition.name || expedition.title}
-              </span>
-            )}
+            <span>{formatDate(item.date)}</span>
+            <span className="truncate max-w-[170px]" title={expedition?.title || ''}>
+              {expedition?.locationName || expedition?.title || 'Polar Expedition'}
+            </span>
           </div>
 
           {/* Title */}
@@ -88,60 +78,33 @@ export default function ItemCard({ item, expedition, onClick, dataTour }) {
             {item.title}
           </h3>
 
-          {/* Author / Journal / Channel if present */}
-          {(item.author || item.journal || item.channel || item.repository) && (
-            <p className="text-xs text-polar-600 font-mono truncate">
-              {item.author || item.journal || item.channel || item.repository}
-            </p>
-          )}
-
-          {/* Plain description snippet if present */}
-          {descriptionSnippet && (
-            <p className="text-sm text-polar-700 leading-relaxed line-clamp-2">
-              {descriptionSnippet}
-            </p>
-          )}
+          {/* Plain description snippet */}
+          <p className="text-sm text-polar-700 leading-relaxed line-clamp-2">
+            {item.description}
+          </p>
         </div>
 
-        {/* Card Footer: Visible Source Link & One-Line Credit */}
-        <div className="pt-2.5 border-t border-glacier-border/70 text-xs space-y-1.5">
-          {sourceUrl && (
-            <div className="flex items-center justify-between">
-              <span className="text-[11px] font-semibold uppercase tracking-wider text-polar-500">
-                Primary Source
+        {/* Footer: Tags and View Expedition Link */}
+        <div className="pt-2.5 flex items-center justify-between gap-2 border-t border-glacier-border/70 text-xs">
+          <div className="flex flex-wrap gap-1">
+            {item.tags?.slice(0, 2).map((tag) => (
+              <span key={tag} className="text-[11px] text-polar-600 px-1.5 py-0.5 rounded bg-polar-100/70">
+                #{tag}
               </span>
-              <a
-                href={sourceUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={(e) => e.stopPropagation()}
-                className="inline-flex items-center gap-1 text-aurora-700 hover:text-aurora-800 font-medium transition-colors"
-                title={sourceUrl}
-              >
-                <span>View Source</span>
-                <ExternalLink className="w-3 h-3" />
-              </a>
-            </div>
-          )}
+            ))}
+          </div>
 
-          {item.creditLine && (
-            <p className="text-[11px] text-polar-500 truncate" title={item.creditLine}>
-              {item.creditLine}
-            </p>
-          )}
-
-          {/* Expedition link if present */}
-          {item.expeditionId && (
-            <div className="pt-1">
-              <Link
-                to={`/expeditions/${item.expeditionId}`}
-                onClick={(e) => e.stopPropagation()}
-                className="text-xs font-medium text-polar-700 hover:text-polar-950 underline decoration-glacier-border hover:decoration-aurora-500"
-              >
-                View connected expedition &rarr;
-              </Link>
-            </div>
-          )}
+          <Link
+            data-tour={dataTour ? "archive-view-expedition" : undefined}
+            to={`/expeditions/${item.expeditionId}`}
+            state={{ fromArchiveSearch: typeof window !== 'undefined' ? window.location.search.slice(1) : '' }}
+            onClick={(e) => e.stopPropagation()}
+            className="text-aurora-700 hover:text-aurora-600 font-semibold inline-flex items-center gap-1 shrink-0 group/exp"
+            title="View expedition map and timeline"
+          >
+            <span>View expedition</span>
+            <span className="transition-transform group-hover/exp:translate-x-0.5">&rarr;</span>
+          </Link>
         </div>
       </div>
     </article>

@@ -131,28 +131,26 @@ export default function ArchiveFilters({
       <div className="pt-4 border-t border-glacier-border/80 flex flex-col md:flex-row md:items-center justify-between gap-4">
         {/* Dropdown selectors */}
         <div className="flex flex-wrap items-center gap-3 text-sm">
-          {/* Region Dropdown (hidden if too sparse) */}
-          {regions && regions.length > 1 && (
-            <div className="flex items-center gap-1.5">
-              <label htmlFor="filter-region" className="text-xs font-semibold text-polar-500 uppercase tracking-wider flex items-center">
-                Region:
-                <InfoTip termKey="region" />
-              </label>
-              <select
-                id="filter-region"
-                value={selectedRegion || 'all'}
-                onChange={(e) => onSelectRegion(e.target.value)}
-                className="py-1.5 pl-3 pr-8 rounded-md border border-glacier-border bg-glacier-50 text-polar-800 text-sm font-medium focus:outline-none focus:ring-1 focus:ring-aurora-500 cursor-pointer"
-              >
-                <option value="all">All regions ({totalItemsCount})</option>
-                {regions.map((r) => (
-                  <option key={r.key} value={r.key}>
-                    {r.label} ({r.count})
-                  </option>
-                ))}
-              </select>
-            </div>
-          )}
+          {/* Region Dropdown */}
+          <div className="flex items-center gap-1.5">
+            <label htmlFor="filter-region" className="text-xs font-semibold text-polar-500 uppercase tracking-wider flex items-center">
+              Region:
+              <InfoTip termKey="region" />
+            </label>
+            <select
+              id="filter-region"
+              value={selectedRegion || 'all'}
+              onChange={(e) => onSelectRegion(e.target.value)}
+              className="py-1.5 pl-3 pr-8 rounded-md border border-glacier-border bg-glacier-50 text-polar-800 text-sm font-medium focus:outline-none focus:ring-1 focus:ring-aurora-500 cursor-pointer"
+            >
+              <option value="all">All regions ({totalItemsCount})</option>
+              {regions.map((r) => (
+                <option key={r.key} value={r.key}>
+                  {r.label} ({r.count})
+                </option>
+              ))}
+            </select>
+          </div>
 
           {/* Expedition Dropdown */}
           <div className="flex items-center gap-1.5">

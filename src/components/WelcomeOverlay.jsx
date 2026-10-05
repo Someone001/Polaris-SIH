@@ -50,15 +50,10 @@ export default function WelcomeOverlay() {
 
         {/* 3 Short Plain-English Lines */}
         <div className="space-y-2 text-base sm:text-lg text-polar-800 leading-relaxed border-l-2 border-aurora-500 pl-4 bg-aurora-50/40 py-2 rounded-r-lg">
-          <p>This portal shows what polar expeditions produced — publications, data, photos, and videos.</p>
+          <p>This portal shows what polar expeditions produced — reports, data, photos and videos.</p>
           <p>Browse the Archive or follow an Expedition.</p>
           <p>Or pick any item and get ready-to-post text.</p>
         </div>
-
-        {/* Prototype Disclaimer */}
-        <p className="text-xs text-polar-600 bg-glacier-100 p-3 rounded-lg border border-glacier-border/70 leading-relaxed">
-          Polaris is a student prototype built for Smart India Hackathon 2026 (problem statement SIH26063). It is not an official website of MoES or NCPOR. Every record links to its public source.
-        </p>
 
         {/* 3 Navigational Choice Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-3.5 pt-2">

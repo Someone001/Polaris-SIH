@@ -4,20 +4,21 @@
 
 // Human-friendly plain labels for item types
 export const TYPE_LABELS = {
-  Publication: 'Published papers',
+  Report: 'Expedition reports',
   Dataset: 'Research data',
-  Photo: 'Photographs',
+  Publication: 'Published papers',
+  Photo: 'Photos',
   Video: 'Videos',
-  Activity: 'Activities & events',
+  Activity: 'Events and activities',
 };
 
 /**
  * Filter items with:
- * - Case-insensitive query across title, description, author/creators, journal, doi, and tags
+ * - Case-insensitive query across title, description, and tags
  * - AND combination between different filters
  * - OR combination within a multi-select filter (e.g. types, regions)
  */
-export function filterItems(items = [], filters = {}, expeditions = []) {
+export function filterItems(items, filters = {}, expeditions = []) {
   const { query, types, regions, expeditionId, year } = filters;
 
   // Build a fast lookup map for expedition details (to get region and year)
@@ -39,19 +40,17 @@ export function filterItems(items = [], filters = {}, expeditions = []) {
     : [];
 
   return items.filter((item) => {
-    const itemRegion = item.region || '';
-    const itemYear = item.year ? String(item.year) : item.date ? item.date.slice(0, 4) : '';
+    const linkedExp = expMap.get(item.expeditionId) || {};
+    const itemRegion = linkedExp.region || '';
+    const itemYear = item.date ? item.date.slice(0, 4) : String(linkedExp.year || '');
 
-    // 1. Query search across title, description, authors, journal, doi, and tags
+    // 1. Query search across title, description, and tags
     if (cleanQuery) {
       const matchTitle = item.title?.toLowerCase().includes(cleanQuery);
-      const matchDesc = (item.description || item.subject || item.highlights || '')?.toLowerCase().includes(cleanQuery);
-      const matchAuthor = (item.author || (Array.isArray(item.creators) ? item.creators.join(' ') : ''))?.toLowerCase().includes(cleanQuery);
-      const matchJournal = item.journal?.toLowerCase().includes(cleanQuery);
-      const matchDoi = item.doi?.toLowerCase().includes(cleanQuery);
+      const matchDesc = item.description?.toLowerCase().includes(cleanQuery);
       const matchTags = Array.isArray(item.tags) && item.tags.some((t) => t.toLowerCase().includes(cleanQuery));
 
-      if (!matchTitle && !matchDesc && !matchAuthor && !matchJournal && !matchDoi && !matchTags) {
+      if (!matchTitle && !matchDesc && !matchTags) {
         return false;
       }
     }
@@ -91,23 +90,17 @@ export function filterItems(items = [], filters = {}, expeditions = []) {
 /**
  * Sorts items by "newest", "oldest", or "title"
  */
-export function sortItems(items = [], sortBy = 'newest') {
+export function sortItems(items, sortBy = 'newest') {
   const cloned = [...items];
-
-  const getDateOrYear = (item) => {
-    if (item.date) return item.date;
-    if (item.year) return `${item.year}-01-01`;
-    return '1900-01-01';
-  };
 
   switch (sortBy) {
     case 'oldest':
-      return cloned.sort((a, b) => getDateOrYear(a).localeCompare(getDateOrYear(b)));
+      return cloned.sort((a, b) => (a.date || '').localeCompare(b.date || ''));
     case 'title':
       return cloned.sort((a, b) => (a.title || '').localeCompare(b.title || ''));
     case 'newest':
     default:
-      return cloned.sort((a, b) => getDateOrYear(b).localeCompare(getDateOrYear(a)));
+      return cloned.sort((a, b) => (b.date || '').localeCompare(a.date || ''));
   }
 }
 
@@ -118,28 +111,39 @@ export function getFilterOptions(items = [], expeditions = []) {
   const expMap = new Map();
   expeditions.forEach((exp) => expMap.set(exp.id, exp));
 
-  const typeCounts = {};
+  const typeCounts = {
+    Report: 0,
+    Dataset: 0,
+    Publication: 0,
+    Photo: 0,
+    Video: 0,
+    Activity: 0,
+  };
+
   const regionCounts = {};
   const yearCounts = {};
   const expeditionCounts = {};
 
   items.forEach((item) => {
     // Type counts
-    typeCounts[item.type] = (typeCounts[item.type] || 0) + 1;
-
-    const region = item.region;
-    if (region) {
-      regionCounts[region] = (regionCounts[region] || 0) + 1;
+    if (typeCounts[item.type] !== undefined) {
+      typeCounts[item.type] += 1;
+    } else {
+      typeCounts[item.type] = 1;
     }
 
-    const year = item.year ? String(item.year) : item.date ? item.date.slice(0, 4) : exp?.year ? String(exp.year) : null;
-    if (year) {
-      yearCounts[year] = (yearCounts[year] || 0) + 1;
-    }
+    const exp = expMap.get(item.expeditionId);
+    const region = exp?.region || 'Unknown';
+    const year = item.date ? item.date.slice(0, 4) : String(exp?.year || 'Unknown');
 
-    if (item.expeditionId) {
-      expeditionCounts[item.expeditionId] = (expeditionCounts[item.expeditionId] || 0) + 1;
-    }
+    // Region counts
+    regionCounts[region] = (regionCounts[region] || 0) + 1;
+
+    // Year counts
+    yearCounts[year] = (yearCounts[year] || 0) + 1;
+
+    // Expedition counts
+    expeditionCounts[item.expeditionId] = (expeditionCounts[item.expeditionId] || 0) + 1;
   });
 
   const typesList = Object.keys(typeCounts).map((key) => ({
@@ -164,15 +168,13 @@ export function getFilterOptions(items = [], expeditions = []) {
       count: yearCounts[year],
     }));
 
-  const expeditionsList = expeditions
-    .filter((exp) => expeditionCounts[exp.id])
-    .map((exp) => ({
-      key: exp.id,
-      label: exp.title || exp.name,
-      count: expeditionCounts[exp.id] || 0,
-      region: exp.region,
-      year: exp.year,
-    }));
+  const expeditionsList = expeditions.map((exp) => ({
+    key: exp.id,
+    label: exp.title,
+    count: expeditionCounts[exp.id] || 0,
+    region: exp.region,
+    year: exp.year,
+  }));
 
   return {
     types: typesList,

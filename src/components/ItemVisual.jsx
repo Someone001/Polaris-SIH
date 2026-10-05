@@ -3,7 +3,7 @@ import { Play } from 'lucide-react';
 import { generateItemSvg } from '../lib/visuals';
 
 /**
- * Renders a polar photograph/visual with video indicator and deterministic SVG fallback.
+ * Renders an authentic polar photograph/visual with video indicator and deterministic SVG fallback.
  */
 export default function ItemVisual({ item, size = 'md', className = '' }) {
   const [imageError, setImageError] = useState(false);
